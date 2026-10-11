@@ -66,6 +66,13 @@ let listening = false, paused = false, recognitionDesired = false;
 let finalizedSegments = [], currentRecognitionFinal = '', currentRecognitionInterim = '', manualOverride = '';
 let runStart = null, elapsedMs = 0, timerHandle = null;
 
+// Diagnóstico e controle de reinicialização progressiva do SpeechRecognition
+let restartAttempts = 0;
+const MAX_RESTART_ATTEMPTS = 5;
+let restartTimer = null;
+let diagResultsCount = 0;
+let diagLastErrorCode = 'Nenhum';
+
 let highlightResult = {
   matched: new Set(),
   skipped: new Set(),
@@ -383,19 +390,34 @@ function startClock() {
   renderClock();
 }
 
+function updateDiag(stateText = null) {
+  if (stateText && $('diag-state')) $('diag-state').textContent = stateText;
+  if ($('diag-support')) $('diag-support').textContent = voiceSupported ? 'Suportado (Web Speech API)' : 'Não suportado no navegador';
+  if ($('diag-last-error')) $('diag-last-error').textContent = diagLastErrorCode;
+  if ($('diag-results-count')) $('diag-results-count').textContent = String(diagResultsCount);
+  if ($('diag-restarts-count')) $('diag-restarts-count').textContent = `${restartAttempts} / ${MAX_RESTART_ATTEMPTS}`;
+}
+
 function status(text, state = 'idle') {
-  $('speech-status').textContent = text;
-  $('dock-status').textContent = text;
-  $('mic-dot').className = 'mic-dot ' + state;
-  $('start-button').disabled = listening;
-  $('pause-button').disabled = !listening;
-  $('resume-button').hidden = !paused;
-  $('pause-button').hidden = paused;
+  if ($('speech-status')) $('speech-status').textContent = text;
+  if ($('dock-status')) $('dock-status').textContent = text;
+  if ($('mic-dot')) $('mic-dot').className = 'mic-dot ' + state;
+  if ($('start-button')) $('start-button').disabled = listening;
+  if ($('pause-button')) $('pause-button').disabled = !listening;
+  if ($('resume-button')) $('resume-button').hidden = !paused;
+  if ($('pause-button')) $('pause-button').hidden = paused;
+  updateDiag(text);
 }
 
 function commitRecognition() {
   const complete = [currentRecognitionFinal, currentRecognitionInterim].filter(Boolean).join(' ').trim();
-  if (complete) finalizedSegments.push(complete);
+  if (complete) {
+    // Evita duplicar segmento se já for igual ao último inserido
+    const lastSeg = finalizedSegments[finalizedSegments.length - 1];
+    if (lastSeg !== complete) {
+      finalizedSegments.push(complete);
+    }
+  }
   currentRecognitionFinal = '';
   currentRecognitionInterim = '';
 }
@@ -409,54 +431,152 @@ function newRecognizer() {
   r.interimResults = true;
   r.maxAlternatives = 1;
 
+  // Eventos de Ciclo de Vida do SpeechRecognition
+  r.onstart = () => {
+    console.info('[SpeechRecognition] onstart: serviço iniciado com sucesso.');
+    restartAttempts = 0; // Reconhecimento ativo com sucesso zera tentativas de reinicialização
+    status('Ouvindo em português (Brasil)...', 'listening');
+  };
+
+  r.onaudiostart = () => {
+    console.info('[SpeechRecognition] onaudiostart: captura de áudio ativa.');
+  };
+
+  r.onspeechstart = () => {
+    console.info('[SpeechRecognition] onspeechstart: fala humana detectada.');
+    status('Recebendo transcrição...', 'speaking');
+  };
+
+  r.onspeechend = () => {
+    console.info('[SpeechRecognition] onspeechend: pausa na fala detectada.');
+    if (listening && !paused) {
+      status('Ouvindo em português (Brasil)...', 'listening');
+    }
+  };
+
+  r.onaudioend = () => {
+    console.info('[SpeechRecognition] onaudioend: captura de áudio suspensa.');
+  };
+
   r.onresult = e => {
+    diagResultsCount++;
+    console.info(`[SpeechRecognition] onresult: ${e.results.length} resultados (último índice: ${e.resultIndex}).`);
+
     let finalized = [], interim = [];
     for (let k = 0; k < e.results.length; k++) {
       const row = e.results[k];
-      const text = row[0]?.transcript || '';
-      (row.isFinal ? finalized : interim).push(text);
+      const text = (row[0]?.transcript || '').trim();
+      if (!text) continue;
+      if (row.isFinal) {
+        finalized.push(text);
+      } else {
+        interim.push(text);
+      }
     }
+
     currentRecognitionFinal = finalized.join(' ').trim();
     currentRecognitionInterim = interim.join(' ').trim();
     refreshTranscript();
+    updateDiag('Recebendo transcrição');
   };
 
   r.onerror = e => {
-    const fatal = ['not-allowed', 'service-not-allowed', 'audio-capture', 'language-not-supported'];
-    if (fatal.includes(e.error)) {
-      recognitionDesired = false;
-      listening = false;
-      paused = true;
-      stopClock();
-      status(`Microfone indisponível: ${e.error}`, 'error');
-      $('manual-details').open = true;
-      toast('Reconhecimento não disponível. Use a transcrição manual.');
-    } else if (e.error === 'no-speech') {
-      status('Sem fala detectada; aguardando...', 'listening');
-    } else {
-      toast(`Reconhecimento de voz: ${e.error}`);
+    diagLastErrorCode = e.error || 'desconhecido';
+    console.warn(`[SpeechRecognition] onerror: ${e.error}`);
+    updateDiag();
+
+    // Tratamento específico de cada erro
+    switch (e.error) {
+      case 'not-allowed':
+      case 'service-not-allowed':
+        recognitionDesired = false;
+        listening = false;
+        paused = true;
+        stopClock();
+        status('Permissão de microfone negada no navegador', 'error');
+        if ($('manual-details')) $('manual-details').open = true;
+        toast('Permissão de microfone negada. Autorize nas configurações do navegador ou use o modo manual.');
+        break;
+
+      case 'audio-capture':
+        recognitionDesired = false;
+        listening = false;
+        paused = true;
+        stopClock();
+        status('Nenhum microfone encontrado ou dispositivo em uso', 'error');
+        if ($('manual-details')) $('manual-details').open = true;
+        toast('Microfone não detectado. Verifique os dispositivos de áudio.');
+        break;
+
+      case 'language-not-supported':
+        recognitionDesired = false;
+        listening = false;
+        paused = true;
+        stopClock();
+        status('Idioma pt-BR não suportado pelo navegador', 'error');
+        toast('O serviço do navegador não suporta reconhecimento em português (Brasil).');
+        break;
+
+      case 'network':
+        status('Falha de rede no serviço de voz do navegador', 'error');
+        toast('Erro de rede na Web Speech API do navegador. Verifique a conexão.');
+        break;
+
+      case 'no-speech':
+        if (listening && !paused) {
+          status('Sem fala detectada; aguardando...', 'listening');
+        }
+        break;
+
+      case 'aborted':
+        console.info('[SpeechRecognition] onerror: sessão abortada intencionalmente.');
+        break;
+
+      default:
+        toast(`Reconhecimento de voz: ${e.error}`);
+        break;
     }
   };
 
   r.onend = () => {
+    console.info('[SpeechRecognition] onend: sessão finalizada.');
     commitRecognition();
     refreshTranscript();
     voice = null;
-    if (recognitionDesired && listening) {
-      setTimeout(() => {
-        if (recognitionDesired && listening) {
-          try {
-            voice = newRecognizer();
-            voice.start();
-          } catch (err) {
-            recognitionDesired = false;
-            listening = false;
-            paused = true;
-            stopClock();
-            status('Falha ao reiniciar microfone', 'paused');
+
+    if (recognitionDesired && listening && !paused) {
+      if (restartAttempts < MAX_RESTART_ATTEMPTS) {
+        restartAttempts++;
+        const backoffDelay = Math.min(1500, 250 * Math.pow(1.5, restartAttempts));
+        status(`Reiniciando escuta (${restartAttempts}/${MAX_RESTART_ATTEMPTS})...`, 'starting');
+        clearTimeout(restartTimer);
+        restartTimer = setTimeout(() => {
+          if (recognitionDesired && listening && !paused) {
+            try {
+              voice = newRecognizer();
+              voice.start();
+            } catch (err) {
+              console.warn('[SpeechRecognition] Falha ao reiniciar:', err);
+              if (restartAttempts >= MAX_RESTART_ATTEMPTS) {
+                recognitionDesired = false;
+                listening = false;
+                paused = true;
+                stopClock();
+                status('Limite de tentativas de microfone atingido', 'paused');
+                toast('O serviço de reconhecimento não respondeu. Use a transcrição manual ou tente novamente.');
+              }
+            }
           }
-        }
-      }, 230);
+        }, backoffDelay);
+      } else {
+        recognitionDesired = false;
+        listening = false;
+        paused = true;
+        stopClock();
+        status('Serviço de voz suspenso (muitas tentativas)', 'paused');
+        if ($('manual-details')) $('manual-details').open = true;
+        toast('Serviço de reconhecimento suspenso após múltiplas tentativas. Use o modo manual.');
+      }
     } else if (!listening) {
       status(paused ? 'Treino pausado' : 'Treino encerrado', paused ? 'paused' : 'idle');
     }
@@ -471,8 +591,8 @@ function beginVoice() {
     return;
   }
   if (!voiceSupported) {
-    $('manual-details').open = true;
-    toast('Este navegador não oferece SpeechRecognition. Use a análise manual.');
+    if ($('manual-details')) $('manual-details').open = true;
+    toast('Este navegador não oferece SpeechRecognition. Use a transcrição manual.');
     status('Modo manual disponível', 'idle');
     return;
   }
@@ -481,20 +601,26 @@ function beginVoice() {
   recognitionDesired = true;
   listening = true;
   paused = false;
-  status('Ouvindo em português (Brasil)...', 'listening');
+  restartAttempts = 0;
+  clearTimeout(restartTimer);
+
+  // Não marca como "Ouvindo" ainda; aguarda a confirmação de onstart
+  status('Iniciando microfone...', 'starting');
   startClock();
 
   try {
     voice = newRecognizer();
     voice.start();
   } catch (e) {
+    console.error('[SpeechRecognition] Exceção em start():', e);
+    diagLastErrorCode = e.message || 'falha_start';
     recognitionDesired = false;
     listening = false;
     paused = true;
     stopClock();
     status('Microfone não iniciado', 'paused');
-    $('manual-details').open = true;
-    toast('Não foi possível iniciar o microfone. Verifique permissões e HTTPS.');
+    if ($('manual-details')) $('manual-details').open = true;
+    toast('Não foi possível iniciar o microfone. Verifique permissões e conexão segura.');
   }
 }
 
@@ -504,7 +630,8 @@ function startVoice() {
     return;
   }
   if (!store.consent) {
-    $('privacy-modal').hidden = false;
+    status('Solicitando permissão...', 'requesting');
+    if ($('privacy-modal')) $('privacy-modal').hidden = false;
     return;
   }
   beginVoice();
@@ -515,6 +642,7 @@ function pauseVoice() {
   recognitionDesired = false;
   listening = false;
   paused = true;
+  clearTimeout(restartTimer);
   stopClock();
   status('Treino pausado', 'paused');
   try { voice?.stop(); } catch (e) {}
@@ -529,6 +657,7 @@ function stopVoice() {
   recognitionDesired = false;
   listening = false;
   paused = false;
+  clearTimeout(restartTimer);
   stopClock();
   try { voice?.stop(); } catch (e) {}
   voice = null;

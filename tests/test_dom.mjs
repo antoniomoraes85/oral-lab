@@ -22,7 +22,7 @@ globalThis.document=document;
 const memory=new Map();globalThis.localStorage={getItem:k=>memory.get(k)||null,setItem:(k,v)=>memory.set(k,v)};
 let fakePrints=0;
 class FakeRecognition{
- static instances=[];constructor(){this.continuous=false;this.interimResults=false;FakeRecognition.instances.push(this);}start(){this.started=true;}stop(){this.started=false;queueMicrotask(()=>this.onend?.());}}
+ static instances=[];constructor(){this.continuous=false;this.interimResults=false;FakeRecognition.instances.push(this);}start(){this.started=true;queueMicrotask(()=>{this.onstart?.();this.onaudiostart?.();});}stop(){this.started=false;queueMicrotask(()=>this.onend?.());}}
 const w={SpeechRecognition:FakeRecognition,addEventListener(){},print(){fakePrints++}};globalThis.window=w;Object.defineProperty(globalThis,'navigator',{value:{},configurable:true});globalThis.location={protocol:'file:'};
 globalThis.confirm=()=>true;globalThis.alert=()=>{};
 globalThis.URL.createObjectURL=()=> 'blob:test';globalThis.URL.revokeObjectURL=()=>{};

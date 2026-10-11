@@ -212,6 +212,16 @@
               <textarea id="manual-transcript" rows="4" placeholder="Cole ou digite a resposta falada para testar o alinhamento e a pontuação semântica."></textarea>
               <button id="analyze-manual" class="small-gold-button">Analisar texto</button>
             </details>
+            <details id="diag-details" class="diag-panel">
+              <summary>Diagnóstico de Reconhecimento</summary>
+              <div class="diag-grid">
+                <div class="diag-item"><span>Estado:</span><strong id="diag-state">Inativo</strong></div>
+                <div class="diag-item"><span>Suporte:</span><strong id="diag-support">Verificando...</strong></div>
+                <div class="diag-item"><span>Último erro:</span><strong id="diag-last-error">Nenhum</strong></div>
+                <div class="diag-item"><span>Resultados recebidos:</span><strong id="diag-results-count">0</strong></div>
+                <div class="diag-item"><span>Reinicializações:</span><strong id="diag-restarts-count">0</strong></div>
+              </div>
+            </details>
             <div class="panel-foot">
               <button id="save-session" class="link-button">Salvar sessão</button>
               <button id="clear-transcript" class="link-button">Limpar transcrição</button>
