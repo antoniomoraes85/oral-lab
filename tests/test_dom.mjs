@@ -3,7 +3,7 @@ import assert from 'node:assert/strict';
 import fs from 'node:fs';
 let errors=[];
 class El {
- constructor(tag='div'){this.tag=tag;this.children=[];this.style={};this.dataset={};this.attributes={};this.hidden=false;this.value='';this._text='';this._html='';this.events={};this.checked=false;this.disabled=false;this.className='';this.open=false;this.scrollTop=0;this.classList={toggle:(name,yes)=>{const base=this.className.split(' ').filter(s=>s&&s!==name);if(yes)base.push(name);this.className=base.join(' ');}};}
+ constructor(tag='div'){this.tag=tag;this.children=[];this.style={};this.dataset={};this.attributes={};this.hidden=false;this.value='';this._text='';this._html='';this.events={};this.checked=false;this.disabled=false;this.className='';this.open=false;this.scrollTop=0;this.classList={toggle:(name,yes)=>{const base=this.className.split(' ').filter(s=>s&&s!==name);if(yes)base.push(name);this.className=base.join(' ');},add:(name)=>{const base=this.className.split(' ').filter(s=>s&&s!==name);base.push(name);this.className=base.join(' ');},remove:(name)=>{const base=this.className.split(' ').filter(s=>s&&s!==name);this.className=base.join(' ');}};}
  set textContent(x){this._text=String(x);this.children=[];this._html='';}get textContent(){return this._text+this.children.map(c=>c.textContent||'').join('');}
  set innerHTML(x){this._html=String(x);this._text='';this.children=[];}get innerHTML(){return this._html;}
  append(...items){this.children.push(...items);}appendChild(x){this.children.push(x);return x;}

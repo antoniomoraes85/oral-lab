@@ -4,77 +4,2384 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
   <meta name="theme-color" content="#103d46" />
-  <meta name="description" content="Plataforma de provas orais e entrevistas: simulados personalizáveis, teleprompter, treino com voz e evolução." />
-  <title>ORAL LAB | Estúdio de Provas Orais</title>
+  <meta name="description" content="Plataforma de alta performance para provas orais e entrevistas: simulados personalizáveis, teleprompter com IA e tolerância semântica, detecção de omissões com feedback sonoro e relatório final." />
+  <title>ORAL LAB | Estúdio Premium de Provas Orais & Entrevistas</title>
 <style>
-:root{--petrol:#103d46;--deep:#092c34;--gold:#b29456;--gold-light:#d5bf88;--cream:#f7f6f1;--beige:#efede5;--ink:#1d3236;--mute:#718186;--border:#e3e4df;--green:#4d997e;--shadow:0 8px 30px rgba(9,44,52,.055)}
-*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:var(--cream);font-family:'DM Sans',system-ui,Arial,sans-serif;color:var(--ink);-webkit-font-smoothing:antialiased}button,textarea,input{font:inherit}button{cursor:pointer}button:disabled{cursor:not-allowed;opacity:.45}button:focus-visible,textarea:focus-visible,input:focus-visible,.tele-window:focus-visible{outline:3px solid #ac995e;outline-offset:2px}button{transition:background .17s,border-color .17s,transform .17s}button:active:not(:disabled){transform:scale(.98)}.topbar{background:var(--deep);color:#fff;min-height:92px;display:flex;align-items:center;justify-content:space-between;gap:20px;padding:18px max(24px,calc((100vw - 1376px)/2))}.brand-lockup{display:flex;align-items:center;gap:17px}.brand-symbol{border:1px solid var(--gold);border-radius:1px;color:var(--gold-light);height:44px;width:44px;display:grid;place-items:center;font-family:Georgia,serif;font-size:17px;position:relative}.brand-symbol span{position:absolute;top:-8px;right:-6px;background:var(--deep);font-size:12px}.brand-name{font-size:14px;letter-spacing:2px;font-weight:700}.brand-name .brand-divider{color:var(--gold)}.brand-subtitle{font-size:11px;color:#a9c3c6;margin-top:7px;letter-spacing:.45px}.header-actions{display:flex;align-items:center;gap:13px}.storage-tag{font-size:11px;color:#bcd0d0;border:1px solid #49666d;padding:8px 10px;border-radius:30px;white-space:nowrap}.circle-button{height:38px;width:38px;border-radius:50%;border:1px solid #66818a;background:transparent;color:inherit;font-size:21px;display:grid;place-items:center}.circle-button:hover{border-color:var(--gold)}.app-container{max-width:1392px;margin:0 auto;padding:33px 24px 130px}.page-intro{display:flex;justify-content:space-between;align-items:center;gap:30px;margin:8px 0 28px}.eyebrow,.micro-overline{font-size:10px;letter-spacing:2px;color:var(--gold);font-weight:700}.gold-dot{display:inline-block;width:7px;height:7px;background:var(--gold);border-radius:50%;vertical-align:middle;margin-right:9px}.page-intro h1{font-family:'Libre Baskerville',Georgia,serif;line-height:1.23;letter-spacing:-.9px;font-size:clamp(28px,3vw,42px);font-weight:400;margin:15px 0 12px}.page-intro h1 em{color:#8a8d78;font-weight:400}.page-intro p{color:#758186;font-size:14px;margin:0}.session-overview{border:1px solid var(--border);border-radius:5px;background:white;padding:20px 22px;min-width:200px;box-shadow:var(--shadow)}.session-overview span,.session-overview small{display:block;font-size:10px;letter-spacing:1.6px;color:var(--mute)}.session-overview strong{font:normal 32px Georgia,serif;color:var(--petrol);display:block;margin:7px 0}.session-overview strong small{display:inline;font-size:17px;color:var(--mute)}.thin-track,.progress-track{height:5px;border-radius:8px;background:#e6eae5;overflow:hidden}.thin-track>div,.progress-track>div{height:100%;background:var(--gold);width:0;transition:width .25s}.session-overview>small{letter-spacing:0;margin-top:9px}.module-nav{display:grid;grid-template-columns:repeat(6,minmax(0,1fr));gap:8px;margin-bottom:21px}.module-tab{background:#fff;border:1px solid #e3e4df;text-align:left;padding:14px 12px 16px;min-height:84px;border-radius:5px;position:relative;color:var(--ink)}.module-tab:hover{border-color:var(--gold)}.module-tab.active{background:var(--petrol);color:#fff;border-color:var(--petrol);box-shadow:0 7px 20px #103d4620}.module-tab.active:after{content:'';height:3px;background:var(--gold);position:absolute;bottom:0;left:14px;right:14px}.module-no{display:block;font-size:10px;letter-spacing:1.4px;color:#b09555;font-weight:700;margin-bottom:7px}.module-name{font-size:12px;font-weight:700;line-height:1.4}.workspace-grid{display:grid;grid-template-columns:minmax(0,1.72fr) minmax(300px,.85fr);gap:18px;align-items:start}.tele-card,.insight-card{background:white;border:1px solid var(--border);border-radius:6px;box-shadow:var(--shadow)}.tele-card{padding:30px 32px}.section-kicker{display:flex;align-items:center;gap:9px;font-size:10px;letter-spacing:1.6px;font-weight:700;color:var(--gold)}.gold-bar{height:14px;width:3px;background:var(--gold)}.kicker-right{margin-left:auto;color:#9ba7a7}.tele-card h2{font:normal 28px/1.24 'Libre Baskerville',Georgia,serif;margin:18px 0 12px}.main-question{color:#6f7c81;line-height:1.6;margin:0 0 20px;font-size:14px}.tele-toolbar{border-top:1px solid var(--border);border-bottom:1px solid var(--border);padding:13px 0;display:flex;justify-content:space-between;gap:12px;align-items:center;flex-wrap:wrap}.choice-set{display:flex;align-items:center;border:1px solid #dfe4e1;border-radius:4px;padding:3px;gap:1px;background:#f5f7f5}.choice-set button{font-size:12px;font-weight:700;border:0;background:transparent;color:#77878b;padding:9px 12px;border-radius:3px}.choice-set button.active{color:#fff;background:var(--petrol)}.font-control{display:flex;align-items:center;gap:8px;color:var(--mute);font-size:11px}.font-control button{border:1px solid var(--border);background:#fff;border-radius:3px;min-width:36px;height:34px;color:var(--petrol);font-weight:700}.reading-switch{display:flex;align-items:center;justify-content:space-between;gap:10px;margin:20px 0 15px}.toggle-label{display:flex;align-items:center;gap:8px;font-size:12px;font-weight:700;cursor:pointer}.toggle-label input{accent-color:var(--petrol);height:17px;width:17px}.toggle-label small{display:block;color:#8b989b;font-weight:400;font-size:10px;margin-top:2px}.link-button{color:var(--petrol);background:transparent;border:0;font-size:12px;font-weight:700;padding:8px 1px;text-align:left}.link-button:hover{color:var(--gold)}.tele-window{border:1px solid #e5e9e7;background:#fcfcfa;border-radius:4px;min-height:440px;max-height:560px;overflow:auto;position:relative;scroll-padding:110px}.tele-status-line{height:45px;position:sticky;top:0;z-index:2;background:#f8faf8;border-bottom:1px solid #e5e9e7;padding:0 20px;display:flex;align-items:center;justify-content:space-between;gap:10px;font-size:11px;color:#677b7e}.tele-status-line>div{display:flex;align-items:center;gap:7px}.mic-dot{display:inline-block;width:7px;height:7px;border-radius:50%;background:#b2beb8}.mic-dot.listening{background:#3aaf88;box-shadow:0 0 0 5px #3aaf8822}.mic-dot.paused{background:var(--gold)}.tele-content{padding:18px 24px 35px;color:#28363a;font-size:22px;line-height:1.95;letter-spacing:.05px;font-weight:400;overflow-wrap:anywhere}.tele-content p{margin:0 0 20px}.word{border-radius:3px;transition:background .12s}.word.matched{background:#dcf2e8;color:#286a54}.word.skipped{color:#9ea5a4;text-decoration:underline dotted #bcbfbd}.word.current{background:#ecd8a2;color:#5f4a16;box-shadow:0 0 0 2px #ecd8a2}.keywords-content{padding:38px 30px;line-height:1.8}.memory-center{font:normal 23px/1.5 Georgia,serif;color:var(--petrol);margin-bottom:25px}.keyword-pill{display:inline-block;border:1px solid var(--gold-light);color:var(--petrol);border-radius:30px;background:#faf5e9;padding:9px 14px;margin:0 7px 9px 0;font-size:14px}.memory-flow{font-size:12px;color:var(--mute);margin:20px 0 0}.tele-footer{padding:19px 0 3px}.progress-caption{display:flex;justify-content:space-between;color:#738286;font-size:12px;margin-bottom:9px}.progress-caption strong{color:var(--petrol)}.progress-track{height:6px}.progress-track>div{background:#5d947d}.micro-note{font-size:10px;color:#8e9898;line-height:1.55;margin:10px 0 0}.metrics-grid{display:grid;grid-template-columns:repeat(3,1fr);border-top:1px solid var(--border);margin-top:19px;padding-top:20px}.metrics-grid>div{padding:0 20px;border-right:1px solid var(--border)}.metrics-grid>div:first-child{padding-left:0}.metrics-grid>div:last-child{border:0}.metrics-grid span{display:block;color:#9aa3a4;font-size:9px;letter-spacing:1.2px;font-weight:700;line-height:1.5}.metrics-grid strong{display:block;margin-top:7px;font:normal 25px Georgia,serif;color:var(--petrol)}.insight-column{display:flex;flex-direction:column;gap:16px}.insight-card{padding:23px 24px}.aside-heading{display:flex;align-items:center;gap:11px;margin-bottom:15px}.aside-icon{width:35px;height:35px;display:grid;place-items:center;background:#eef2ef;border-radius:4px;color:#728c85;font-size:21px}.aside-heading h3{font:normal 19px Georgia,serif;margin:5px 0 0;color:var(--petrol)}.idea-text{font-size:13px;line-height:1.8;margin:0;font-weight:600;color:#465d62}.gold-rule{height:1px;background:linear-gradient(to right,var(--gold),transparent);margin:20px 0}.insight-card h4{font-size:11px;letter-spacing:1.2px;text-transform:uppercase;color:var(--petrol);margin:0 0 13px}.argument-list{counter-reset:arg;list-style:none;padding:0;margin:0}.argument-list li{display:flex;align-items:flex-start;gap:10px;font-size:12px;line-height:1.6;color:#697a7e;margin-bottom:13px}.argument-list li::before{counter-increment:arg;content:counter(arg,decimal-leading-zero);display:inline-block;font-family:Georgia,serif;color:#b49558;font-size:14px;min-width:21px}.closing-box{background:#f1f3ed;border-left:3px solid var(--gold);padding:16px 18px;margin-top:17px}.closing-box span,.legal-alert strong{font-size:9px;letter-spacing:1.5px;color:#a4874b;font-weight:700}.closing-box p{font:italic 14px/1.55 Georgia,serif;color:var(--petrol);margin:8px 0 0}.mind-map{display:flex;flex-wrap:wrap;gap:5px;align-items:center}.map-node{background:#eaf0ed;border:1px solid #d5e1dc;border-radius:3px;padding:7px 9px;font-size:10px;color:var(--petrol);font-weight:700;line-height:1.4}.map-connector{color:var(--gold);font-size:15px}.aside-separator{border-top:1px solid var(--border);margin:18px 0}.small-aside{font-size:12px;color:#6f7c81;line-height:1.7;margin:0 0 15px}.legal-alert{background:#fcf7ea;padding:13px 14px;border-radius:3px;border:1px solid #eee0bd}.legal-alert p{font-size:11px;line-height:1.65;color:#766c56;margin:6px 0 0}.transcript-output{min-height:95px;max-height:180px;overflow:auto;background:#f7faf8;padding:13px;color:#5a7770;font-size:12px;line-height:1.65;white-space:pre-wrap;overflow-wrap:anywhere}.transcript-panel summary{font-size:12px;color:var(--petrol);font-weight:700;cursor:pointer;margin-top:13px}.transcript-panel textarea{display:block;width:100%;margin:11px 0;resize:vertical;border:1px solid var(--border);border-radius:3px;padding:10px;font-size:12px}.small-gold-button{padding:9px 12px;background:var(--petrol);color:white;border:0;border-radius:3px;font-size:11px;font-weight:700}.panel-foot{display:flex;justify-content:space-between;border-top:1px solid var(--border);margin-top:12px}.control-dock{position:fixed;bottom:0;left:0;right:0;background:#092e36;color:white;box-shadow:0 -10px 35px #092e3625;z-index:10;border-top:2px solid #a78c52}.dock-inner{max-width:1392px;margin:auto;padding:15px 24px;display:flex;align-items:center;justify-content:space-between;gap:24px}.dock-label span{font-size:9px;letter-spacing:1.8px;color:#b69d60;display:block;margin-bottom:7px}.dock-label strong{font-size:13px;font-weight:500;color:#d7e6e5;white-space:nowrap}.dock-controls{display:flex;gap:9px;align-items:center;flex-wrap:wrap}.dock-action,.primary-action{border-radius:4px;padding:12px 15px;font-weight:700;font-size:12px;min-height:46px}.primary-action{border:1px solid var(--gold);background:#c1a567;color:#102c32;white-space:nowrap}.primary-action span{font-size:12px;margin-right:6px}.dock-action{border:1px solid #56737a;background:transparent;color:white}.dock-action:hover:not(:disabled){border-color:var(--gold)}.next-action{border-color:#ae925b;color:#e5d2ab}.modal-backdrop{position:fixed;inset:0;background:#052329bb;z-index:30;display:grid;place-items:center;padding:20px}.modal-backdrop[hidden]{display:none}.modal-sheet{width:min(780px,100%);max-height:min(90vh,900px);overflow:auto;background:#fff;border-radius:8px;padding:29px 31px;box-shadow:0 24px 90px #0003}.modal-heading{display:flex;justify-content:space-between;align-items:flex-start;gap:16px;margin-bottom:19px}.modal-heading h2{font:normal 27px Georgia,serif;color:var(--petrol);margin:7px 0}.modal-heading p{font-size:12px;line-height:1.5;color:var(--mute);margin:5px 0}.modal-heading .circle-button{color:var(--petrol);border-color:var(--border);flex-shrink:0}.modal-sheet>textarea{width:100%;padding:19px;border:1px solid #d4e0d9;background:#fcfcfa;color:#20383d;line-height:1.8;resize:vertical;min-height:300px;font-size:14px}.edit-helper{font-size:11px;color:var(--mute);line-height:1.6}.modal-actions{display:flex;justify-content:flex-end;gap:10px;flex-wrap:wrap;align-items:center;margin-top:19px}.flex-space{flex:1}.gold-button,.secondary-button{padding:12px 17px;border-radius:3px;font-size:12px;font-weight:700;min-height:43px}.gold-button{background:var(--petrol);color:white;border:1px solid var(--petrol)}.secondary-button{background:#fff;color:var(--petrol);border:1px solid #cbd5d2}.gold-button:hover{background:#155561}.danger-button{background:#fff2f0;color:#9b483c;border:1px solid #ebbbb3;border-radius:3px;padding:11px 14px;font-size:12px;font-weight:700}.settings-sheet{width:min(680px,100%)}.settings-body h3{color:var(--petrol);font-size:13px;margin:24px 0 10px}.settings-body p{font-size:12px;color:#6c7a7b;line-height:1.75}.settings-buttons{display:flex;gap:7px;flex-wrap:wrap}.history-list{max-height:160px;overflow:auto;font-size:12px;color:var(--mute);background:#f7f9f7;padding:11px}.history-row{padding:9px;border-bottom:1px solid var(--border)}.danger-row{display:flex;gap:13px;align-items:center;margin-top:19px;flex-wrap:wrap}.danger-row span{font-size:11px;color:#889393}.source-list{font-size:11px;color:#51666b;line-height:1.6}.source-list .source-row{border-top:1px solid var(--border);padding:7px 0}.source-list a{color:#1b6472;overflow-wrap:anywhere}.permission-sheet{width:min(490px,100%)}.permission-symbol{font-size:30px;color:var(--gold)}.permission-sheet h2{font:normal 27px Georgia,serif}.permission-sheet p{font-size:13px;line-height:1.75;color:var(--mute)}.consent-checkbox{display:flex;align-items:start;gap:11px;padding:15px;background:#f6f8f6;font-size:12px;line-height:1.6}.consent-checkbox input{margin-top:2px;accent-color:var(--petrol)}#toast{position:fixed;bottom:112px;right:24px;background:#163f46;color:#fff;padding:13px 19px;border-left:3px solid var(--gold);border-radius:3px;z-index:45;box-shadow:var(--shadow);font-size:12px;max-width:300px}#toast[hidden]{display:none}#print-root{display:none}
-@media(max-width:990px){.workspace-grid{grid-template-columns:minmax(0,1fr)}.insight-column{display:grid;grid-template-columns:repeat(2,minmax(0,1fr))}.transcript-panel{grid-column:span 2}.module-nav{display:flex;overflow-x:auto;padding-bottom:6px;scroll-snap-type:x mandatory}.module-tab{min-width:164px;scroll-snap-align:start}.session-overview{display:none}}
-@media(max-width:680px){.topbar{min-height:72px;padding:13px 15px}.brand-symbol{width:37px;height:37px;font-size:14px}.brand-lockup{gap:11px}.brand-name{font-size:10px;letter-spacing:1.1px;line-height:1.45}.brand-subtitle{font-size:9px;line-height:1.4;max-width:245px;margin-top:3px}.storage-tag{display:none}.circle-button{height:34px;width:34px}.app-container{padding:21px 12px 155px}.page-intro{margin:3px 3px 18px}.page-intro h1{font-size:29px;margin:12px 0 10px}.page-intro p{font-size:12px;line-height:1.65}.eyebrow{font-size:9px;letter-spacing:1.3px}.module-nav{gap:7px;margin-bottom:13px}.module-tab{min-width:140px;min-height:73px;padding:10px 12px}.module-name{font-size:11px}.workspace-grid{gap:13px}.tele-card{padding:20px 16px}.kicker-right{font-size:8px;letter-spacing:1px}.tele-card h2{font-size:23px}.main-question{font-size:12px;margin-bottom:16px}.tele-toolbar{gap:7px}.choice-set button{padding:9px 8px;font-size:11px}.font-control{gap:5px;font-size:10px}.font-control button{height:31px;min-width:30px}.reading-switch{margin:15px 0 12px}.tele-window{min-height:350px;max-height:470px}.tele-content{padding:15px 18px 32px;line-height:1.87}.tele-status-line{padding:0 13px;font-size:10px}.metrics-grid>div{padding:0 10px}.metrics-grid span{font-size:8px;letter-spacing:.5px}.metrics-grid strong{font-size:21px}.insight-column{display:flex}.insight-card{padding:20px}.control-dock{padding-bottom:env(safe-area-inset-bottom)}.dock-inner{padding:10px 12px;display:block}.dock-label{display:none}.dock-controls{display:grid;grid-template-columns:1.25fr 1fr 1fr;gap:6px}.dock-controls .next-action{grid-column:span 3}.dock-action,.primary-action{padding:10px 7px;min-height:45px;font-size:11px}.modal-backdrop{padding:10px;align-items:end}.modal-sheet{padding:23px 17px;max-height:92vh;border-radius:9px 9px 0 0}.settings-buttons button{flex:1}.modal-actions{gap:6px}.gold-button,.secondary-button{padding:10px 12px}#toast{bottom:135px;right:12px;left:12px;max-width:none}}
-@page{size:A4;margin:17mm 16mm 17mm 16mm}
-@media print{body{margin:0;background:#fff;color:#173840;font-family:Arial,sans-serif}#app-shell,.modal-backdrop,#toast{display:none!important}#print-root{display:block!important}#print-root .print-cover{break-after:page;display:flex;flex-direction:column;justify-content:center;min-height:240mm;background:#103d46!important;color:#fff!important;padding:22mm;-webkit-print-color-adjust:exact;print-color-adjust:exact}#print-root .print-cover .cap{letter-spacing:3px;color:#d5bf88;font-size:12px}#print-root .print-cover h1{font:normal 32pt/1.3 Georgia,serif;color:#fff;margin:32mm 0 10mm}#print-root .print-cover h1 em{color:#d5bf88}#print-root .print-cover p{font:15pt Georgia,serif;color:#e6ecea}#print-root .print-cover footer{margin-top:auto;border-top:1px solid #839a9b;padding-top:8mm;font-size:10pt}#print-root .print-toc{break-after:page}#print-root .print-toc h2{font:26pt Georgia,serif;color:#103d46}#print-root .print-toc li{font-size:13pt;padding:5mm 0;border-bottom:1px solid #ddd}#print-root .print-module{break-before:page}#print-root .print-module h2{font:21pt Georgia,serif;border-bottom:2px solid #b29456;padding-bottom:4mm;color:#103d46}#print-root .print-module h3{color:#103d46;font-size:11pt;margin-top:7mm}#print-root .print-module h4{font-size:9pt;color:#8a7347;text-transform:uppercase;margin:5mm 0 2mm}#print-root .print-module p,#print-root .print-module li{font-size:10pt;line-height:1.6;text-align:justify;orphans:3;widows:3}#print-root .print-module .q{font-style:italic;font-weight:700;text-align:left}#print-root .print-module .schema{border-left:3px solid #b29456;padding-left:5mm;background:#f7f6f1!important;break-inside:avoid}#print-root .print-module .schema p{font-size:9pt;line-height:1.5}#print-root .print-module .memory-card{break-inside:avoid;border:1px solid #d9e2dd;padding:4mm;margin-top:5mm}#print-root .print-module .legal{break-inside:avoid;font-size:9pt;background:#fcf8e9!important;padding:4mm}#print-root .print-sources{break-before:page}#print-root .print-sources h2{font:20pt Georgia,serif}#print-root .print-sources p{font-size:9pt;line-height:1.6;overflow-wrap:anywhere}#print-root .print-header{font-size:8pt;color:#a98a52;text-transform:uppercase;letter-spacing:1pt}#print-root .print-tip{font-size:9pt;line-height:1.55} }
+:root {
+  --petrol: #0f3d47;
+  --petrol-dark: #09262c;
+  --petrol-light: #185a68;
+  --deep: #071e23;
+  --gold: #c5a059;
+  --gold-light: #dfc282;
+  --gold-glow: rgba(197, 160, 89, 0.25);
+  --cream: #f9f9f6;
+  --beige: #f1ede2;
+  --surface: rgba(255, 255, 255, 0.94);
+  --surface-translucent: rgba(255, 255, 255, 0.85);
+  --ink: #192e33;
+  --mute: #6f8287;
+  --border: #e2e7e4;
+  --border-focus: #c5a059;
+  --green: #2a8767;
+  --green-bg: #e2f6ee;
+  --red: #c0392b;
+  --red-bg: #fde8e6;
+  --gold-bg: #fdf3d8;
+  --shadow-sm: 0 4px 14px rgba(9, 38, 44, 0.04);
+  --shadow: 0 12px 36px rgba(9, 38, 44, 0.07);
+  --shadow-lg: 0 24px 60px rgba(7, 30, 35, 0.12);
+  --radius-sm: 6px;
+  --radius-md: 10px;
+  --radius-lg: 16px;
+}
 
-/* Oral Lab — biblioteca e editor de provas orais */
-.library-toolbar{display:flex;gap:14px;align-items:flex-end;justify-content:space-between;background:#fff;border:1px solid var(--border);padding:15px 17px;margin-bottom:12px;border-radius:6px;flex-wrap:wrap}
-.library-picker{min-width:260px;flex:1;display:flex;flex-direction:column;gap:6px}.library-picker label{color:var(--gold);letter-spacing:1.3px;font-size:10px;font-weight:700}.library-picker select{width:100%;background:#f8faf9;border:1px solid #cedbd8;border-radius:4px;padding:12px 10px;font-size:14px;color:var(--petrol);font-weight:700;min-height:46px}
-.library-actions{display:flex;gap:7px;flex-wrap:wrap}.library-btn{border:1px solid #d3dedb;background:#fff;color:var(--petrol);border-radius:4px;padding:11px 12px;font-size:12px;font-weight:700;min-height:44px}.library-btn:hover{border-color:var(--gold)}.library-btn.muted{color:#a06155}
-.questions-bar{display:flex;gap:20px;align-items:center;justify-content:space-between;margin:17px 2px 11px}.questions-bar strong{font:normal 19px Georgia,serif;color:var(--petrol)}.questions-bar p{font-size:12px;color:var(--mute);margin:4px 0 0}.questions-bar .gold-button{white-space:nowrap}
-.module-nav{grid-template-columns:repeat(auto-fit,minmax(160px,1fr))}.question-edit-actions{display:flex;gap:15px;margin:-11px 0 15px;justify-content:flex-end}.warning-link{color:#b06555}.field-label{display:flex;flex-direction:column;gap:7px;font-size:12px;color:var(--petrol);font-weight:700;margin-bottom:14px}.field-label input,.field-label textarea{width:100%;padding:12px 13px;border:1px solid #ccd8d3;border-radius:4px;background:#fcfcfa;font-weight:400;color:var(--ink);font-size:13px;line-height:1.6}.field-label textarea{resize:vertical}.question-sheet{max-height:94vh;max-width:780px}.question-fields{max-height:65vh;overflow-y:auto;padding-right:7px}
-@media(max-width:680px){.library-toolbar{padding:12px}.library-picker{min-width:100%}.library-actions{width:100%;display:grid;grid-template-columns:1fr 1fr 70px}.library-btn{font-size:10px;padding:10px 4px}.questions-bar{gap:10px;align-items:start}.questions-bar strong{font-size:17px}.questions-bar .gold-button{font-size:11px;padding:10px}.module-nav{display:flex}.question-edit-actions{justify-content:flex-start;margin:-8px 0 12px}.question-edit-actions .link-button{font-size:11px}.question-sheet{padding-bottom:env(safe-area-inset-bottom)}.question-fields{max-height:66vh}}
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  background-color: var(--cream);
+  font-family: 'DM Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  color: var(--ink);
+  -webkit-font-smoothing: antialiased;
+  min-height: 100vh;
+  position: relative;
+  overflow-x: hidden;
+}
+
+/* ========================================================
+   PARALLAX PREMIUM BACKGROUND (Camadas Sutis com Suporte a Reduced Motion)
+   ======================================================== */
+.parallax-viewport {
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  z-index: 0;
+  overflow: hidden;
+}
+
+.parallax-layer {
+  position: absolute;
+  inset: -10%;
+  width: 120%;
+  height: 120%;
+  will-change: transform;
+  transition: transform 0.25s cubic-bezier(0.1, 0.9, 0.2, 1);
+}
+
+.parallax-layer-1 {
+  background: 
+    radial-gradient(circle at 15% 20%, rgba(15, 61, 71, 0.05) 0%, transparent 45%),
+    radial-gradient(circle at 85% 75%, rgba(197, 160, 89, 0.06) 0%, transparent 50%),
+    radial-gradient(circle at 50% 50%, rgba(241, 237, 226, 0.6) 0%, transparent 70%);
+}
+
+.parallax-layer-2 {
+  opacity: 0.7;
+  background-image: 
+    radial-gradient(rgba(15, 61, 71, 0.07) 1px, transparent 1px),
+    radial-gradient(rgba(197, 160, 89, 0.05) 1px, transparent 1px);
+  background-size: 48px 48px, 96px 96px;
+  background-position: 0 0, 24px 24px;
+}
+
+.parallax-layer-3 {
+  background: 
+    radial-gradient(ellipse 600px 400px at 90% 10%, rgba(197, 160, 89, 0.04), transparent),
+    radial-gradient(ellipse 500px 350px at 10% 85%, rgba(15, 61, 71, 0.04), transparent);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .parallax-layer {
+    transform: none !important;
+    transition: none !important;
+  }
+}
+
+/* ========================================================
+   ESTRUTURA E TIPOGRAFIA
+   ======================================================== */
+#app-shell {
+  position: relative;
+  z-index: 1;
+}
+
+button, textarea, input, select {
+  font: inherit;
+}
+
+button {
+  cursor: pointer;
+  transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+button:disabled {
+  cursor: not-allowed;
+  opacity: 0.45;
+}
+
+button:focus-visible, textarea:focus-visible, input:focus-visible, select:focus-visible, .tele-window:focus-visible {
+  outline: 2px solid var(--gold);
+  outline-offset: 3px;
+}
+
+button:active:not(:disabled) {
+  transform: scale(0.97);
+}
+
+/* ========================================================
+   TOPBAR PREMIUM
+   ======================================================== */
+.topbar {
+  background: linear-gradient(135deg, var(--deep) 0%, var(--petrol-dark) 100%);
+  color: #fff;
+  min-height: 84px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+  padding: 14px max(24px, calc((100vw - 1440px)/2));
+  border-bottom: 1px solid rgba(197, 160, 89, 0.25);
+  box-shadow: 0 4px 24px rgba(0, 0, 0, 0.15);
+  position: sticky;
+  top: 0;
+  z-index: 25;
+  backdrop-filter: blur(12px);
+}
+
+.brand-lockup {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.brand-symbol {
+  border: 1.5px solid var(--gold);
+  border-radius: var(--radius-sm);
+  color: var(--gold-light);
+  height: 44px;
+  width: 44px;
+  display: grid;
+  place-items: center;
+  font-family: Georgia, serif;
+  font-size: 18px;
+  position: relative;
+  background: rgba(197, 160, 89, 0.08);
+  box-shadow: 0 0 15px var(--gold-glow);
+}
+
+.brand-symbol span {
+  position: absolute;
+  top: -7px;
+  right: -5px;
+  background: var(--deep);
+  color: var(--gold);
+  font-size: 11px;
+}
+
+.brand-name {
+  font-size: 15px;
+  letter-spacing: 2.2px;
+  font-weight: 700;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.brand-badge {
+  background: rgba(197, 160, 89, 0.2);
+  color: var(--gold-light);
+  font-size: 10px;
+  padding: 2px 7px;
+  border-radius: 12px;
+  letter-spacing: 1px;
+  font-weight: 600;
+}
+
+.brand-name .brand-divider {
+  color: var(--gold);
+  opacity: 0.7;
+}
+
+.brand-subtitle {
+  font-size: 11px;
+  color: #a3c2c7;
+  margin-top: 3px;
+  letter-spacing: 0.4px;
+}
+
+.header-actions {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.sound-toggle-btn {
+  background: rgba(255, 255, 255, 0.07);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  color: #d1e2e4;
+  border-radius: 20px;
+  padding: 8px 14px;
+  font-size: 12px;
+  display: flex;
+  align-items: center;
+  gap: 7px;
+  font-weight: 600;
+}
+
+.sound-toggle-btn:hover {
+  background: rgba(255, 255, 255, 0.12);
+  border-color: var(--gold);
+  color: #fff;
+}
+
+.sound-toggle-btn.muted {
+  color: #e28e82;
+  border-color: rgba(192, 57, 43, 0.4);
+}
+
+.storage-tag {
+  font-size: 11px;
+  color: #bad3d6;
+  border: 1px solid rgba(197, 160, 89, 0.25);
+  background: rgba(0, 0, 0, 0.15);
+  padding: 8px 12px;
+  border-radius: 30px;
+  white-space: nowrap;
+}
+
+.circle-button {
+  height: 40px;
+  width: 40px;
+  border-radius: 50%;
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  background: rgba(255, 255, 255, 0.05);
+  color: inherit;
+  font-size: 18px;
+  display: grid;
+  place-items: center;
+  transition: all 0.2s;
+}
+
+.circle-button:hover {
+  border-color: var(--gold);
+  color: var(--gold-light);
+  background: rgba(197, 160, 89, 0.1);
+}
+
+/* ========================================================
+   CONTAINER PRINCIPAL E SEÇÃO INTRO
+   ======================================================== */
+.app-container {
+  max-width: 1440px;
+  margin: 0 auto;
+  padding: 28px 24px 140px;
+}
+
+.page-intro {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  gap: 30px;
+  margin: 6px 0 24px;
+}
+
+.eyebrow, .micro-overline {
+  font-size: 10.5px;
+  letter-spacing: 2.2px;
+  color: var(--gold);
+  font-weight: 700;
+  text-transform: uppercase;
+}
+
+.gold-dot {
+  display: inline-block;
+  width: 7px;
+  height: 7px;
+  background: var(--gold);
+  border-radius: 50%;
+  vertical-align: middle;
+  margin-right: 9px;
+  box-shadow: 0 0 8px var(--gold);
+}
+
+.page-intro h1 {
+  font-family: 'Libre Baskerville', Georgia, serif;
+  line-height: 1.2;
+  letter-spacing: -0.6px;
+  font-size: clamp(28px, 3.2vw, 42px);
+  font-weight: 400;
+  margin: 12px 0 8px;
+  color: var(--petrol-dark);
+}
+
+.page-intro h1 em {
+  color: var(--gold);
+  font-style: italic;
+  font-weight: 400;
+}
+
+.page-intro p {
+  color: var(--mute);
+  font-size: 14.5px;
+  margin: 0;
+  max-width: 650px;
+  line-height: 1.5;
+}
+
+.session-overview {
+  border: 1px solid var(--border);
+  border-radius: var(--radius-md);
+  background: var(--surface);
+  padding: 18px 22px;
+  min-width: 230px;
+  box-shadow: var(--shadow-sm);
+  backdrop-filter: blur(8px);
+}
+
+.session-overview span, .session-overview small {
+  display: block;
+  font-size: 9.5px;
+  letter-spacing: 1.6px;
+  color: var(--mute);
+  font-weight: 700;
+}
+
+.session-overview strong {
+  font: normal 32px Georgia, serif;
+  color: var(--petrol);
+  display: block;
+  margin: 6px 0 8px;
+}
+
+.session-overview strong small {
+  display: inline;
+  font-size: 16px;
+  color: var(--mute);
+}
+
+.thin-track, .progress-track {
+  height: 6px;
+  border-radius: 10px;
+  background: #e5ece9;
+  overflow: hidden;
+}
+
+.thin-track > div, .progress-track > div {
+  height: 100%;
+  background: linear-gradient(90deg, var(--gold) 0%, #d8b877 100%);
+  width: 0;
+  transition: width 0.3s cubic-bezier(0.1, 0.9, 0.2, 1);
+}
+
+.session-overview > small {
+  letter-spacing: 0;
+  margin-top: 8px;
+  font-weight: normal;
+}
+
+/* ========================================================
+   BIBLIOTECA DE SIMULADOS
+   ======================================================== */
+.library-toolbar {
+  display: flex;
+  gap: 16px;
+  align-items: flex-end;
+  justify-content: space-between;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  padding: 14px 20px;
+  margin-bottom: 14px;
+  border-radius: var(--radius-md);
+  box-shadow: var(--shadow-sm);
+  backdrop-filter: blur(8px);
+  flex-wrap: wrap;
+}
+
+.library-picker {
+  min-width: 280px;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.library-picker label {
+  color: var(--gold);
+  letter-spacing: 1.5px;
+  font-size: 10px;
+  font-weight: 700;
+}
+
+.library-picker select {
+  width: 100%;
+  background: #fbfdfc;
+  border: 1px solid #cad6d3;
+  border-radius: var(--radius-sm);
+  padding: 11px 14px;
+  font-size: 14px;
+  color: var(--petrol);
+  font-weight: 700;
+  min-height: 44px;
+}
+
+.library-actions {
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+
+.library-btn {
+  border: 1px solid #cfdad6;
+  background: #fff;
+  color: var(--petrol);
+  border-radius: var(--radius-sm);
+  padding: 10px 14px;
+  font-size: 12px;
+  font-weight: 700;
+  min-height: 42px;
+}
+
+.library-btn:hover {
+  border-color: var(--gold);
+  background: #fafaf7;
+}
+
+.library-btn.muted {
+  color: #ad5041;
+}
+
+.questions-bar {
+  display: flex;
+  gap: 20px;
+  align-items: center;
+  justify-content: space-between;
+  margin: 16px 2px 14px;
+}
+
+.questions-bar strong {
+  font: normal 20px Georgia, serif;
+  color: var(--petrol);
+  display: block;
+}
+
+.questions-bar p {
+  font-size: 12.5px;
+  color: var(--mute);
+  margin: 3px 0 0;
+}
+
+/* ========================================================
+   NAVEGAÇÃO POR QUESTÕES (MODULE NAV)
+   ======================================================== */
+.module-nav {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(170px, 1fr));
+  gap: 10px;
+  margin-bottom: 22px;
+}
+
+.module-tab {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  text-align: left;
+  padding: 13px 14px 15px;
+  min-height: 80px;
+  border-radius: var(--radius-md);
+  position: relative;
+  color: var(--ink);
+  box-shadow: var(--shadow-sm);
+  backdrop-filter: blur(6px);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.module-tab:hover {
+  border-color: var(--gold);
+  transform: translateY(-2px);
+  box-shadow: var(--shadow);
+}
+
+.module-tab.active {
+  background: linear-gradient(145deg, var(--petrol) 0%, var(--petrol-dark) 100%);
+  color: #fff;
+  border-color: var(--petrol);
+  box-shadow: 0 10px 25px rgba(15, 61, 71, 0.25);
+}
+
+.module-tab.active:after {
+  content: '';
+  height: 3px;
+  background: var(--gold);
+  position: absolute;
+  bottom: 0;
+  left: 14px;
+  right: 14px;
+  border-radius: 3px 3px 0 0;
+  box-shadow: 0 0 8px var(--gold);
+}
+
+.module-no {
+  display: block;
+  font-size: 9.5px;
+  letter-spacing: 1.5px;
+  color: #bfa15c;
+  font-weight: 700;
+  margin-bottom: 5px;
+}
+
+.module-tab.active .module-no {
+  color: var(--gold-light);
+}
+
+.module-name {
+  font-size: 12px;
+  font-weight: 700;
+  line-height: 1.4;
+}
+
+/* ========================================================
+   GRID DE TRABALHO: TELEPROMPTER CENTRAL + ASIDE
+   ======================================================== */
+.workspace-grid {
+  display: grid;
+  grid-template-columns: minmax(0, 1.75fr) minmax(320px, 0.95fr);
+  gap: 22px;
+  align-items: start;
+}
+
+.tele-card, .insight-card {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow);
+  backdrop-filter: blur(10px);
+}
+
+.tele-card {
+  padding: 30px 34px;
+  position: relative;
+}
+
+.section-kicker {
+  display: flex;
+  align-items: center;
+  gap: 9px;
+  font-size: 10px;
+  letter-spacing: 1.8px;
+  font-weight: 700;
+  color: var(--gold);
+}
+
+.gold-bar {
+  height: 14px;
+  width: 3.5px;
+  background: var(--gold);
+  border-radius: 2px;
+}
+
+.kicker-right {
+  margin-left: auto;
+  color: #8da0a3;
+  font-size: 9.5px;
+}
+
+.tele-card h2 {
+  font: normal 29px/1.24 'Libre Baskerville', Georgia, serif;
+  margin: 16px 0 10px;
+  color: var(--petrol-dark);
+}
+
+.main-question {
+  color: #556c72;
+  line-height: 1.6;
+  margin: 0 0 16px;
+  font-size: 14.5px;
+}
+
+.question-edit-actions {
+  display: flex;
+  gap: 15px;
+  margin: -6px 0 18px;
+  justify-content: flex-end;
+}
+
+.warning-link {
+  color: #b05043;
+}
+
+.warning-link:hover {
+  color: #92372b;
+}
+
+/* Barra de Ferramentas do Teleprompter */
+.tele-toolbar {
+  border-top: 1px solid var(--border);
+  border-bottom: 1px solid var(--border);
+  padding: 13px 0;
+  display: flex;
+  justify-content: space-between;
+  gap: 12px;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.choice-set {
+  display: flex;
+  align-items: center;
+  border: 1px solid #d9e1dd;
+  border-radius: var(--radius-sm);
+  padding: 3px;
+  gap: 2px;
+  background: #f3f6f4;
+}
+
+.choice-set button {
+  font-size: 12px;
+  font-weight: 700;
+  border: 0;
+  background: transparent;
+  color: #647a7f;
+  padding: 8px 14px;
+  border-radius: 4px;
+}
+
+.choice-set button.active {
+  color: #fff;
+  background: var(--petrol);
+  box-shadow: 0 2px 8px rgba(15, 61, 71, 0.2);
+}
+
+.font-control {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  color: var(--mute);
+  font-size: 11px;
+}
+
+.font-control button {
+  border: 1px solid var(--border);
+  background: #fff;
+  border-radius: var(--radius-sm);
+  min-width: 36px;
+  height: 34px;
+  color: var(--petrol);
+  font-weight: 700;
+}
+
+.reading-switch {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+  margin: 18px 0 14px;
+}
+
+.toggle-label {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 12.5px;
+  font-weight: 700;
+  cursor: pointer;
+  color: var(--ink);
+}
+
+.toggle-label input {
+  accent-color: var(--petrol);
+  height: 18px;
+  width: 18px;
+}
+
+.toggle-label small {
+  display: block;
+  color: #859599;
+  font-weight: 400;
+  font-size: 10.5px;
+  margin-top: 1px;
+}
+
+.link-button {
+  color: var(--petrol);
+  background: transparent;
+  border: 0;
+  font-size: 12px;
+  font-weight: 700;
+  padding: 6px 2px;
+  text-align: left;
+}
+
+.link-button:hover {
+  color: var(--gold);
+}
+
+/* ========================================================
+   JANELA DO TELEPROMPTER E PALAVRAS (CORES DE ESTADO)
+   ======================================================== */
+.tele-window {
+  border: 1px solid #dbe2df;
+  background: #fbfbf8;
+  border-radius: var(--radius-md);
+  min-height: 440px;
+  max-height: 570px;
+  overflow-y: auto;
+  position: relative;
+  scroll-padding: 110px;
+  box-shadow: inset 0 2px 8px rgba(0, 0, 0, 0.02);
+}
+
+.tele-status-line {
+  height: 48px;
+  position: sticky;
+  top: 0;
+  z-index: 4;
+  background: rgba(246, 249, 247, 0.96);
+  border-bottom: 1px solid #e1e7e4;
+  padding: 0 22px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+  font-size: 11.5px;
+  color: #556e72;
+  backdrop-filter: blur(8px);
+}
+
+.tele-status-line > div {
+  display: flex;
+  align-items: center;
+  gap: 9px;
+}
+
+.mic-dot {
+  display: inline-block;
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: #b2c0ba;
+  transition: all 0.25s;
+}
+
+.mic-dot.listening {
+  background: #27ae60;
+  box-shadow: 0 0 0 5px rgba(39, 174, 96, 0.25);
+  animation: pulseMic 1.8s infinite;
+}
+
+@keyframes pulseMic {
+  0% { box-shadow: 0 0 0 2px rgba(39, 174, 96, 0.3); }
+  50% { box-shadow: 0 0 0 7px rgba(39, 174, 96, 0.15); }
+  100% { box-shadow: 0 0 0 2px rgba(39, 174, 96, 0.3); }
+}
+
+.mic-dot.paused {
+  background: var(--gold);
+  box-shadow: 0 0 0 4px var(--gold-glow);
+}
+
+.mic-dot.error {
+  background: var(--red);
+  box-shadow: 0 0 0 4px rgba(192, 57, 43, 0.25);
+}
+
+.mic-dot.done {
+  background: #2980b9;
+  box-shadow: 0 0 0 4px rgba(41, 128, 185, 0.25);
+}
+
+.tele-content {
+  padding: 22px 28px 40px;
+  color: #24353a;
+  font-size: 22px;
+  line-height: 2;
+  letter-spacing: 0.1px;
+  font-weight: 400;
+  overflow-wrap: anywhere;
+}
+
+.tele-content p {
+  margin: 0 0 24px;
+}
+
+/* ESTADOS DAS PALAVRAS NO TELEPROMPTER */
+.word {
+  border-radius: 3px;
+  padding: 1px 2px;
+  margin: 0 1px;
+  transition: background-color 0.18s, color 0.18s, box-shadow 0.18s;
+}
+
+/* Verde: Reconhecido Corretamente */
+.word.matched {
+  background: #dbf4e9;
+  color: #19694e;
+  font-weight: 500;
+}
+
+/* Vermelho: Omitido / Não Identificado após tolerância */
+.word.skipped {
+  background: var(--red-bg);
+  color: var(--red);
+  font-weight: 600;
+  text-decoration: underline wavy rgba(192, 57, 43, 0.6);
+  text-underline-offset: 3px;
+  animation: alertPop 0.3s ease-out;
+}
+
+@keyframes alertPop {
+  0% { transform: scale(1.06); }
+  100% { transform: scale(1); }
+}
+
+/* Dourado: Palavra Atual / Em Foco da Fala */
+.word.current {
+  background: #faeecb;
+  color: #5f4810;
+  box-shadow: 0 0 0 2px #e6cb81;
+  font-weight: 600;
+}
+
+/* Posição Neutra / Hesitação Recente */
+.word.pending {
+  color: #7b8888;
+  border-bottom: 1.5px dotted #9eb2b0;
+}
+
+/* Trecho aceito por equivalência semântica */
+.word.semantic {
+  background: #e8f0fe;
+  color: #1a56db;
+  border-bottom: 2px solid #5b8def;
+}
+
+.keywords-content {
+  padding: 38px 30px;
+  line-height: 1.8;
+}
+
+.memory-center {
+  font: normal 23px/1.5 Georgia, serif;
+  color: var(--petrol);
+  margin-bottom: 25px;
+}
+
+.keyword-pill {
+  display: inline-block;
+  border: 1px solid var(--gold-light);
+  color: var(--petrol);
+  border-radius: 30px;
+  background: #faf5e9;
+  padding: 9px 15px;
+  margin: 0 8px 10px 0;
+  font-size: 13.5px;
+  font-weight: 600;
+}
+
+.memory-flow {
+  font-size: 12px;
+  color: var(--mute);
+  margin: 20px 0 0;
+}
+
+/* Rodapé de Métricas do Teleprompter */
+.tele-footer {
+  padding: 20px 0 4px;
+}
+
+.progress-caption {
+  display: flex;
+  justify-content: space-between;
+  color: #63777b;
+  font-size: 12px;
+  margin-bottom: 9px;
+  font-weight: 500;
+}
+
+.progress-caption strong {
+  color: var(--petrol);
+  font-size: 14px;
+}
+
+.progress-track {
+  height: 7px;
+}
+
+.progress-track > div {
+  background: linear-gradient(90deg, #2a8767 0%, #46aa86 100%);
+}
+
+.micro-note {
+  font-size: 10.5px;
+  color: #8c9b9b;
+  line-height: 1.55;
+  margin: 10px 0 0;
+}
+
+.metrics-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  border-top: 1px solid var(--border);
+  margin-top: 20px;
+  padding-top: 20px;
+  gap: 10px;
+}
+
+.metrics-grid > div {
+  padding: 0 16px;
+  border-right: 1px solid var(--border);
+}
+
+.metrics-grid > div:first-child {
+  padding-left: 0;
+}
+
+.metrics-grid > div:last-child {
+  border: 0;
+  padding-right: 0;
+}
+
+.metrics-grid span {
+  display: block;
+  color: #8c999b;
+  font-size: 9px;
+  letter-spacing: 1.2px;
+  font-weight: 700;
+  line-height: 1.4;
+  text-transform: uppercase;
+}
+
+.metrics-grid strong {
+  display: block;
+  margin-top: 6px;
+  font: normal 25px Georgia, serif;
+  color: var(--petrol);
+}
+
+.metrics-grid strong.skipped-stat {
+  color: var(--red);
+}
+
+.metrics-grid strong.score-stat {
+  color: var(--gold);
+}
+
+/* ========================================================
+   COLUNA LATERAL (INSIGHT COLUMN & TRANSCRIÇÃO)
+   ======================================================== */
+.insight-column {
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+}
+
+.insight-card {
+  padding: 24px;
+}
+
+.aside-heading {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 16px;
+}
+
+.aside-icon {
+  width: 36px;
+  height: 36px;
+  display: grid;
+  place-items: center;
+  background: #edf3f0;
+  border-radius: var(--radius-sm);
+  color: var(--petrol);
+  font-size: 20px;
+}
+
+.aside-heading h3 {
+  font: normal 19px Georgia, serif;
+  margin: 4px 0 0;
+  color: var(--petrol);
+}
+
+.idea-text {
+  font-size: 13.5px;
+  line-height: 1.75;
+  margin: 0;
+  font-weight: 600;
+  color: #3b5358;
+}
+
+.gold-rule {
+  height: 1px;
+  background: linear-gradient(to right, var(--gold), transparent);
+  margin: 18px 0;
+}
+
+.insight-card h4 {
+  font-size: 11px;
+  letter-spacing: 1.3px;
+  text-transform: uppercase;
+  color: var(--petrol);
+  margin: 0 0 12px;
+}
+
+.argument-list {
+  counter-reset: arg;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.argument-list li {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  font-size: 12.5px;
+  line-height: 1.6;
+  color: #5b6f74;
+  margin-bottom: 12px;
+}
+
+.argument-list li::before {
+  counter-increment: arg;
+  content: counter(arg, decimal-leading-zero);
+  display: inline-block;
+  font-family: Georgia, serif;
+  color: var(--gold);
+  font-size: 14px;
+  font-weight: 700;
+  min-width: 22px;
+}
+
+.closing-box {
+  background: #f3f5f0;
+  border-left: 3px solid var(--gold);
+  padding: 15px 18px;
+  margin-top: 16px;
+  border-radius: 0 var(--radius-sm) var(--radius-sm) 0;
+}
+
+.closing-box span, .legal-alert strong {
+  font-size: 9.5px;
+  letter-spacing: 1.5px;
+  color: #a4874b;
+  font-weight: 700;
+}
+
+.closing-box p {
+  font: italic 14px/1.55 Georgia, serif;
+  color: var(--petrol);
+  margin: 6px 0 0;
+}
+
+.mind-map {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  align-items: center;
+}
+
+.map-node {
+  background: #ebf1ef;
+  border: 1px solid #d2e0dc;
+  border-radius: var(--radius-sm);
+  padding: 7px 11px;
+  font-size: 11px;
+  color: var(--petrol);
+  font-weight: 700;
+  line-height: 1.35;
+}
+
+.map-connector {
+  color: var(--gold);
+  font-size: 15px;
+}
+
+.aside-separator {
+  border-top: 1px solid var(--border);
+  margin: 18px 0;
+}
+
+.small-aside {
+  font-size: 12.5px;
+  color: #63777d;
+  line-height: 1.65;
+  margin: 0 0 14px;
+}
+
+.legal-alert {
+  background: #fdf8eb;
+  padding: 13px 15px;
+  border-radius: var(--radius-sm);
+  border: 1px solid #eee2c3;
+}
+
+.legal-alert p {
+  font-size: 11.5px;
+  line-height: 1.65;
+  color: #786d52;
+  margin: 5px 0 0;
+}
+
+/* Painel de Transcrição */
+.transcript-output {
+  min-height: 100px;
+  max-height: 190px;
+  overflow-y: auto;
+  background: #f7faf8;
+  border: 1px solid #dce5e1;
+  border-radius: var(--radius-sm);
+  padding: 14px;
+  color: #486961;
+  font-size: 12.5px;
+  line-height: 1.7;
+  white-space: pre-wrap;
+  overflow-wrap: anywhere;
+}
+
+.transcript-panel summary {
+  font-size: 12px;
+  color: var(--petrol);
+  font-weight: 700;
+  cursor: pointer;
+  margin-top: 14px;
+}
+
+.transcript-panel textarea {
+  display: block;
+  width: 100%;
+  margin: 10px 0;
+  resize: vertical;
+  border: 1px solid var(--border);
+  border-radius: var(--radius-sm);
+  padding: 10px 12px;
+  font-size: 12.5px;
+}
+
+.small-gold-button {
+  padding: 9px 14px;
+  background: var(--petrol);
+  color: white;
+  border: 0;
+  border-radius: var(--radius-sm);
+  font-size: 11.5px;
+  font-weight: 700;
+}
+
+.panel-foot {
+  display: flex;
+  justify-content: space-between;
+  border-top: 1px solid var(--border);
+  margin-top: 14px;
+  padding-top: 6px;
+}
+
+/* ========================================================
+   MODAL DE RESUMO FINAL & PONTUAÇÃO (SCORE DASHBOARD)
+   ======================================================== */
+.score-modal-sheet {
+  width: min(720px, 100%);
+  background: #fff;
+  border-radius: var(--radius-lg);
+  padding: 34px;
+  box-shadow: var(--shadow-lg);
+}
+
+.score-hero {
+  display: flex;
+  align-items: center;
+  gap: 28px;
+  padding: 24px;
+  background: linear-gradient(135deg, #092c34 0%, #103d46 100%);
+  color: #fff;
+  border-radius: var(--radius-md);
+  margin: 18px 0 24px;
+  border: 1px solid var(--gold);
+}
+
+.score-badge {
+  text-align: center;
+  min-width: 130px;
+}
+
+.score-circle {
+  font-family: Georgia, serif;
+  font-size: 52px;
+  font-weight: 700;
+  color: var(--gold-light);
+  line-height: 1;
+}
+
+.score-circle small {
+  font-size: 22px;
+  color: rgba(255, 255, 255, 0.7);
+}
+
+.score-tag {
+  font-size: 10px;
+  letter-spacing: 1.5px;
+  color: #bcd5d8;
+  margin-top: 6px;
+  font-weight: 700;
+}
+
+.score-hero-details h3 {
+  font: normal 22px Georgia, serif;
+  margin: 0 0 6px;
+  color: #fff;
+}
+
+.score-hero-details p {
+  font-size: 12.5px;
+  color: #c4d7d9;
+  margin: 0;
+  line-height: 1.55;
+}
+
+.score-breakdown-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 12px;
+  margin-bottom: 22px;
+}
+
+.score-breakdown-item {
+  background: #f7faf8;
+  border: 1px solid var(--border);
+  padding: 14px 16px;
+  border-radius: var(--radius-sm);
+}
+
+.score-breakdown-item span {
+  font-size: 10px;
+  letter-spacing: 1.2px;
+  color: var(--mute);
+  font-weight: 700;
+  display: block;
+}
+
+.score-breakdown-item strong {
+  font: normal 22px Georgia, serif;
+  color: var(--petrol);
+  display: block;
+  margin-top: 4px;
+}
+
+.score-formula-box {
+  background: #fafaf6;
+  border: 1px solid #e8ede9;
+  border-radius: var(--radius-sm);
+  padding: 12px 16px;
+  font-size: 11px;
+  color: #63777c;
+  line-height: 1.6;
+  margin-bottom: 22px;
+}
+
+.score-omissions-box {
+  background: #fff8f7;
+  border: 1px solid #f2d0ca;
+  border-radius: var(--radius-sm);
+  padding: 14px 16px;
+  margin-bottom: 24px;
+}
+
+.score-omissions-box h4 {
+  margin: 0 0 8px;
+  font-size: 12px;
+  color: var(--red);
+  letter-spacing: 1px;
+}
+
+.omissions-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+}
+
+.omission-pill {
+  background: #fce8e6;
+  color: var(--red);
+  border: 1px solid #f5c4be;
+  padding: 4px 9px;
+  border-radius: 4px;
+  font-size: 11px;
+}
+
+/* ========================================================
+   DOCK FIXO INFERIOR DE CONTROLES
+   ======================================================== */
+.control-dock {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: linear-gradient(180deg, rgba(9, 46, 54, 0.98) 0%, rgba(7, 30, 35, 1) 100%);
+  color: white;
+  box-shadow: 0 -12px 40px rgba(7, 30, 35, 0.35);
+  z-index: 20;
+  border-top: 2px solid var(--gold);
+  backdrop-filter: blur(14px);
+}
+
+.dock-inner {
+  max-width: 1440px;
+  margin: auto;
+  padding: 14px 24px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 24px;
+}
+
+.dock-label span {
+  font-size: 9.5px;
+  letter-spacing: 2px;
+  color: var(--gold-light);
+  display: block;
+  margin-bottom: 4px;
+  font-weight: 700;
+}
+
+.dock-label strong {
+  font-size: 14px;
+  font-weight: 600;
+  color: #dbe8e7;
+  white-space: nowrap;
+}
+
+.dock-controls {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.dock-action, .primary-action {
+  border-radius: var(--radius-sm);
+  padding: 12px 18px;
+  font-weight: 700;
+  font-size: 12.5px;
+  min-height: 46px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 7px;
+}
+
+.primary-action {
+  border: 1px solid var(--gold);
+  background: linear-gradient(135deg, #d4b878 0%, #ba984f 100%);
+  color: #0c252a;
+  white-space: nowrap;
+  box-shadow: 0 4px 18px rgba(197, 160, 89, 0.35);
+}
+
+.primary-action:hover:not(:disabled) {
+  background: linear-gradient(135deg, #dfc68b 0%, #c5a359 100%);
+  transform: translateY(-1px);
+}
+
+.dock-action {
+  border: 1px solid #4a686f;
+  background: rgba(255, 255, 255, 0.05);
+  color: white;
+}
+
+.dock-action:hover:not(:disabled) {
+  border-color: var(--gold);
+  background: rgba(197, 160, 89, 0.12);
+  color: var(--gold-light);
+}
+
+.finish-action {
+  border-color: #27ae60;
+  background: rgba(39, 174, 96, 0.15);
+  color: #92e0b2;
+}
+
+.finish-action:hover:not(:disabled) {
+  background: rgba(39, 174, 96, 0.25);
+  border-color: #2ecc71;
+  color: #fff;
+}
+
+.next-action {
+  border-color: #a88d55;
+  color: #e5d4ae;
+}
+
+/* ========================================================
+   MODAIS E SHEETS
+   ======================================================== */
+.modal-backdrop {
+  position: fixed;
+  inset: 0;
+  background: rgba(5, 30, 36, 0.75);
+  z-index: 40;
+  display: grid;
+  place-items: center;
+  padding: 20px;
+  backdrop-filter: blur(6px);
+}
+
+.modal-backdrop[hidden] {
+  display: none;
+}
+
+.modal-sheet {
+  width: min(780px, 100%);
+  max-height: min(90vh, 900px);
+  overflow-y: auto;
+  background: #fff;
+  border-radius: var(--radius-lg);
+  padding: 30px 32px;
+  box-shadow: var(--shadow-lg);
+  border: 1px solid var(--border);
+}
+
+.modal-heading {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 16px;
+  margin-bottom: 20px;
+}
+
+.modal-heading h2 {
+  font: normal 27px Georgia, serif;
+  color: var(--petrol);
+  margin: 6px 0;
+}
+
+.modal-heading p {
+  font-size: 12px;
+  line-height: 1.5;
+  color: var(--mute);
+  margin: 4px 0;
+}
+
+.modal-heading .circle-button {
+  color: var(--petrol);
+  border-color: var(--border);
+  flex-shrink: 0;
+}
+
+.modal-sheet > textarea {
+  width: 100%;
+  padding: 16px 18px;
+  border: 1px solid #cedbd5;
+  background: #fbfbf8;
+  color: #20383d;
+  line-height: 1.8;
+  resize: vertical;
+  min-height: 280px;
+  font-size: 14px;
+  border-radius: var(--radius-sm);
+}
+
+.edit-helper {
+  font-size: 11px;
+  color: var(--mute);
+  line-height: 1.6;
+}
+
+.modal-actions {
+  display: flex;
+  justify-content: flex-end;
+  gap: 10px;
+  flex-wrap: wrap;
+  align-items: center;
+  margin-top: 20px;
+}
+
+.flex-space {
+  flex: 1;
+}
+
+.gold-button, .secondary-button {
+  padding: 12px 18px;
+  border-radius: var(--radius-sm);
+  font-size: 12px;
+  font-weight: 700;
+  min-height: 44px;
+}
+
+.gold-button {
+  background: var(--petrol);
+  color: white;
+  border: 1px solid var(--petrol);
+}
+
+.gold-button:hover {
+  background: #144e59;
+}
+
+.secondary-button {
+  background: #fff;
+  color: var(--petrol);
+  border: 1px solid #cbd5d2;
+}
+
+.secondary-button:hover {
+  background: #f8faf9;
+  border-color: var(--gold);
+}
+
+.danger-button {
+  background: #fff2f0;
+  color: #9b483c;
+  border: 1px solid #ebbbb3;
+  border-radius: var(--radius-sm);
+  padding: 11px 15px;
+  font-size: 12px;
+  font-weight: 700;
+}
+
+.field-label {
+  display: flex;
+  flex-direction: column;
+  gap: 7px;
+  font-size: 12px;
+  color: var(--petrol);
+  font-weight: 700;
+  margin-bottom: 14px;
+}
+
+.field-label input, .field-label textarea {
+  width: 100%;
+  padding: 11px 13px;
+  border: 1px solid #ccd8d3;
+  border-radius: var(--radius-sm);
+  background: #fcfcfa;
+  font-weight: 400;
+  color: var(--ink);
+  font-size: 13px;
+  line-height: 1.6;
+}
+
+.question-fields {
+  max-height: 65vh;
+  overflow-y: auto;
+  padding-right: 7px;
+}
+
+.settings-sheet {
+  width: min(680px, 100%);
+}
+
+.settings-body h3 {
+  color: var(--petrol);
+  font-size: 13.5px;
+  margin: 22px 0 9px;
+}
+
+.settings-body p {
+  font-size: 12.5px;
+  color: #647577;
+  line-height: 1.75;
+}
+
+.settings-buttons {
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+
+.history-list {
+  max-height: 160px;
+  overflow-y: auto;
+  font-size: 12px;
+  color: var(--mute);
+  background: #f7f9f7;
+  padding: 12px;
+  border-radius: var(--radius-sm);
+}
+
+.history-row {
+  padding: 8px 0;
+  border-bottom: 1px solid var(--border);
+}
+
+.danger-row {
+  display: flex;
+  gap: 13px;
+  align-items: center;
+  margin-top: 18px;
+  flex-wrap: wrap;
+}
+
+.source-list {
+  font-size: 11.5px;
+  color: #51666b;
+  line-height: 1.6;
+}
+
+.source-list .source-row {
+  border-top: 1px solid var(--border);
+  padding: 8px 0;
+}
+
+.source-list a {
+  color: #1b6472;
+}
+
+.permission-sheet {
+  width: min(490px, 100%);
+}
+
+.permission-symbol {
+  font-size: 32px;
+  color: var(--gold);
+}
+
+.consent-checkbox {
+  display: flex;
+  align-items: start;
+  gap: 12px;
+  padding: 16px;
+  background: #f5f8f6;
+  border-radius: var(--radius-sm);
+  font-size: 12px;
+  line-height: 1.6;
+}
+
+.consent-checkbox input {
+  margin-top: 2px;
+  accent-color: var(--petrol);
+}
+
+/* ========================================================
+   TOAST NOTIFICATION
+   ======================================================== */
+#toast {
+  position: fixed;
+  bottom: 100px;
+  right: 24px;
+  background: #103840;
+  color: #fff;
+  padding: 14px 20px;
+  border-left: 4px solid var(--gold);
+  border-radius: var(--radius-sm);
+  z-index: 50;
+  box-shadow: var(--shadow-lg);
+  font-size: 12.5px;
+  max-width: 320px;
+  animation: slideToast 0.25s ease-out;
+}
+
+@keyframes slideToast {
+  from { transform: translateY(15px); opacity: 0; }
+  to { transform: translateY(0); opacity: 1; }
+}
+
+#toast[hidden] {
+  display: none;
+}
+
+/* ========================================================
+   RESPONSIVIDADE
+   ======================================================== */
+@media (max-width: 1040px) {
+  .workspace-grid {
+    grid-template-columns: minmax(0, 1fr);
+  }
+  .insight-column {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+  .transcript-panel {
+    grid-column: span 2;
+  }
+  .module-nav {
+    display: flex;
+    overflow-x: auto;
+    padding-bottom: 8px;
+    scroll-snap-type: x mandatory;
+  }
+  .module-tab {
+    min-width: 170px;
+    scroll-snap-align: start;
+  }
+  .session-overview {
+    display: none;
+  }
+}
+
+@media (max-width: 720px) {
+  .topbar {
+    min-height: 70px;
+    padding: 12px 16px;
+  }
+  .brand-symbol {
+    width: 38px;
+    height: 38px;
+    font-size: 15px;
+  }
+  .brand-lockup {
+    gap: 10px;
+  }
+  .brand-name {
+    font-size: 11px;
+    letter-spacing: 1.2px;
+  }
+  .brand-subtitle {
+    display: none;
+  }
+  .storage-tag {
+    display: none;
+  }
+  .app-container {
+    padding: 18px 14px 160px;
+  }
+  .page-intro {
+    margin: 4px 2px 18px;
+  }
+  .page-intro h1 {
+    font-size: 26px;
+  }
+  .tele-card {
+    padding: 20px 18px;
+  }
+  .tele-window {
+    min-height: 340px;
+    max-height: 460px;
+  }
+  .tele-content {
+    padding: 16px 18px 32px;
+    font-size: 19px;
+  }
+  .metrics-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 14px;
+  }
+  .metrics-grid > div {
+    border-right: 0;
+    padding: 0;
+  }
+  .insight-column {
+    display: flex;
+  }
+  .control-dock {
+    padding-bottom: env(safe-area-inset-bottom);
+  }
+  .dock-inner {
+    padding: 10px 14px;
+    display: block;
+  }
+  .dock-label {
+    display: none;
+  }
+  .dock-controls {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 6px;
+  }
+  .dock-controls .primary-action {
+    grid-column: span 2;
+  }
+  .dock-controls .finish-action {
+    grid-column: span 2;
+  }
+  .dock-controls .next-action {
+    grid-column: span 2;
+  }
+  .modal-backdrop {
+    padding: 12px;
+    align-items: end;
+  }
+  .modal-sheet {
+    padding: 24px 18px;
+    max-height: 92vh;
+    border-radius: 16px 16px 0 0;
+  }
+  .score-breakdown-grid {
+    grid-template-columns: 1fr;
+  }
+  #toast {
+    bottom: 150px;
+    right: 14px;
+    left: 14px;
+    max-width: none;
+  }
+}
+
+/* ========================================================
+   ESTILOS DE IMPRESSÃO (A4 PDF)
+   ======================================================== */
+#print-root {
+  display: none;
+}
+
+@page {
+  size: A4;
+  margin: 17mm 16mm;
+}
+
+@media print {
+  body {
+    margin: 0;
+    background: #fff;
+    color: #173840;
+    font-family: Arial, sans-serif;
+  }
+  #app-shell, .modal-backdrop, #toast, .parallax-viewport {
+    display: none !important;
+  }
+  #print-root {
+    display: block !important;
+  }
+  #print-root .print-cover {
+    break-after: page;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    min-height: 240mm;
+    background: #103d46 !important;
+    color: #fff !important;
+    padding: 22mm;
+    -webkit-print-color-adjust: exact;
+    print-color-adjust: exact;
+  }
+  #print-root .print-cover .cap {
+    letter-spacing: 3px;
+    color: #d5bf88;
+    font-size: 12px;
+  }
+  #print-root .print-cover h1 {
+    font: normal 32pt/1.3 Georgia, serif;
+    color: #fff;
+    margin: 32mm 0 10mm;
+  }
+  #print-root .print-cover h1 em {
+    color: #d5bf88;
+  }
+  #print-root .print-cover p {
+    font: 15pt Georgia, serif;
+    color: #e6ecea;
+  }
+  #print-root .print-cover footer {
+    margin-top: auto;
+    border-top: 1px solid #839a9b;
+    padding-top: 8mm;
+    font-size: 10pt;
+  }
+  #print-root .print-toc {
+    break-after: page;
+  }
+  #print-root .print-toc h2 {
+    font: 26pt Georgia, serif;
+    color: #103d46;
+  }
+  #print-root .print-toc li {
+    font-size: 13pt;
+    padding: 5mm 0;
+    border-bottom: 1px solid #ddd;
+  }
+  #print-root .print-module {
+    break-before: page;
+  }
+  #print-root .print-module h2 {
+    font: 21pt Georgia, serif;
+    border-bottom: 2px solid #b29456;
+    padding-bottom: 4mm;
+    color: #103d46;
+  }
+  #print-root .print-module h3 {
+    color: #103d46;
+    font-size: 11pt;
+    margin-top: 7mm;
+  }
+  #print-root .print-module h4 {
+    font-size: 9pt;
+    color: #8a7347;
+    text-transform: uppercase;
+    margin: 5mm 0 2mm;
+  }
+  #print-root .print-module p, #print-root .print-module li {
+    font-size: 10pt;
+    line-height: 1.6;
+    text-align: justify;
+    orphans: 3;
+    widows: 3;
+  }
+  #print-root .print-module .q {
+    font-style: italic;
+    font-weight: 700;
+    text-align: left;
+  }
+  #print-root .print-module .schema {
+    border-left: 3px solid #b29456;
+    padding-left: 5mm;
+    background: #f7f6f1 !important;
+    break-inside: avoid;
+  }
+  #print-root .print-module .schema p {
+    font-size: 9pt;
+    line-height: 1.5;
+  }
+  #print-root .print-module .memory-card {
+    break-inside: avoid;
+    border: 1px solid #d9e2dd;
+    padding: 4mm;
+    margin-top: 5mm;
+  }
+  #print-root .print-module .legal {
+    break-inside: avoid;
+    font-size: 9pt;
+    background: #fcf8e9 !important;
+    padding: 4mm;
+  }
+  #print-root .print-sources {
+    break-before: page;
+  }
+  #print-root .print-sources h2 {
+    font: 20pt Georgia, serif;
+  }
+  #print-root .print-sources p {
+    font-size: 9pt;
+    line-height: 1.6;
+    overflow-wrap: anywhere;
+  }
+  #print-root .print-header {
+    font-size: 8pt;
+    color: #a98a52;
+    text-transform: uppercase;
+    letter-spacing: 1pt;
+  }
+  #print-root .print-tip {
+    font-size: 9pt;
+    line-height: 1.55;
+  }
+}
 
 </style>
 </head>
 <body>
+  <!-- Fundo Parallax Elegante com Camadas de Profundidade -->
+  <div class="parallax-viewport" aria-hidden="true">
+    <div class="parallax-layer parallax-layer-1" id="parallax-layer-1"></div>
+    <div class="parallax-layer parallax-layer-2" id="parallax-layer-2"></div>
+    <div class="parallax-layer parallax-layer-3" id="parallax-layer-3"></div>
+  </div>
+
   <div id="app-shell">
     <header class="topbar">
-      <div class="brand-lockup"><div class="brand-symbol">OL<span>✦</span></div><div><div class="brand-name">ORAL LAB <span class="brand-divider">/</span> PROVAS ORAIS</div><div class="brand-subtitle">Seu espaço de preparação, argumentação e prática oral</div></div></div>
-      <div class="header-actions"><span id="storage-status" class="storage-tag" aria-live="polite">Dados neste dispositivo</span><button id="settings-toggle" class="circle-button" aria-label="Abrir ajustes">⚙</button></div>
+      <div class="brand-lockup">
+        <div class="brand-symbol">OL<span>✦</span></div>
+        <div>
+          <div class="brand-name">
+            ORAL LAB <span class="brand-divider">/</span> PROVAS ORAIS
+            <span class="brand-badge">PREMIUM STUDIO</span>
+          </div>
+          <div class="brand-subtitle">Simulador de arguição oral com teleprompter inteligente e análise de fala</div>
+        </div>
+      </div>
+      <div class="header-actions">
+        <button id="sound-toggle" class="sound-toggle-btn" aria-label="Alternar som de feedback" title="Ativar/desativar som discreto de erro em omissões">
+          <span id="sound-icon">🔔</span> <span id="sound-text">Som Ativo</span>
+        </button>
+        <span id="storage-status" class="storage-tag" aria-live="polite">Dados neste dispositivo</span>
+        <button id="settings-toggle" class="circle-button" aria-label="Abrir configurações de estudo e histórico" title="Ajustes e histórico">⚙</button>
+      </div>
     </header>
+
     <main class="app-container">
-      <div class="page-intro"><div><div class="eyebrow"><span class="gold-dot"></span> PLATAFORMA DE TREINAMENTO · PROVAS ORAIS</div><h1>Prepare sua resposta.<br><em>Treine sua fala.</em></h1><p>Crie simulados, estude e acompanhe sua fala com um teleprompter inteligente.</p></div><div class="session-overview"><span>PROGRESSO DO SIMULADO</span><strong id="overall-counter">01 <small>/ 06</small></strong><div class="thin-track"><div id="overall-fill"></div></div><small>Banco de questões personalizável</small></div></div>
+      <div class="page-intro">
+        <div>
+          <div class="eyebrow"><span class="gold-dot"></span> PLATAFORMA DE TREINAMENTO ORAL · PADRÃO BANCA EXAMINADORA</div>
+          <h1>Prepare sua fundamentação.<br><em>Domine a sustentação oral.</em></h1>
+          <p>Treine com teleprompter adaptativo, detecção de palavras puladas em vermelho, tolerância semântica e pontuação transparente de desempenho.</p>
+        </div>
+        <div class="session-overview">
+          <span>PROGRESSO DO SIMULADO</span>
+          <strong id="overall-counter">01 <small>/ 06</small></strong>
+          <div class="thin-track"><div id="overall-fill"></div></div>
+          <small>Banco personalizável de questões</small>
+        </div>
+      </div>
+
       <section class="library-toolbar" aria-label="Biblioteca de simulados">
-        <div class="library-picker"><label for="collection-select">SEU SIMULADO</label><select id="collection-select" aria-label="Selecionar simulado"></select></div>
-        <div class="library-actions"><button id="new-collection" class="library-btn">＋ Novo simulado</button><button id="rename-collection" class="library-btn">✎ Renomear</button><button id="delete-collection" class="library-btn muted" title="Excluir simulado">Excluir</button></div>
+        <div class="library-picker">
+          <label for="collection-select">SEU SIMULADO ATIVO</label>
+          <select id="collection-select" aria-label="Selecionar simulado"></select>
+        </div>
+        <div class="library-actions">
+          <button id="new-collection" class="library-btn">＋ Novo simulado</button>
+          <button id="rename-collection" class="library-btn">✎ Renomear</button>
+          <button id="delete-collection" class="library-btn muted" title="Excluir simulado">Excluir</button>
+        </div>
       </section>
-      <div class="questions-bar"><div><strong id="collection-heading">Direito das Famílias — Trabalho de cuidado</strong><p id="collection-description">Simulado inicial com seis respostas fundamentadas e editáveis.</p></div><button id="new-question" class="gold-button">＋ Nova questão</button></div>
+
+      <div class="questions-bar">
+        <div>
+          <strong id="collection-heading">Direito das Famílias — Trabalho de cuidado</strong>
+          <p id="collection-description">Simulado inicial com seis respostas fundamentadas e editáveis.</p>
+        </div>
+        <button id="new-question" class="gold-button">＋ Nova questão</button>
+      </div>
+
       <nav class="module-nav" id="module-nav" aria-label="Questões do simulado"></nav>
+
       <div class="workspace-grid">
+        <!-- ÁREA CENTRAL: TELEPROMPTER -->
         <section class="tele-card" aria-labelledby="tele-heading">
-          <div class="section-kicker"><span class="gold-bar"></span><span id="section-label">QUESTÃO 01</span><span class="kicker-right">TELEPROMPTER INTELIGENTE</span></div>
+          <div class="section-kicker">
+            <span class="gold-bar"></span>
+            <span id="section-label">QUESTÃO 01</span>
+            <span class="kicker-right">TELEPROMPTER ADAPTATIVO & ALINHAMENTO</span>
+          </div>
+
           <h2 id="tele-heading"></h2>
-          <p id="main-question" class="main-question"></p><div class="question-edit-actions"><button id="edit-question" class="link-button">✎ Editar questão e guia</button><button id="delete-question" class="link-button warning-link">Excluir questão</button></div>
-          <div class="tele-toolbar"><div class="choice-set" id="mode-picker" role="group" aria-label="Versão da resposta"><button data-mode="short">30 s</button><button data-mode="medium">90 s</button><button data-mode="full">Completa</button></div><div class="font-control"><button id="font-down" aria-label="Diminuir tamanho da letra">A−</button><span id="font-size-label">22 px</span><button id="font-up" aria-label="Aumentar tamanho da letra">A+</button></div></div>
-          <div class="reading-switch"><label class="toggle-label"><input id="memory-toggle" type="checkbox" /> <span>Treino de memória <small>mostrar apenas palavras-chave</small></span></label><button id="edit-button" class="link-button">✎ Editar esta versão</button></div>
-          <div class="tele-window" id="tele-window" tabindex="0" aria-label="Roteiro da resposta"><div class="tele-status-line"><div><span id="mic-dot" class="mic-dot"></span><span id="speech-status">Pronto para praticar</span></div><span id="word-position">0 / 0 palavras</span></div><div id="tele-content" class="tele-content"></div><div id="keywords-content" class="keywords-content" hidden></div></div>
-          <div class="tele-footer"><div class="progress-caption"><span>Avanço estimado no roteiro</span><strong id="progress-label">0%</strong></div><div class="progress-track"><div id="progress-fill"></div></div><p class="micro-note">O destaque reflete alinhamento estimado da transcrição; não mede correção, segurança ou qualidade da argumentação.</p></div>
-          <div class="metrics-grid"><div><span>TEMPO DE TREINO</span><strong id="metric-time">00:00</strong></div><div><span>PALAVRAS IDENTIFICADAS</span><strong id="metric-words">0</strong></div><div><span>TRECHOS NÃO IDENTIFICADOS</span><strong id="metric-skipped">0</strong></div></div>
+          <p id="main-question" class="main-question"></p>
+          
+          <div class="question-edit-actions">
+            <button id="edit-question" class="link-button">✎ Editar questão e guia pedagógico</button>
+            <button id="delete-question" class="link-button warning-link">Excluir questão</button>
+          </div>
+
+          <div class="tele-toolbar">
+            <div class="choice-set" id="mode-picker" role="group" aria-label="Versão da resposta">
+              <button data-mode="short">30 s (Síntese)</button>
+              <button data-mode="medium">90 s (Padrão)</button>
+              <button data-mode="full">Completa</button>
+            </div>
+            <div class="font-control">
+              <button id="font-down" aria-label="Diminuir tamanho da letra">A−</button>
+              <span id="font-size-label">22 px</span>
+              <button id="font-up" aria-label="Aumentar tamanho da letra">A+</button>
+            </div>
+          </div>
+
+          <div class="reading-switch">
+            <label class="toggle-label">
+              <input id="memory-toggle" type="checkbox" />
+              <span>Modo Memorização <small>ocultar texto corrido e exibir tópicos-chave</small></span>
+            </label>
+            <button id="edit-button" class="link-button">✎ Customizar este roteiro</button>
+          </div>
+
+          <!-- Janela do Teleprompter com Scroll e Estados de Palavras -->
+          <div class="tele-window" id="tele-window" tabindex="0" aria-label="Roteiro da resposta">
+            <div class="tele-status-line">
+              <div>
+                <span id="mic-dot" class="mic-dot"></span>
+                <span id="speech-status">Pronto para praticar</span>
+              </div>
+              <span id="word-position">0 / 0 palavras</span>
+            </div>
+            <div id="tele-content" class="tele-content"></div>
+            <div id="keywords-content" class="keywords-content" hidden></div>
+          </div>
+
+          <div class="tele-footer">
+            <div class="progress-caption">
+              <span>Avanço no roteiro (com tolerância semântica)</span>
+              <strong id="progress-label">0%</strong>
+            </div>
+            <div class="progress-track"><div id="progress-fill"></div></div>
+            <p class="micro-note">
+              Verde = pronunciado corretamente · Vermelho = omitido/pulado · Dourado = foco da fala · Azul = paráfrase aceita sem prejuízo conceitual.
+            </p>
+          </div>
+
+          <!-- Métricas de Treino em Tempo Real -->
+          <div class="metrics-grid">
+            <div>
+              <span>TEMPO</span>
+              <strong id="metric-time">00:00</strong>
+            </div>
+            <div>
+              <span>PALAVRAS IDENTIFICADAS</span>
+              <strong id="metric-words">0</strong>
+            </div>
+            <div>
+              <span>TRECHOS OMITIDOS</span>
+              <strong id="metric-skipped" class="skipped-stat">0</strong>
+            </div>
+            <div>
+              <span>SCORE ESTIMADO</span>
+              <strong id="metric-score" class="score-stat">0%</strong>
+            </div>
+          </div>
         </section>
+
+        <!-- COLUNA LATERAL DE APOIO PEDAGÓGICO E TRANSCRIÇÃO -->
         <aside class="insight-column">
-          <section class="insight-card"><div class="aside-heading"><span class="aside-icon">◎</span><div><div class="micro-overline">GUIA DE ARGUMENTAÇÃO</div><h3>Essência da resposta</h3></div></div><p id="idea-text" class="idea-text"></p><div class="gold-rule"></div><h4>Três argumentos essenciais</h4><ol id="argument-list" class="argument-list"></ol><div class="closing-box"><span>FRASE DE FECHAMENTO</span><p id="closing-text"></p></div></section>
-          <section class="insight-card"><div class="aside-heading"><span class="aside-icon">⌘</span><div><div class="micro-overline">CONEXÕES CONCEITUAIS</div><h3>Mapa mental</h3></div></div><div id="mind-map" class="mind-map"></div><div class="aside-separator"></div><h4>Pergunta de repescagem</h4><p id="follow-up" class="small-aside"></p><div class="legal-alert"><strong>PONTOS DE ATENÇÃO</strong><p id="legal-alert"></p></div></section>
-          <section class="insight-card transcript-panel"><div class="aside-heading"><span class="aside-icon">◉</span><div><div class="micro-overline">ANÁLISE DO ENSAIO</div><h3>Transcrição</h3></div></div><div id="transcript" class="transcript-output" aria-live="polite">A transcrição aparecerá aqui conforme você falar.</div><details id="manual-details"><summary>Sem microfone? Usar transcrição manual</summary><textarea id="manual-transcript" rows="4" placeholder="Cole ou escreva o que foi dito para comparar com o roteiro."></textarea><button id="analyze-manual" class="small-gold-button">Analisar texto</button></details><div class="panel-foot"><button id="save-session" class="link-button">Salvar sessão</button><button id="clear-transcript" class="link-button">Limpar transcrição</button></div></section>
+          <section class="insight-card">
+            <div class="aside-heading">
+              <span class="aside-icon">◎</span>
+              <div>
+                <div class="micro-overline">GUIA DE ARGUMENTAÇÃO</div>
+                <h3>Essência da resposta</h3>
+              </div>
+            </div>
+            <p id="idea-text" class="idea-text"></p>
+            <div class="gold-rule"></div>
+            <h4>Três argumentos essenciais</h4>
+            <ol id="argument-list" class="argument-list"></ol>
+            <div class="closing-box">
+              <span>FRASE DE FECHAMENTO</span>
+              <p id="closing-text"></p>
+            </div>
+          </section>
+
+          <section class="insight-card">
+            <div class="aside-heading">
+              <span class="aside-icon">⌘</span>
+              <div>
+                <div class="micro-overline">CONEXÕES CONCEITUAIS</div>
+                <h3>Mapa mental</h3>
+              </div>
+            </div>
+            <div id="mind-map" class="mind-map"></div>
+            <div class="aside-separator"></div>
+            <h4>Pergunta de repescagem da banca</h4>
+            <p id="follow-up" class="small-aside"></p>
+            <div class="legal-alert">
+              <strong>PONTOS DE ATENÇÃO / ARMADILHAS</strong>
+              <p id="legal-alert"></p>
+            </div>
+          </section>
+
+          <section class="insight-card transcript-panel">
+            <div class="aside-heading">
+              <span class="aside-icon">◉</span>
+              <div>
+                <div class="micro-overline">TRANSCRIÇÃO EM TEMPO REAL</div>
+                <h3>Análise da fala</h3>
+              </div>
+            </div>
+            <div id="transcript" class="transcript-output" aria-live="polite">
+              A transcrição do áudio aparecerá aqui conforme você responder à banca...
+            </div>
+            <details id="manual-details">
+              <summary>Sem microfone? Inserir transcrição manual</summary>
+              <textarea id="manual-transcript" rows="4" placeholder="Cole ou digite a resposta falada para testar o alinhamento e a pontuação semântica."></textarea>
+              <button id="analyze-manual" class="small-gold-button">Analisar texto</button>
+            </details>
+            <div class="panel-foot">
+              <button id="save-session" class="link-button">Salvar sessão</button>
+              <button id="clear-transcript" class="link-button">Limpar transcrição</button>
+            </div>
+          </section>
         </aside>
       </div>
     </main>
-    <div class="control-dock" role="group" aria-label="Controles de treinamento"><div class="dock-inner"><div class="dock-label"><span>TREINAMENTO ORAL</span><strong id="dock-status">Aguardando início</strong></div><div class="dock-controls"><button id="start-button" class="primary-action"><span>●</span> Iniciar microfone</button><button id="pause-button" class="dock-action" disabled>Ⅱ Pausar</button><button id="resume-button" class="dock-action" hidden>▶ Continuar</button><button id="restart-button" class="dock-action">↻ Reiniciar</button><button id="next-button" class="dock-action next-action">Próxima pergunta →</button></div></div></div>
+
+    <!-- DOCK FIXO DE COMANDO DE TREINO -->
+    <div class="control-dock" role="group" aria-label="Controles de treinamento oral">
+      <div class="dock-inner">
+        <div class="dock-label">
+          <span>TREINAMENTO ORAL</span>
+          <strong id="dock-status">Aguardando início</strong>
+        </div>
+        <div class="dock-controls">
+          <button id="start-button" class="primary-action"><span>●</span> Iniciar arguição</button>
+          <button id="pause-button" class="dock-action" disabled>Ⅱ Pausar</button>
+          <button id="resume-button" class="dock-action" hidden>▶ Continuar</button>
+          <button id="finish-button" class="dock-action finish-action" title="Concluir treino e gerar relatório de pontuação">✓ Concluir ensaio</button>
+          <button id="restart-button" class="dock-action">↻ Reiniciar</button>
+          <button id="next-button" class="dock-action next-action">Próxima pergunta →</button>
+        </div>
+      </div>
+    </div>
   </div>
-  <div class="modal-backdrop" id="editor-modal" hidden><div class="modal-sheet" role="dialog" aria-modal="true" aria-labelledby="editor-title"><div class="modal-heading"><div><span class="micro-overline">PERSONALIZAÇÃO DO ROTEIRO</span><h2 id="editor-title">Editar resposta</h2><p id="editor-subtitle"></p></div><button id="editor-close" class="circle-button" aria-label="Fechar editor">×</button></div><textarea id="editor-text" rows="14" spellcheck="true" aria-label="Texto editável da resposta"></textarea><p class="edit-helper">As versões de 30 s, 90 s e completa são independentes. Salvar substitui apenas a versão atual.</p><div class="modal-actions"><button id="restore-version" class="secondary-button">Restaurar original</button><span class="flex-space"></span><button id="editor-cancel" class="secondary-button">Cancelar</button><button id="editor-save" class="gold-button">Salvar alterações</button></div></div></div>
-  <div class="modal-backdrop" id="settings-modal" hidden><div class="modal-sheet settings-sheet" role="dialog" aria-modal="true" aria-labelledby="settings-title"><div class="modal-heading"><div><span class="micro-overline">CONTROLE DOS SEUS DADOS</span><h2 id="settings-title">Configurações & arquivos</h2></div><button id="settings-close" class="circle-button" aria-label="Fechar configurações">×</button></div><div class="settings-body"><h3>Privacidade</h3><p>O roteiro e as sessões são salvos apenas no armazenamento deste navegador. O aplicativo não grava áudio. O serviço de reconhecimento de fala do navegador pode processar áudio externamente; consulte as condições do navegador antes de usar.</p><h3>Backup e recuperação</h3><div class="settings-buttons"><button id="export-json" class="secondary-button">Exportar JSON</button><button id="import-json" class="secondary-button">Importar JSON</button><input id="import-file" type="file" accept="application/json,.json" hidden/><button id="export-pdf" class="gold-button">Exportar guia em PDF</button></div><h3>Histórico local</h3><div id="history-list" class="history-list">Nenhuma sessão salva.</div><div class="danger-row"><button id="erase-data" class="danger-button">Apagar dados locais</button><span>Apaga respostas editadas e histórico salvo neste navegador.</span></div><h3>Fontes do simulado inicial</h3><div id="source-list" class="source-list"></div><p class="micro-note">As referências abaixo se aplicam apenas ao simulado inicial de Direito das Famílias. Confira sempre a atualização normativa.</p></div></div></div>
-  <div class="modal-backdrop" id="collection-modal" hidden><div class="modal-sheet" role="dialog" aria-modal="true" aria-labelledby="collection-modal-title"><div class="modal-heading"><div><span class="micro-overline">BIBLIOTECA DE ESTUDOS</span><h2 id="collection-modal-title">Criar simulado</h2></div><button id="collection-close" class="circle-button" aria-label="Fechar">×</button></div><label class="field-label">Nome do simulado<input id="collection-name" type="text" maxlength="120" placeholder="Ex.: Direito Constitucional — prova oral" /></label><label class="field-label">Descrição ou objetivo<input id="collection-desc" type="text" maxlength="300" placeholder="Ex.: Questões de concursos públicos" /></label><div class="modal-actions"><button id="collection-cancel" class="secondary-button">Cancelar</button><button id="collection-save" class="gold-button">Salvar simulado</button></div></div></div>
-  <div class="modal-backdrop" id="question-modal" hidden><div class="modal-sheet question-sheet" role="dialog" aria-modal="true" aria-labelledby="question-modal-title"><div class="modal-heading"><div><span class="micro-overline">EDITOR DE QUESTÕES</span><h2 id="question-modal-title">Nova questão</h2><p>Cadastre o enunciado e os roteiros. Todas as respostas poderão ser revisadas depois.</p></div><button id="question-close" class="circle-button" aria-label="Fechar">×</button></div><div class="question-fields">
-  <label class="field-label">Título curto<input id="q-title" maxlength="120" placeholder="Ex.: Controle de constitucionalidade" /></label>
-  <label class="field-label">Enunciado da questão<textarea id="q-question" rows="3" placeholder="Qual seria a pergunta da banca?"></textarea></label>
-  <label class="field-label">Resposta de 30 segundos<textarea id="q-short" rows="3"></textarea></label>
-  <label class="field-label">Resposta de 90 segundos<textarea id="q-medium" rows="5"></textarea></label>
-  <label class="field-label">Resposta completa<textarea id="q-full" rows="7"></textarea></label>
-  <label class="field-label">Ideia central<input id="q-idea" /></label>
-  <label class="field-label">Três argumentos essenciais (um por linha)<textarea id="q-arguments" rows="3"></textarea></label>
-  <label class="field-label">Palavras-chave do mapa mental (separadas por vírgula)<input id="q-keywords" /></label>
-  <label class="field-label">Frase de fechamento<input id="q-closing" /></label>
-  <label class="field-label">Pergunta de repescagem<input id="q-followup" /></label>
-  <label class="field-label">Pontos de atenção<input id="q-alert" /></label>
-  </div><div class="modal-actions"><button id="question-cancel" class="secondary-button">Cancelar</button><button id="question-save" class="gold-button">Salvar questão</button></div></div></div>
-  <div class="modal-backdrop" id="privacy-modal" hidden><div class="modal-sheet permission-sheet" role="dialog" aria-modal="true" aria-labelledby="permission-title"><span class="permission-symbol">◉</span><h2 id="permission-title">Permissão de microfone</h2><p>Ao iniciar o treinamento, o navegador pedirá autorização para acessar o microfone. O reconhecimento de fala pode enviar áudio ao serviço do fabricante do navegador. Nenhum áudio será gravado ou armazenado por este aplicativo.</p><label class="consent-checkbox"><input type="checkbox" id="voice-consent"/> <span>Compreendo essa condição e desejo ativar o reconhecimento de fala.</span></label><div class="modal-actions"><button id="privacy-cancel" class="secondary-button">Cancelar</button><button id="privacy-accept" class="gold-button" disabled>Continuar</button></div></div></div>
+
+  <!-- MODAL DE RELATÓRIO FINAL & PONTUAÇÃO (SCORE DASHBOARD) -->
+  <div class="modal-backdrop" id="score-modal" hidden>
+    <div class="modal-sheet score-modal-sheet" role="dialog" aria-modal="true" aria-labelledby="score-modal-title">
+      <div class="modal-heading">
+        <div>
+          <span class="micro-overline">RELATÓRIO DE DESEMPENHO</span>
+          <h2 id="score-modal-title">Resultado do Ensaio Oral</h2>
+          <p id="score-modal-subtitle">Avaliação quantitativa e qualitativa da sua resposta.</p>
+        </div>
+        <button id="score-close" class="circle-button" aria-label="Fechar relatório">×</button>
+      </div>
+
+      <div class="score-hero">
+        <div class="score-badge">
+          <div class="score-circle"><span id="final-score-val">0</span><small>%</small></div>
+          <div class="score-tag">PONTUAÇÃO GERAL</div>
+        </div>
+        <div class="score-hero-details">
+          <h3 id="score-rating-title">Desempenho Muito Bom</h3>
+          <p id="score-rating-desc">Sua resposta cobriu a maior parte dos fundamentos esperados com boa precisão conceitual.</p>
+        </div>
+      </div>
+
+      <div class="score-breakdown-grid">
+        <div class="score-breakdown-item">
+          <span>COBERTURA DO ROTEIRO</span>
+          <strong id="modal-coverage-val">0%</strong>
+        </div>
+        <div class="score-breakdown-item">
+          <span>ADERÊNCIA SEMÂNTICA</span>
+          <strong id="modal-semantic-val">0%</strong>
+        </div>
+        <div class="score-breakdown-item">
+          <span>TRECHOS/PALAVRAS OMITIDOS</span>
+          <strong id="modal-skipped-val" style="color:var(--red);">0</strong>
+        </div>
+        <div class="score-breakdown-item">
+          <span>EQUIVALÊNCIAS SEMÂNTICAS ACEITAS</span>
+          <strong id="modal-paraphrases-val" style="color:#1a56db;">0 trechos</strong>
+        </div>
+      </div>
+
+      <div class="score-formula-box">
+        <strong>Fórmula de Pontuação:</strong> Score = (40% Cobertura) + (35% Aderência Semântica) + (15% Retenção sem Omissões) + (Bônus de Paráfrases Aceitas até 10%). Não penaliza hesitações momentâneas nem paráfrases válidas.
+      </div>
+
+      <div class="score-omissions-box" id="omissions-container" hidden>
+        <h4>TRECHOS OMITIDOS DETECTADOS:</h4>
+        <div class="omissions-tags" id="omissions-tags"></div>
+      </div>
+
+      <div class="modal-actions">
+        <button id="repeat-session-btn" class="secondary-button">↻ Repetir este ensaio</button>
+        <span class="flex-space"></span>
+        <button id="save-modal-session-btn" class="gold-button">💾 Salvar sessão no histórico</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- MODAIS AUXILIARES -->
+  <div class="modal-backdrop" id="editor-modal" hidden>
+    <div class="modal-sheet" role="dialog" aria-modal="true" aria-labelledby="editor-title">
+      <div class="modal-heading">
+        <div>
+          <span class="micro-overline">PERSONALIZAÇÃO DO ROTEIRO</span>
+          <h2 id="editor-title">Editar resposta</h2>
+          <p id="editor-subtitle"></p>
+        </div>
+        <button id="editor-close" class="circle-button" aria-label="Fechar editor">×</button>
+      </div>
+      <textarea id="editor-text" rows="14" spellcheck="true" aria-label="Texto editável da resposta"></textarea>
+      <p class="edit-helper">As versões de 30 s, 90 s e completa são independentes. Salvar substitui apenas a versão atual.</p>
+      <div class="modal-actions">
+        <button id="restore-version" class="secondary-button">Restaurar original</button>
+        <span class="flex-space"></span>
+        <button id="editor-cancel" class="secondary-button">Cancelar</button>
+        <button id="editor-save" class="gold-button">Salvar alterações</button>
+      </div>
+    </div>
+  </div>
+
+  <div class="modal-backdrop" id="settings-modal" hidden>
+    <div class="modal-sheet settings-sheet" role="dialog" aria-modal="true" aria-labelledby="settings-title">
+      <div class="modal-heading">
+        <div>
+          <span class="micro-overline">CONTROLE DOS SEUS DADOS</span>
+          <h2 id="settings-title">Configurações & arquivos</h2>
+        </div>
+        <button id="settings-close" class="circle-button" aria-label="Fechar configurações">×</button>
+      </div>
+      <div class="settings-body">
+        <h3>Privacidade & Segurança</h3>
+        <p>O roteiro e as sessões são salvos apenas no armazenamento deste navegador (LocalStorage). O aplicativo não grava nem armazena áudio em servidores externos.</p>
+        
+        <h3>Backup e recuperação</h3>
+        <div class="settings-buttons">
+          <button id="export-json" class="secondary-button">Exportar JSON</button>
+          <button id="import-json" class="secondary-button">Importar JSON</button>
+          <input id="import-file" type="file" accept="application/json,.json" hidden/>
+          <button id="export-pdf" class="gold-button">Exportar guia em PDF</button>
+        </div>
+
+        <h3>Histórico local de sessões</h3>
+        <div id="history-list" class="history-list">Nenhuma sessão salva.</div>
+
+        <div class="danger-row">
+          <button id="erase-data" class="danger-button">Apagar dados locais</button>
+          <span>Apaga respostas editadas e histórico salvo neste navegador.</span>
+        </div>
+
+        <h3>Fontes do simulado inicial</h3>
+        <div id="source-list" class="source-list"></div>
+        <p class="micro-note">As referências abaixo se aplicam apenas ao simulado inicial de Direito das Famílias. Confira sempre a atualização normativa.</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="modal-backdrop" id="collection-modal" hidden>
+    <div class="modal-sheet" role="dialog" aria-modal="true" aria-labelledby="collection-modal-title">
+      <div class="modal-heading">
+        <div>
+          <span class="micro-overline">BIBLIOTECA DE ESTUDOS</span>
+          <h2 id="collection-modal-title">Criar simulado</h2>
+        </div>
+        <button id="collection-close" class="circle-button" aria-label="Fechar">×</button>
+      </div>
+      <label class="field-label">
+        Nome do simulado
+        <input id="collection-name" type="text" maxlength="120" placeholder="Ex.: Direito Constitucional — prova oral" />
+      </label>
+      <label class="field-label">
+        Descrição ou objetivo
+        <input id="collection-desc" type="text" maxlength="300" placeholder="Ex.: Questões de concursos públicos" />
+      </label>
+      <div class="modal-actions">
+        <button id="collection-cancel" class="secondary-button">Cancelar</button>
+        <button id="collection-save" class="gold-button">Salvar simulado</button>
+      </div>
+    </div>
+  </div>
+
+  <div class="modal-backdrop" id="question-modal" hidden>
+    <div class="modal-sheet question-sheet" role="dialog" aria-modal="true" aria-labelledby="question-modal-title">
+      <div class="modal-heading">
+        <div>
+          <span class="micro-overline">EDITOR DE QUESTÕES</span>
+          <h2 id="question-modal-title">Nova questão</h2>
+          <p>Cadastre o enunciado e os roteiros. Todas as respostas poderão ser revisadas depois.</p>
+        </div>
+        <button id="question-close" class="circle-button" aria-label="Fechar">×</button>
+      </div>
+      <div class="question-fields">
+        <label class="field-label">Título curto<input id="q-title" maxlength="120" placeholder="Ex.: Controle de constitucionalidade" /></label>
+        <label class="field-label">Enunciado da questão<textarea id="q-question" rows="3" placeholder="Qual seria a pergunta da banca?"></textarea></label>
+        <label class="field-label">Resposta de 30 segundos<textarea id="q-short" rows="3"></textarea></label>
+        <label class="field-label">Resposta de 90 segundos<textarea id="q-medium" rows="5"></textarea></label>
+        <label class="field-label">Resposta completa<textarea id="q-full" rows="7"></textarea></label>
+        <label class="field-label">Ideia central<input id="q-idea" /></label>
+        <label class="field-label">Três argumentos essenciais (um por linha)<textarea id="q-arguments" rows="3"></textarea></label>
+        <label class="field-label">Palavras-chave do mapa mental (separadas por vírgula)<input id="q-keywords" /></label>
+        <label class="field-label">Frase de fechamento<input id="q-closing" /></label>
+        <label class="field-label">Pergunta de repescagem<input id="q-followup" /></label>
+        <label class="field-label">Pontos de atenção<input id="q-alert" /></label>
+      </div>
+      <div class="modal-actions">
+        <button id="question-cancel" class="secondary-button">Cancelar</button>
+        <button id="question-save" class="gold-button">Salvar questão</button>
+      </div>
+    </div>
+  </div>
+
+  <div class="modal-backdrop" id="privacy-modal" hidden>
+    <div class="modal-sheet permission-sheet" role="dialog" aria-modal="true" aria-labelledby="permission-title">
+      <span class="permission-symbol">◉</span>
+      <h2 id="permission-title">Permissão de microfone</h2>
+      <p>Ao iniciar o treinamento, o navegador solicitará acesso ao microfone. O processamento de voz ocorre localmente ou através da Web Speech API nativa do navegador. Nenhum áudio é gravado pelo aplicativo.</p>
+      <label class="consent-checkbox">
+        <input type="checkbox" id="voice-consent"/>
+        <span>Compreendo essa condição e desejo ativar o reconhecimento de fala.</span>
+      </label>
+      <div class="modal-actions">
+        <button id="privacy-cancel" class="secondary-button">Cancelar</button>
+        <button id="privacy-accept" class="gold-button" disabled>Continuar</button>
+      </div>
+    </div>
+  </div>
+
   <div id="toast" role="status" aria-live="polite" hidden></div>
   <section id="print-root" aria-label="Guia de prova oral para impressão"></section>
 <script>
@@ -259,149 +2566,1430 @@ Historicamente, porém, essa responsabilidade permaneceu invisível e concentrad
 A Lei 15.069/2024, que instituiu a Política Nacional de Cuidados, representa um passo significativo, cuja efetividade depende de serviços, financiamento e coordenação entre os poderes públicos. O Direito das Famílias também precisa reconhecer o valor social e econômico da dedicação familiar. Não se trata de mercantilizar afetos, mas de impedir que eles legitimem desigualdades. Cuidar deve ser uma responsabilidade coletiva.`}
 ];
 
-const tokens = text=>(text.match(/[\p{L}\p{N}]+(?:[’'-][\p{L}\p{N}]+)*/gu)||[]);
-const norm=t=>t.toLocaleLowerCase('pt-BR').normalize('NFD').replace(/[\u0300-\u036f]/g,'').replace(/[’]/g,"'").replace(/^pra$/,'para').replace(/^pro$/,'para').replace(/^num$/,'em');
-function tokenized(text){return tokens(text).map(norm)}
-function closeEnough(a,b){if(a===b)return 2;if(Math.min(a.length,b.length)<5||Math.abs(a.length-b.length)>1||a[0]!==b[0])return 0;let i=0,j=0,edits=0;while(i<a.length&&j<b.length){if(a[i]===b[j]){i++;j++;continue;}if(++edits>1)return 0;if(a.length>b.length)i++;else if(b.length>a.length)j++;else {i++;j++;}}return edits+((a.length-i)||(b.length-j))<=1?1:0;}
-/** Alinhamento global monotônico de sequências, com penalidades para saltos, inserções e divergências.
-    O caminho não depende da última palavra isolada; coincidências repetidas não provocam saltos arbitrários. */
-function alignTranscript(reference,spoken){const ref=Array.isArray(reference)?reference:tokenized(reference),said=Array.isArray(spoken)?spoken:tokenized(spoken);
-  const n=ref.length,m=said.length,matched=new Set(),skipped=new Set();
-  if(!n||!m)return {matched,skipped,progress:0,current:0,total:n,words:0};
-  const cols=m+1,score=new Float32Array((n+1)*cols),path=new Uint8Array((n+1)*cols);
-  const at=(i,j)=>i*cols+j;
-  for(let i=1;i<=n;i++){score[at(i,0)]=-1.35*i;path[at(i,0)]=1;}
-  for(let j=1;j<=m;j++){score[at(0,j)]=-1.8*j;path[at(0,j)]=2;}
-  for(let i=1;i<=n;i++){const a=ref[i-1];for(let j=1;j<=m;j++){
-      const sim=closeEnough(a,said[j-1]);let best=score[at(i-1,j-1)]+(sim===2?3:sim===1?1:-2.8),dir=0;
-      const skip=score[at(i-1,j)]-1.35;if(skip>best){best=skip;dir=1;}
-      const extra=score[at(i,j-1)]-1.8;if(extra>best){best=extra;dir=2;}
-      score[at(i,j)]=best;path[at(i,j)]=dir;
-  }}
-  let end=0,bestEnd=-Infinity;for(let k=0;k<=n;k++){const candidate=score[at(k,m)]-0.055*k;if(candidate>bestEnd){bestEnd=candidate;end=k;}}
-  let i=end,j=m,found=0;
-  while(i>0||j>0){const dir=path[at(i,j)];if(i>0&&j>0&&dir===0){if(closeEnough(ref[i-1],said[j-1])){matched.add(i-1);found++;}i--;j--;}else if(i>0&&(dir===1||j===0))i--;else if(j>0)j--;else break;}
-  const max=matched.size?Math.max(...matched):-1;
-  for(let k=0;k<max;k++)if(!matched.has(k))skipped.add(k);
-  return {matched,skipped,progress:max<0?0:Math.round((max+1)/n*100),current:Math.min(n-1,max+1),total:n,words:found};
+// Camada avançada de alinhamento com tolerância temporal, equivalência semântica e pontuação
+
+const tokens = text => (text.match(/[\p{L}\p{N}]+(?:[’'-][\p{L}\p{N}]+)*/gu) || []);
+
+const STOPWORDS = new Set([
+  'a','o','as','os','um','uma','uns','umas','de','do','da','dos','das','em','no','na','nos','nas',
+  'por','para','pelo','pela','pelos','pelas','com','sem','sob','sobre','e','ou','mas','que','se',
+  'ao','aos','aonde','onde','como','quando','porque','porquê','pois','ja','já','muito','mais','menos',
+  'esta','este','estes','estas','esse','essa','esses','essas','aquele','aquela','aqueles','aquelas',
+  'isto','isso','aquilo','meu','minha','seu','sua','dele','dela','deles','delas','nosso','nossa'
+]);
+
+// Mapa de sinônimos e equivalências semânticas jurídicas e conceituais
+const SYNONYM_MAP = new Map([
+  ['cuidado', ['assistencia', 'zelo', 'atencao', 'amparo', 'trabalho domestico', 'reprodutivo', 'trabalho de cuidado']],
+  ['mulheres', ['mulher', 'feminino', 'feminina', 'maes', 'esposas']],
+  ['homens', ['homem', 'masculino', 'maridos', 'pais']],
+  ['divisao', ['separacao', 'distribuicao', 'reparticao', 'partilha']],
+  ['trabalho', ['labor', 'atividade', 'ocupacao', 'servico', 'afazer']],
+  ['remunerado', ['pago', 'assalariado', 'produtivo', 'financeiro']],
+  ['domestico', ['lar', 'casa', 'familiar', 'reprodutivo']],
+  ['estrutural', ['historica', 'sistemica', 'institucional', 'enraizada']],
+  ['invisibilidade', ['invisibilizacao', 'desvalorizacao', 'desconsideracao', 'silenciamento']],
+  ['autonomia', ['independencia', 'emancipacao', 'liberdade']],
+  ['patrimonio', ['bens', 'recursos', 'patrimonial', 'riqueza']],
+  ['dissolucao', ['divorcio', 'separacao', 'termino', 'ruptura']],
+  ['interseccional', ['interseccionalidade', 'multipla', 'sobreposicao']],
+  ['negra', ['pretas', 'negras', 'pardas']],
+  ['renda', ['salario', 'remuneracao', 'ganhos', 'financeiro']],
+  ['desigualdade', ['disparidade', 'assimetria', 'diferenca', 'desequilibrio']],
+  ['essencial', ['fundamental', 'indispensavel', 'primordial', 'vital']],
+  ['reconhecimento', ['valorizacao', 'validacao', 'consideracao', 'compensacao']]
+]);
+
+const norm = t => t.toLocaleLowerCase('pt-BR')
+  .normalize('NFD')
+  .replace(/[\u0300-\u036f]/g, '')
+  .replace(/[’]/g, "'")
+  .replace(/^pra$/, 'para')
+  .replace(/^pro$/, 'para')
+  .replace(/^num$/, 'em')
+  .replace(/^pelo$/, 'por')
+  .replace(/^pela$/, 'por')
+  .replace(/[.,;:!?()]/g, '');
+
+function tokenized(text) {
+  return tokens(text).map(norm).filter(Boolean);
 }
 
-const $ = id => document.getElementById(id);
-const modes = {short:'30 segundos',medium:'90 segundos',full:'Completa'};
-const storageKey='oral-lab-v2';
-const seedId='familias-cuidado';
-const makeSeed=()=>({id:seedId,name:'Direito das Famílias — Trabalho de cuidado',description:'Simulado inicial: cuidado, desigualdade de gênero e direitos das mulheres.',questions:ORIGINAL_QUESTIONS.map((q,i)=>({...q,id:`seed-${i+1}`}))});
-let store={collections:[makeSeed()],activeCollectionId:seedId,edits:{},history:[],fontSize:22,consent:false};
-let persistent=true;
-try{
- const newer=localStorage.getItem(storageKey);
- if(newer){const parsed=JSON.parse(newer);if(parsed&&Array.isArray(parsed.collections)&&parsed.collections.length)store={...store,...parsed};}
- else {const old=localStorage.getItem('brunella-interview-studio-v1');if(old){const legacy=JSON.parse(old);if(legacy?.edits)for(const [key,v] of Object.entries(legacy.edits)){const match=key.match(/^([0-5]):(short|medium|full)$/);if(match&&typeof v==='string')store.edits[`${seedId}:seed-${Number(match[1])+1}:${match[2]}`]=v;}if(Array.isArray(legacy.history))store.history=legacy.history.map(e=>({...e,collectionId:seedId}));if(Number.isInteger(legacy.fontSize))store.fontSize=legacy.fontSize;if(typeof legacy.consent==='boolean')store.consent=legacy.consent;}}
- localStorage.setItem(storageKey,JSON.stringify(store));
-}catch(e){persistent=false;}
-if(!Array.isArray(store.collections)||!store.collections.length)store.collections=[makeSeed()];
-if(!store.collections.some(x=>x.id===store.activeCollectionId))store.activeCollectionId=store.collections[0].id;
-if(!store.edits||typeof store.edits!=='object')store.edits={};
-const activeCollection=()=>store.collections.find(x=>x.id===store.activeCollectionId)||store.collections[0];
-let MODULES=activeCollection().questions;
-const makeId=()=>`q-${Date.now().toString(36)}-${Math.random().toString(36).slice(2,10)}`;
-let moduleIndex=0,mode='full',memory=false,voice=null,voiceSupported=!!(window.SpeechRecognition||window.webkitSpeechRecognition);
-let listening=false,paused=false,recognitionDesired=false,stopReason='';
-let finalizedSegments=[],currentRecognitionFinal='',currentRecognitionInterim='',manualOverride='';
-let runStart=null,elapsedMs=0,timerHandle=null,highlightResult={matched:new Set(),skipped:new Set(),progress:0,current:0,total:0,words:0};
-let currentWordEls=[];let toastHandle=null;let lastAutoScroll=-1;
-function persist(){try{localStorage.setItem(storageKey,JSON.stringify(store));persistent=true;$('storage-status').textContent='Dados neste dispositivo';return true;}catch(e){persistent=false;$('storage-status').textContent='Armazenamento indisponível';toast('Dados não puderam ser salvos: exporte um backup JSON.');return false;}}
-function toast(msg){const el=$('toast');el.textContent=msg;el.hidden=false;clearTimeout(toastHandle);toastHandle=setTimeout(()=>el.hidden=true,5000);}
-const editionKey=(i,m)=>`${store.activeCollectionId}:${MODULES[i]?.id}:${m}`;
-function currentText(i=moduleIndex,m=mode){const value=store.edits[editionKey(i,m)];return typeof value==='string'?value:(MODULES[i]?.[m]||'');}
-function renderModules(){const nav=$('module-nav');nav.replaceChildren();MODULES.forEach((mod,i)=>{const button=document.createElement('button');button.type='button';button.className='module-tab'+(i===moduleIndex?' active':'');button.setAttribute('aria-current',i===moduleIndex?'step':'false');button.innerHTML=`<span class="module-no">PERGUNTA ${String(i+1).padStart(2,'0')}</span><span class="module-name"></span>`;button.querySelector('.module-name').textContent=mod.title;button.addEventListener('click',()=>selectModule(i));nav.append(button);});$('overall-counter').innerHTML=`${String(MODULES.length?moduleIndex+1:0).padStart(2,'0')} <small>/ ${String(MODULES.length).padStart(2,'0')}</small>`;$('overall-fill').style.width=(MODULES.length?(moduleIndex+1)/MODULES.length*100:0)+'%';}
-function renderContent(){const mod=MODULES[moduleIndex]||{title:'Comece criando uma questão',question:'Este simulado ainda não tem perguntas.',idea:'Adicione uma questão para montar seu próprio roteiro.',arguments:[],closing:'',followup:'',alert:'',keywords:[]};$('section-label').textContent=`QUESTÃO ${String(MODULES.length?moduleIndex+1:0).padStart(2,'0')}`;$('tele-heading').textContent=mod.title;$('main-question').textContent=mod.question;
-  document.querySelectorAll('[data-mode]').forEach(b=>{b.classList.toggle('active',b.dataset.mode===mode);b.setAttribute('aria-pressed',String(b.dataset.mode===mode));});
-  $('idea-text').textContent=mod.idea;$('argument-list').replaceChildren();mod.arguments.forEach(a=>{const li=document.createElement('li');li.textContent=a;$('argument-list').append(li);});$('closing-text').textContent=mod.closing;$('follow-up').textContent=mod.followup;$('legal-alert').textContent=mod.alert;
-  const map=$('mind-map');map.replaceChildren();mod.keywords.forEach((s,i)=>{if(i){const arrow=document.createElement('span');arrow.className='map-connector';arrow.textContent='→';map.append(arrow);}const node=document.createElement('span');node.className='map-node';node.textContent=s;map.append(node);});
-  const keywords=$('keywords-content');keywords.replaceChildren();const big=document.createElement('p');big.className='memory-center';big.textContent=mod.idea;keywords.append(big);mod.keywords.forEach(s=>{const pill=document.createElement('span');pill.className='keyword-pill';pill.textContent=s;keywords.append(pill);});const hint=document.createElement('p');hint.className='memory-flow';hint.textContent='Use os conceitos acima para construir a resposta com suas próprias palavras.';keywords.append(hint);
-  $('font-size-label').textContent=`${store.fontSize} px`;$('tele-content').style.fontSize=`${store.fontSize}px`;
-  $('tele-content').hidden=memory;keywords.hidden=!memory;renderTeleprompter();}
-function renderTeleprompter(){const text=currentText();const out=$('tele-content');out.replaceChildren();currentWordEls=[];
-  const paragraphs=text.split(/\n\s*\n/);let wordIndex=0;
-  for(const para of paragraphs){const p=document.createElement('p');const parts=para.split(/([\p{L}\p{N}]+(?:[’'-][\p{L}\p{N}]+)*)/gu);parts.forEach((part,index)=>{if(index%2===1){const el=document.createElement('span');el.className='word';el.dataset.wordIndex=wordIndex++;el.textContent=part;currentWordEls.push(el);p.appendChild(el);}else p.appendChild(document.createTextNode(part));});out.appendChild(p);}
-  lastAutoScroll=-1;refreshTranscript();}
-function transcriptText(){return manualOverride||[...finalizedSegments,currentRecognitionFinal,currentRecognitionInterim].filter(Boolean).join(' ').trim();}
-function refreshTranscript(){const text=transcriptText();highlightResult=alignTranscript(tokenized(currentText()),tokenized(text));
- const h=highlightResult;$('metric-words').textContent=String(h.words);$('metric-skipped').textContent=String(h.skipped.size);$('word-position').textContent=`${h.words} / ${h.total} palavras`;$('progress-label').textContent=h.progress+'%';$('progress-fill').style.width=h.progress+'%';
- for(let idx=0;idx<currentWordEls.length;idx++){let cl='word';if(h.matched.has(idx))cl+=' matched';else if(h.skipped.has(idx))cl+=' skipped';else if(idx===h.current&&text)cl+=' current';currentWordEls[idx].className=cl;}
- if(text&&h.current!==lastAutoScroll&&h.progress>0){lastAutoScroll=h.current;const target=currentWordEls[h.current];if(target){const rect=target.getBoundingClientRect(),parent=$('tele-window').getBoundingClientRect();if(rect.top<parent.top+65||rect.bottom>parent.bottom-90)target.scrollIntoView({behavior:'smooth',block:'center'});}}
- $('transcript').textContent=text||'A transcrição aparecerá aqui conforme você falar.';}
-function renderClock(){let ms=elapsedMs+(runStart?performance.now()-runStart:0);let t=Math.floor(ms/1000);$('metric-time').textContent=`${String(Math.floor(t/60)).padStart(2,'0')}:${String(t%60).padStart(2,'0')}`;}
-function stopClock(){if(runStart){elapsedMs+=performance.now()-runStart;runStart=null;}clearInterval(timerHandle);renderClock();}
-function startClock(){if(!runStart)runStart=performance.now();clearInterval(timerHandle);timerHandle=setInterval(renderClock,250);renderClock();}
-function status(text,state='idle'){$('speech-status').textContent=text;$('dock-status').textContent=text;$('mic-dot').className='mic-dot '+state;$('start-button').disabled=listening;$('pause-button').disabled=!listening;$('resume-button').hidden=!paused;$('pause-button').hidden=paused;}
-function commitRecognition(){const complete=[currentRecognitionFinal,currentRecognitionInterim].filter(Boolean).join(' ').trim();if(complete)finalizedSegments.push(complete);currentRecognitionFinal='';currentRecognitionInterim='';}
-function newRecognizer(){const Voice=window.SpeechRecognition||window.webkitSpeechRecognition;if(!Voice)return null;const r=new Voice();r.lang='pt-BR';r.continuous=true;r.interimResults=true;r.maxAlternatives=1;
- r.onresult=e=>{let finalized=[],interim=[];for(let k=0;k<e.results.length;k++){const row=e.results[k];const text=row[0]?.transcript||'';(row.isFinal?finalized:interim).push(text);}currentRecognitionFinal=finalized.join(' ').trim();currentRecognitionInterim=interim.join(' ').trim();refreshTranscript();};
- r.onerror=e=>{const fatal=['not-allowed','service-not-allowed','audio-capture','language-not-supported'];if(fatal.includes(e.error)){recognitionDesired=false;listening=false;paused=true;stopClock();status(`Microfone indisponível: ${e.error}`,'paused');$('manual-details').open=true;toast('Reconhecimento não disponível. Use a transcrição manual.');}else if(e.error==='no-speech'){status('Sem fala detectada; tentando novamente','listening');}else{toast(`Reconhecimento de voz: ${e.error}`);}};
- r.onend=()=>{commitRecognition();refreshTranscript();voice=null;if(recognitionDesired&&listening){setTimeout(()=>{if(recognitionDesired&&listening){try{voice=newRecognizer();voice.start();}catch(err){recognitionDesired=false;listening=false;paused=true;stopClock();status('Falha ao reiniciar o reconhecimento','paused');}}},230);}else if(!listening){status(paused?'Treino pausado':'Treino encerrado',paused?'paused':'idle');}};
- return r;}
-function beginVoice(){if(!MODULES.length){toast('Adicione uma questão antes de iniciar o treino.');return;}if(!voiceSupported){$('manual-details').open=true;toast('Este navegador não oferece SpeechRecognition. Use a análise manual.');status('Modo manual disponível');return;}
- manualOverride='';recognitionDesired=true;listening=true;paused=false;status('Ouvindo em português (Brasil)','listening');startClock();try{voice=newRecognizer();voice.start();}catch(e){recognitionDesired=false;listening=false;paused=true;stopClock();status('Microfone não iniciado','paused');$('manual-details').open=true;toast('Não foi possível iniciar o microfone. Verifique HTTPS e permissões.');}}
-function startVoice(){if(!voiceSupported){beginVoice();return;}if(!store.consent){$('privacy-modal').hidden=false;return;}beginVoice();}
-function pauseVoice(){if(!listening)return;recognitionDesired=false;listening=false;paused=true;stopClock();status('Treino pausado','paused');try{voice?.stop();}catch(e){}}
-function resumeVoice(){if(!paused)return;beginVoice();}
-function stopVoice(){recognitionDesired=false;listening=false;paused=false;stopClock();try{voice?.stop();}catch(e){}voice=null;}
-function clearRun(){stopVoice();finalizedSegments=[];currentRecognitionFinal='';currentRecognitionInterim='';manualOverride='';elapsedMs=0;runStart=null;status('Pronto para praticar');$('tele-window').scrollTop=0;renderClock();refreshTranscript();}
-function selectModule(i){if(i===moduleIndex)return;stopVoice();moduleIndex=i;clearRun();renderModules();renderContent();}
-function openEditor(){if(!MODULES.length){toast('Crie uma questão antes de editar respostas.');return;}pauseVoice();$('editor-subtitle').textContent=`Pergunta ${moduleIndex+1} · Versão ${modes[mode]}`;$('editor-text').value=currentText();$('editor-modal').hidden=false;$('editor-text').focus();}
-function closeEditor(){$('editor-modal').hidden=true;}
-function saveEditor(){const text=$('editor-text').value.trim();if(!text){toast('O roteiro não pode ficar vazio.');return;}store.edits[editionKey(moduleIndex,mode)]=text;persist();closeEditor();clearRun();renderTeleprompter();toast('Resposta salva neste dispositivo.');}
-function restoreEditor(){if(!confirm('Restaurar o texto original desta versão?'))return;delete store.edits[editionKey(moduleIndex,mode)];persist();$('editor-text').value=MODULES[moduleIndex]?.[mode]||'';clearRun();renderTeleprompter();toast('Versão original restaurada.');}
-function saveSession(){stopClock();if(!transcriptText()){toast('Não há transcrição para registrar nesta sessão.');return;}const item={date:new Date().toISOString(),collectionId:store.activeCollectionId,questionId:MODULES[moduleIndex]?.id,module:moduleIndex,mode,seconds:Math.round(elapsedMs/1000),words:highlightResult.words,progress:highlightResult.progress,skipped:highlightResult.skipped.size,transcript:transcriptText()};store.history.unshift(item);store.history=store.history.slice(0,30);persist();renderHistory();toast('Sessão registrada no histórico local.');}
-function renderHistory(){const hist=$('history-list');hist.replaceChildren();if(!store.history?.length){hist.textContent='Nenhuma sessão salva.';return;}store.history.forEach(e=>{const row=document.createElement('div');row.className='history-row';row.textContent=`${new Date(e.date).toLocaleString('pt-BR')} · ${(store.collections.find(c=>c.id===e.collectionId)?.name||'Simulado anterior')} · Q${e.module+1} · ${modes[e.mode]||e.mode} · ${e.seconds}s · avanço ${e.progress}%`;hist.append(row);});}
-function downloadFile(name,content,mime){const blob=new Blob([content],{type:mime});const url=URL.createObjectURL(blob);const a=document.createElement('a');a.href=url;a.download=name;document.body.append(a);a.click();a.remove();setTimeout(()=>URL.revokeObjectURL(url),5000);}
-function exportJSON(){downloadFile('oral-lab-backup.json',JSON.stringify({application:'Oral Lab',version:2,exportedAt:new Date().toISOString(),collections:store.collections,activeCollectionId:store.activeCollectionId,edits:store.edits,history:store.history,fontSize:store.fontSize},null,2),'application/json;charset=utf-8');toast('Backup de todos os simulados preparado.');}
-async function importJSON(file){if(!file)return;try{const data=JSON.parse(await file.text());if(!data||data.application!=='Oral Lab'||data.version!==2||!Array.isArray(data.collections)||data.collections.length>100||!data.collections.length)throw Error('Este arquivo não é um backup Oral Lab v2');
-  if(data.collections.some(c=>!c||typeof c.id!=='string'||typeof c.name!=='string'||!Array.isArray(c.questions)||c.questions.length>300||c.questions.some(q=>!q||typeof q.title!=='string'||typeof q.question!=='string'||['short','medium','full'].some(k=>typeof q[k]!=='string'))))throw Error('Questões incompatíveis');
-  if(!confirm('Importar o backup? Esta operação substituirá os simulados locais e suas edições.'))return;
-  store.collections=data.collections;store.activeCollectionId=store.collections.some(c=>c.id===data.activeCollectionId)?data.activeCollectionId:store.collections[0].id;store.edits=data.edits&&typeof data.edits==='object'&&!Array.isArray(data.edits)?data.edits:{};store.history=Array.isArray(data.history)?data.history.slice(0,100):[];store.fontSize=Number.isInteger(data.fontSize)?Math.max(16,Math.min(32,data.fontSize)):store.fontSize;
-  moduleIndex=0;MODULES=activeCollection().questions;persist();clearRun();renderLibrary();renderModules();renderContent();renderHistory();toast('Simulados importados com sucesso.');}catch(e){toast(`Não foi possível importar: ${e.message}`);}}
-function renderLibrary(){const sel=$('collection-select');sel.replaceChildren();store.collections.forEach(c=>{const o=document.createElement('option');o.value=c.id;o.textContent=c.name;sel.append(o);});sel.value=store.activeCollectionId;const c=activeCollection();$('collection-heading').textContent=c.name;$('collection-description').textContent=c.description||'Simulado personalizável';$('delete-collection').disabled=store.collections.length<=1;}
-function selectCollection(id){if(!store.collections.some(c=>c.id===id))return;stopVoice();store.activeCollectionId=id;MODULES=activeCollection().questions;moduleIndex=0;mode='full';persist();clearRun();renderLibrary();renderModules();renderContent();renderSources();}
-let editingCollection=false;
-function openCollectionEditor(edit=false){editingCollection=edit;const c=activeCollection();$('collection-modal-title').textContent=edit?'Editar simulado':'Criar simulado';$('collection-name').value=edit?c.name:'';$('collection-desc').value=edit?c.description||'':'';$('collection-modal').hidden=false;$('collection-name').focus();}
-function saveCollection(){const name=$('collection-name').value.trim();if(!name){toast('Informe um nome para o simulado.');return;}const description=$('collection-desc').value.trim();if(editingCollection){activeCollection().name=name;activeCollection().description=description;persist();renderLibrary();}else{const id=makeId();store.collections.push({id,name,description,questions:[]});selectCollection(id);} $('collection-modal').hidden=true;toast(editingCollection?'Simulado renomeado.':'Novo simulado criado. Adicione questões para começar.');}
-function deleteCollection(){if(store.collections.length<=1)return;if(!confirm(`Excluir o simulado “${activeCollection().name}” e suas questões? Faça um backup JSON antes, se precisar.`))return;const id=store.activeCollectionId;store.collections=store.collections.filter(c=>c.id!==id);for(const k of Object.keys(store.edits))if(k.startsWith(id+':'))delete store.edits[k];selectCollection(store.collections[0].id);toast('Simulado excluído do dispositivo.');}
-let editingQuestion=false;
-const qFields=['title','question','short','medium','full','idea','arguments','keywords','closing','followup','alert'];
-function openQuestionEditor(edit=false){editingQuestion=edit;const q=edit?MODULES[moduleIndex]:null;if(edit&&!q)return;$('question-modal-title').textContent=edit?'Editar questão e guia':'Nova questão';for(const name of qFields){let v='';if(q){v=['short','medium','full'].includes(name)?currentText(moduleIndex,name):name==='arguments'?(q.arguments||[]).join('\n'):name==='keywords'?(q.keywords||[]).join(', '):q[name]||'';}$('q-'+name).value=v;} $('question-modal').hidden=false;$('q-title').focus();}
-function saveQuestion(){const title=$('q-title').value.trim(),question=$('q-question').value.trim();if(!title||!question){toast('Informe o título e o enunciado da questão.');return;}const q={id:editingQuestion?MODULES[moduleIndex].id:makeId(),title,question};for(const name of ['short','medium','full','idea','closing','followup','alert'])q[name]=$('q-'+name).value.trim();q.arguments=$('q-arguments').value.split(/\n/).map(s=>s.trim()).filter(Boolean);q.keywords=$('q-keywords').value.split(',').map(s=>s.trim()).filter(Boolean);if(!q.full||!q.short||!q.medium){toast('Preencha as três versões de resposta para ativar o teleprompter.');return;}
- if(editingQuestion){const old=MODULES[moduleIndex];const index=moduleIndex;MODULES[index]=q;for(const m of ['short','medium','full'])delete store.edits[editionKey(index,m)];}else{MODULES.push(q);moduleIndex=MODULES.length-1;}
- $('question-modal').hidden=true;persist();clearRun();renderModules();renderContent();toast(editingQuestion?'Questão atualizada.':'Questão adicionada.');}
-function deleteQuestion(){if(!MODULES.length)return;if(!confirm(`Excluir a questão “${MODULES[moduleIndex].title}”?`))return;const q=MODULES[moduleIndex];for(const m of ['short','medium','full'])delete store.edits[editionKey(moduleIndex,m)];MODULES.splice(moduleIndex,1);moduleIndex=Math.min(moduleIndex,Math.max(0,MODULES.length-1));persist();clearRun();renderModules();renderContent();toast('Questão excluída.');}
-function printParagraphs(target,text){String(text).split(/\n\s*\n/).forEach(line=>{const p=document.createElement('p');p.textContent=line;target.append(p);});}
-function addPrintSection(parent,title,text){const h=document.createElement('h3');h.textContent=title;parent.append(h);printParagraphs(parent,text);}
-function buildPrint(){const root=$('print-root');root.replaceChildren();const cover=document.createElement('div');cover.className='print-cover';const cap=document.createElement('div');cap.className='cap';cap.textContent='ORAL LAB · GUIA DE PROVA ORAL';cover.append(cap);const h=document.createElement('h1');h.innerHTML='PROVAS<br><em>ORAIS</em>';cover.append(h);const desc=document.createElement('p');desc.textContent=activeCollection().name;cover.append(desc);const foot=document.createElement('footer');foot.textContent=`${MODULES.length} questões · Respostas completas e resumidas · Mapas mentais · Cartões de memorização`;cover.append(foot);root.append(cover);
- const toc=document.createElement('section');toc.className='print-toc';toc.innerHTML='<div class="print-header">Guia de preparação e memorização</div><h2>Sumário</h2>';const list=document.createElement('ol');MODULES.forEach(mod=>{const li=document.createElement('li');li.textContent=mod.title;list.append(li);});toc.append(list);const tip=document.createElement('p');tip.className='print-tip';tip.textContent='Roteiro: leia o mapa mental, apresente a resposta curta sem consulta, treine a versão de 90 segundos e refine a completa. O alinhamento por fala é estimativo; revise criticamente o conteúdo e as fontes.';toc.append(tip);root.append(toc);
- MODULES.forEach((mod,i)=>{const section=document.createElement('section');section.className='print-module';const hd=document.createElement('div');hd.className='print-header';hd.textContent=`QUESTÃO ${String(i+1).padStart(2,'0')} / ${String(MODULES.length).padStart(2,'0')}`;section.append(hd);const title=document.createElement('h2');title.textContent=mod.title;section.append(title);const question=document.createElement('p');question.className='q';question.textContent=mod.question;section.append(question);addPrintSection(section,'Resposta completa',currentText(i,'full'));addPrintSection(section,'Versão de 90 segundos',currentText(i,'medium'));addPrintSection(section,'Versão de 30 segundos',currentText(i,'short'));const mind=document.createElement('div');mind.className='schema';const mh=document.createElement('h4');mh.textContent='Mapa mental';mind.append(mh);const mp=document.createElement('p');mp.textContent=mod.keywords.join('  →  ');mind.append(mp);section.append(mind);const card=document.createElement('div');card.className='memory-card';const cardTitle=document.createElement('h4');cardTitle.textContent='Cartão de memorização';card.append(cardTitle);const idea=document.createElement('p');idea.textContent=`IDEIA CENTRAL: ${mod.idea}`;card.append(idea);const args=document.createElement('ol');mod.arguments.forEach(a=>{const li=document.createElement('li');li.textContent=a;args.append(li);});card.append(args);const close=document.createElement('p');close.textContent=`FECHAMENTO: ${mod.closing}`;card.append(close);const follow=document.createElement('p');follow.textContent=`REPESCAGEM: ${mod.followup}`;card.append(follow);section.append(card);const legal=document.createElement('p');legal.className='legal';legal.textContent=`PONTOS DE ATENÇÃO: ${mod.alert}`;section.append(legal);root.append(section);});
- const refs=document.createElement('section');refs.className='print-sources';refs.innerHTML='<div class="print-header">Fontes prioritárias e legislação</div><h2>Referências & orientações de treino</h2>';if(store.activeCollectionId===seedId)SOURCES.forEach(source=>{const p=document.createElement('p');p.textContent=`${source.name}. ${source.detail}`;refs.append(p);});const tip2=document.createElement('p');tip2.textContent=store.activeCollectionId===seedId?'Antes da prova, confira a legislação vigente e a tramitação dos projetos. A tese analisou qualitativamente 37 julgados; não é amostra estatisticamente representativa do Judiciário brasileiro.':'Inclua e verifique as referências acadêmicas, normativas e jurisprudenciais do seu próprio simulado antes da prova oral.';refs.append(tip2);root.append(refs);}
-function exportPDF(){buildPrint();toast('Na janela de impressão, escolha “Salvar como PDF”.');setTimeout(()=>window.print(),120);}
-function renderSources(){const root=$('source-list');root.replaceChildren();if(store.activeCollectionId!==seedId){root.textContent='Adicione suas fontes aos roteiros e confirme a validade de todas as informações antes do exame.';return;}SOURCES.forEach(s=>{const div=document.createElement('div');div.className='source-row';const strong=document.createElement('strong');strong.textContent=s.name;div.append(strong,document.createTextNode(' — '+s.detail));const url=s.detail.match(/https:\/\/\S+/)?.[0];if(url){const a=document.createElement('a');a.href=url;a.target='_blank';a.rel='noopener noreferrer';a.textContent='Abrir tramitação oficial';div.append(document.createElement('br'),a);}root.append(div);});}
-function setFont(s){store.fontSize=Math.max(16,Math.min(32,s));persist();$('tele-content').style.fontSize=store.fontSize+'px';$('font-size-label').textContent=store.fontSize+' px';}
-function bind(){document.querySelectorAll('[data-mode]').forEach(b=>b.addEventListener('click',()=>{const next=b.dataset.mode;if(next===mode)return;clearRun();mode=next;renderContent();}));$('font-down').onclick=()=>setFont(store.fontSize-2);$('font-up').onclick=()=>setFont(store.fontSize+2);
- $('memory-toggle').onchange=e=>{memory=e.target.checked;renderContent();};$('edit-button').onclick=openEditor;$('editor-close').onclick=closeEditor;$('editor-cancel').onclick=closeEditor;$('editor-save').onclick=saveEditor;$('restore-version').onclick=restoreEditor;
- $('start-button').onclick=startVoice;$('pause-button').onclick=pauseVoice;$('resume-button').onclick=resumeVoice;$('restart-button').onclick=clearRun;$('next-button').onclick=()=>MODULES.length?selectModule((moduleIndex+1)%MODULES.length):toast('Adicione uma questão para treinar.');
- $('new-collection').onclick=()=>openCollectionEditor(false);$('rename-collection').onclick=()=>openCollectionEditor(true);$('delete-collection').onclick=deleteCollection;$('collection-select').onchange=e=>selectCollection(e.target.value);$('new-question').onclick=()=>openQuestionEditor(false);$('edit-question').onclick=()=>openQuestionEditor(true);$('delete-question').onclick=deleteQuestion; $('collection-close').onclick=$('collection-cancel').onclick=()=>$('collection-modal').hidden=true;$('collection-save').onclick=saveCollection;$('question-close').onclick=$('question-cancel').onclick=()=>$('question-modal').hidden=true;$('question-save').onclick=saveQuestion;
- $('settings-toggle').onclick=()=>{$('settings-modal').hidden=false;renderHistory();};$('settings-close').onclick=()=>$('settings-modal').hidden=true;
- $('voice-consent').onchange=e=>$('privacy-accept').disabled=!e.target.checked;$('privacy-accept').onclick=()=>{store.consent=true;persist();$('privacy-modal').hidden=true;beginVoice();};$('privacy-cancel').onclick=()=>$('privacy-modal').hidden=true;
- $('analyze-manual').onclick=()=>{pauseVoice();manualOverride=$('manual-transcript').value.trim();if(!manualOverride){toast('Digite ou cole a transcrição primeiro.');return;}refreshTranscript();toast('Comparação manual concluída.');};$('clear-transcript').onclick=clearRun;$('save-session').onclick=saveSession;
- $('export-json').onclick=exportJSON;$('import-json').onclick=()=>$('import-file').click();$('import-file').onchange=e=>{importJSON(e.target.files[0]);e.target.value='';};$('export-pdf').onclick=exportPDF;
- $('erase-data').onclick=()=>{if(!confirm('Apagar todos os simulados, respostas editadas e sessões salvas neste navegador?'))return;store.collections=[makeSeed()];store.activeCollectionId=seedId;store.edits={};store.history=[];MODULES=activeCollection().questions;moduleIndex=0;persist();clearRun();renderLibrary();renderModules();renderContent();renderSources();renderHistory();toast('Todos os dados locais apagados; simulado inicial restaurado.');};
- for(const name of ['editor-modal','settings-modal','privacy-modal','collection-modal','question-modal'])$(name).addEventListener('click',e=>{if(e.target===$(name))$(name).hidden=true;});
- document.addEventListener('keydown',e=>{if(e.key==='Escape'){for(const name of ['editor-modal','settings-modal','privacy-modal','collection-modal','question-modal'])$(name).hidden=true;}});
- window.addEventListener('beforeprint',buildPrint);window.addEventListener('pagehide',stopVoice);
+function closeEnough(a, b) {
+  if (!a || !b) return 0;
+  if (a === b) return 2;
+  
+  // Sinônimos diretos
+  const synsA = SYNONYM_MAP.get(a);
+  if (synsA && synsA.includes(b)) return 2;
+  const synsB = SYNONYM_MAP.get(b);
+  if (synsB && synsB.includes(a)) return 2;
+
+  if (Math.min(a.length, b.length) < 4 || Math.abs(a.length - b.length) > 2) return 0;
+  if (a[0] !== b[0] && Math.min(a.length, b.length) < 6) return 0;
+  
+  // Distância de edição leve (Levenshtein limitado a 1 erro)
+  let i = 0, j = 0, edits = 0;
+  while (i < a.length && j < b.length) {
+    if (a[i] === b[j]) { i++; j++; continue; }
+    if (++edits > 1) return 0;
+    if (a.length > b.length) i++;
+    else if (b.length > a.length) j++;
+    else { i++; j++; }
+  }
+  return edits + ((a.length - i) || (b.length - j)) <= 1 ? 1 : 0;
 }
-if(!persistent)$('storage-status').textContent='Armazenamento indisponível';
-if(!voiceSupported){$('speech-status').textContent='Reconhecimento não disponível neste navegador';$('manual-details').open=true;}
-renderLibrary();renderModules();renderContent();renderHistory();renderSources();renderClock();bind();
-if('serviceWorker' in navigator&&location.protocol==='https:')navigator.serviceWorker.register('./service-worker.js').catch(()=>{});
+
+/**
+ * Similaridade Semântica de n-gramas e Jaccard com peso para termos-chave
+ */
+function calculateSemanticOverlap(refTokens, spokenTokens) {
+  if (!refTokens.length || !spokenTokens.length) return 0;
+  const refSet = new Set(refTokens.filter(t => !STOPWORDS.has(t)));
+  const spokenSet = new Set(spokenTokens.filter(t => !STOPWORDS.has(t)));
+  if (!refSet.size) return 0;
+
+  let hits = 0;
+  for (const r of refSet) {
+    for (const s of spokenSet) {
+      if (closeEnough(r, s) >= 1) {
+        hits++;
+        break;
+      }
+    }
+  }
+  return hits / Math.max(refSet.size, 1);
+}
+
+/**
+ * Alinhamento monotônico com detecção de omissões confirmadas e equivalência semântica de frases.
+ *
+ * @param {string|string[]} reference Roteiro esperado
+ * @param {string|string[]} spoken Transcrição falada
+ * @param {Object} options Configurações de tolerância
+ * @returns {Object} Resultado do alinhamento
+ */
+function alignTranscript(reference, spoken, options = {}) {
+  const ref = Array.isArray(reference) ? reference : tokenized(reference);
+  const said = Array.isArray(spoken) ? spoken : tokenized(spoken);
+  const n = ref.length, m = said.length;
+  
+  const matched = new Set();
+  const confirmedSkipped = new Set();
+  const pendingSkipped = new Set();
+  const semanticMatches = []; // blocos aceitos por equivalência semântica
+
+  if (!n || !m) {
+    return {
+      matched,
+      skipped: confirmedSkipped,
+      pendingSkipped,
+      semanticMatches,
+      progress: 0,
+      current: 0,
+      total: n,
+      words: 0,
+      semanticScore: 0,
+      finalScore: 0
+    };
+  }
+
+  // 1. Alinhamento Global Monotônico por Programação Dinâmica (Needleman-Wunsch adaptado)
+  const cols = m + 1;
+  const score = new Float32Array((n + 1) * cols);
+  const path = new Uint8Array((n + 1) * cols);
+  const at = (i, j) => i * cols + j;
+
+  for (let i = 1; i <= n; i++) { score[at(i, 0)] = -1.35 * i; path[at(i, 0)] = 1; }
+  for (let j = 1; j <= m; j++) { score[at(0, j)] = -1.8 * j; path[at(0, j)] = 2; }
+
+  for (let i = 1; i <= n; i++) {
+    const a = ref[i - 1];
+    for (let j = 1; j <= m; j++) {
+      const sim = closeEnough(a, said[j - 1]);
+      let best = score[at(i - 1, j - 1)] + (sim === 2 ? 3.2 : sim === 1 ? 1.4 : -2.8);
+      let dir = 0;
+
+      const skip = score[at(i - 1, j)] - 1.35;
+      if (skip > best) { best = skip; dir = 1; }
+
+      const extra = score[at(i, j - 1)] - 1.8;
+      if (extra > best) { best = extra; dir = 2; }
+
+      score[at(i, j)] = best;
+      path[at(i, j)] = dir;
+    }
+  }
+
+  // Busca do melhor ponto final na referência
+  let end = 0, bestEnd = -Infinity;
+  for (let k = 0; k <= n; k++) {
+    const candidate = score[at(k, m)] - 0.05 * k;
+    if (candidate > bestEnd) {
+      bestEnd = candidate;
+      end = k;
+    }
+  }
+
+  let i = end, j = m, found = 0;
+  while (i > 0 || j > 0) {
+    const dir = path[at(i, j)];
+    if (i > 0 && j > 0 && dir === 0) {
+      if (closeEnough(ref[i - 1], said[j - 1])) {
+        matched.add(i - 1);
+        found++;
+      }
+      i--; j--;
+    } else if (i > 0 && (dir === 1 || j === 0)) {
+      i--;
+    } else if (j > 0) {
+      j--;
+    } else {
+      break;
+    }
+  }
+
+  const maxMatched = matched.size ? Math.max(...matched) : -1;
+
+  // 2. Análise de Omissões com Janela de Tolerância (Debounce/Histerese)
+  // Regra:
+  // Se uma palavra foi ultrapassada no roteiro por mais de TOLERANCE_WINDOW palavras OU
+  // se o usuário já pronunciou um bloco posterior significativo (>= 3 palavras subsequentes),
+  // a palavra ultrapassada é considerada CONFIRMADA como omitida.
+  // Se estiver na zona de hesitação imediata (últimas 3 palavras antes da frente), fica em 'pendingSkipped'.
+  const TOLERANCE_WINDOW = options.toleranceWindow || 3;
+
+  for (let k = 0; k <= maxMatched; k++) {
+    if (!matched.has(k)) {
+      const distanceToFront = maxMatched - k;
+      // Não penalizar stopwords soltas com erro rígido caso estejam no meio de paráfrases
+      if (distanceToFront > TOLERANCE_WINDOW) {
+        confirmedSkipped.add(k);
+      } else {
+        pendingSkipped.add(k);
+      }
+    }
+  }
+
+  // 3. Camada de Equivalência Semântica por Sentenças / Trechos
+  // Se houver um trecho omitido, verifica se a transcrição recente contém os mesmos conceitos-chave
+  // (paráfrase do parágrafo/oração).
+  if (confirmedSkipped.size > 0) {
+    const skippedArr = Array.from(confirmedSkipped).sort((a, b) => a - b);
+    let chunk = [];
+    for (let c = 0; c < skippedArr.length; c++) {
+      chunk.push(skippedArr[c]);
+      if (c === skippedArr.length - 1 || skippedArr[c + 1] !== skippedArr[c] + 1) {
+        if (chunk.length >= 3) {
+          const chunkTokens = chunk.map(idx => ref[idx]);
+          const overlap = calculateSemanticOverlap(chunkTokens, said);
+          if (overlap >= 0.58) {
+            // Trecho semanticamente recuperado por paráfrase!
+            semanticMatches.push({
+              range: [chunk[0], chunk[chunk.length - 1]],
+              overlap: Math.round(overlap * 100)
+            });
+            // Remove do status de omitido rígido
+            chunk.forEach(idx => {
+              confirmedSkipped.delete(idx);
+              matched.add(idx); // reclassificado como aceito
+            });
+          }
+        }
+        chunk = [];
+      }
+    }
+  }
+
+  // 4. Cálculo da Pontuação Final Transparente (0 a 100)
+  // Componentes:
+  // - Cobertura do roteiro (coverage): % de palavras atingidas (peso 45%)
+  // - Aderência Semântica / Precisão (accuracy): palavras corretas sobre conceitos (peso 35%)
+  // - Retenção sem omissões graves (peso 20%)
+  // - Bônus por paráfrases válidas (até 5%)
+  const effectiveMatched = matched.size;
+  const coveragePercent = n > 0 ? (effectiveMatched / n) * 100 : 0;
+  const semanticOverlapTotal = calculateSemanticOverlap(ref, said);
+  const semanticScorePercent = Math.round(semanticOverlapTotal * 100);
+
+  const rawOmissionRate = n > 0 ? (confirmedSkipped.size / n) : 0;
+  const omissionFactor = Math.max(0, 1 - rawOmissionRate * 1.5);
+
+  const semanticBonus = Math.min(5, semanticMatches.length * 2.5);
+
+  let finalScore = Math.round(
+    (coveragePercent * 0.45) +
+    (semanticScorePercent * 0.35) +
+    (omissionFactor * 100 * 0.20) +
+    semanticBonus
+  );
+  finalScore = Math.max(0, Math.min(100, finalScore));
+
+  const progress = maxMatched < 0 ? 0 : Math.round(((maxMatched + 1) / n) * 100);
+
+  return {
+    matched,
+    skipped: confirmedSkipped,
+    pendingSkipped,
+    semanticMatches,
+    progress,
+    current: Math.min(n - 1, maxMatched + 1),
+    total: n,
+    words: matched.size,
+    coverage: Math.round(coveragePercent),
+    semanticScore: semanticScorePercent,
+    finalScore
+  };
+}
+
+
+const $ = id => document.getElementById(id);
+const modes = { short: '30 segundos', medium: '90 segundos', full: 'Completa' };
+const storageKey = 'oral-lab-v2';
+const seedId = 'familias-cuidado';
+
+const makeSeed = () => ({
+  id: seedId,
+  name: 'Direito das Famílias — Trabalho de cuidado',
+  description: 'Simulado inicial: cuidado, desigualdade de gênero e direitos das mulheres.',
+  questions: ORIGINAL_QUESTIONS.map((q, i) => ({ ...q, id: `seed-${i + 1}` }))
+});
+
+let store = {
+  collections: [makeSeed()],
+  activeCollectionId: seedId,
+  edits: {},
+  history: [],
+  fontSize: 22,
+  consent: false,
+  soundEnabled: true
+};
+
+let persistent = true;
+try {
+  const newer = localStorage.getItem(storageKey);
+  if (newer) {
+    const parsed = JSON.parse(newer);
+    if (parsed && Array.isArray(parsed.collections) && parsed.collections.length) {
+      store = { ...store, ...parsed };
+    }
+  } else {
+    const old = localStorage.getItem('brunella-interview-studio-v1');
+    if (old) {
+      const legacy = JSON.parse(old);
+      if (legacy?.edits) {
+        for (const [key, v] of Object.entries(legacy.edits)) {
+          const match = key.match(/^([0-5]):(short|medium|full)$/);
+          if (match && typeof v === 'string') store.edits[`${seedId}:seed-${Number(match[1]) + 1}:${match[2]}`] = v;
+        }
+      }
+      if (Array.isArray(legacy.history)) store.history = legacy.history.map(e => ({ ...e, collectionId: seedId }));
+      if (Number.isInteger(legacy.fontSize)) store.fontSize = legacy.fontSize;
+      if (typeof legacy.consent === 'boolean') store.consent = legacy.consent;
+    }
+  }
+  if (typeof store.soundEnabled !== 'boolean') store.soundEnabled = true;
+  localStorage.setItem(storageKey, JSON.stringify(store));
+} catch (e) {
+  persistent = false;
+}
+
+if (!Array.isArray(store.collections) || !store.collections.length) store.collections = [makeSeed()];
+if (!store.collections.some(x => x.id === store.activeCollectionId)) store.activeCollectionId = store.collections[0].id;
+if (!store.edits || typeof store.edits !== 'object') store.edits = {};
+
+const activeCollection = () => store.collections.find(x => x.id === store.activeCollectionId) || store.collections[0];
+let MODULES = activeCollection().questions;
+const makeId = () => `q-${Date.now().toString(36)}-${Math.random().toString(36).slice(2, 10)}`;
+
+let moduleIndex = 0, mode = 'full', memory = false, voice = null;
+const voiceSupported = !!(window.SpeechRecognition || window.webkitSpeechRecognition);
+let listening = false, paused = false, recognitionDesired = false;
+let finalizedSegments = [], currentRecognitionFinal = '', currentRecognitionInterim = '', manualOverride = '';
+let runStart = null, elapsedMs = 0, timerHandle = null;
+
+let highlightResult = {
+  matched: new Set(),
+  skipped: new Set(),
+  pendingSkipped: new Set(),
+  semanticMatches: [],
+  progress: 0,
+  current: 0,
+  total: 0,
+  words: 0,
+  coverage: 0,
+  semanticScore: 0,
+  finalScore: 0
+};
+
+let currentWordEls = [];
+let toastHandle = null;
+let lastAutoScroll = -1;
+
+// Gerenciamento do Som de Erro em Omissões (Web Audio API sintetizada, discreta e sem arquivos externos)
+let audioCtx = null;
+let lastOmissionCount = 0;
+let lastSoundPlayTime = 0;
+
+function playSubtleErrorSound() {
+  if (!store.soundEnabled) return;
+  const now = performance.now();
+  // Evitar cascata sonora: intervalo mínimo de 1.8s entre bipes
+  if (now - lastSoundPlayTime < 1800) return;
+  lastSoundPlayTime = now;
+
+  try {
+    const AudioContextClass = window.AudioContext || window.webkitAudioContext;
+    if (!AudioContextClass) return;
+    if (!audioCtx) audioCtx = new AudioContextClass();
+    if (audioCtx.state === 'suspended') {
+      audioCtx.resume().catch(() => {});
+    }
+
+    const osc = audioCtx.createOscillator();
+    const gain = audioCtx.createGain();
+
+    // Som suave, discreto e curto (duplo tom amigável de alerta leve)
+    osc.type = 'sine';
+    osc.frequency.setValueAtTime(320, audioCtx.currentTime);
+    osc.frequency.exponentialRampToValueAtTime(240, audioCtx.currentTime + 0.14);
+
+    gain.gain.setValueAtTime(0.0001, audioCtx.currentTime);
+    gain.gain.exponentialRampToValueAtTime(0.08, audioCtx.currentTime + 0.02); // volume baixo
+    gain.gain.exponentialRampToValueAtTime(0.0001, audioCtx.currentTime + 0.14);
+
+    osc.connect(gain);
+    gain.connect(audioCtx.destination);
+
+    osc.start(audioCtx.currentTime);
+    osc.stop(audioCtx.currentTime + 0.15);
+  } catch (err) {
+    // Falha silenciosa de áudio
+  }
+}
+
+function updateSoundButtonUI() {
+  const btn = $('sound-toggle');
+  const icon = $('sound-icon');
+  const text = $('sound-text');
+  if (!btn) return;
+  if (store.soundEnabled) {
+    btn.classList.remove('muted');
+    if (icon) icon.textContent = '🔔';
+    if (text) text.textContent = 'Som Ativo';
+  } else {
+    btn.classList.add('muted');
+    if (icon) icon.textContent = '🔕';
+    if (text) text.textContent = 'Sem Som';
+  }
+}
+
+function toggleSound() {
+  store.soundEnabled = !store.soundEnabled;
+  persist();
+  updateSoundButtonUI();
+  toast(store.soundEnabled ? 'Feedback sonoro de omissões ATIVADO.' : 'Feedback sonoro DESATIVADO.');
+}
+
+function persist() {
+  try {
+    localStorage.setItem(storageKey, JSON.stringify(store));
+    persistent = true;
+    $('storage-status').textContent = 'Dados neste dispositivo';
+    return true;
+  } catch (e) {
+    persistent = false;
+    $('storage-status').textContent = 'Armazenamento indisponível';
+    toast('Dados não puderam ser salvos: exporte um backup JSON.');
+    return false;
+  }
+}
+
+function toast(msg) {
+  const el = $('toast');
+  if (!el) return;
+  el.textContent = msg;
+  el.hidden = false;
+  clearTimeout(toastHandle);
+  toastHandle = setTimeout(() => el.hidden = true, 5000);
+}
+
+const editionKey = (i, m) => `${store.activeCollectionId}:${MODULES[i]?.id}:${m}`;
+
+function currentText(i = moduleIndex, m = mode) {
+  const value = store.edits[editionKey(i, m)];
+  return typeof value === 'string' ? value : (MODULES[i]?.[m] || '');
+}
+
+function renderModules() {
+  const nav = $('module-nav');
+  nav.replaceChildren();
+  MODULES.forEach((mod, i) => {
+    const button = document.createElement('button');
+    button.type = 'button';
+    button.className = 'module-tab' + (i === moduleIndex ? ' active' : '');
+    button.setAttribute('aria-current', i === moduleIndex ? 'step' : 'false');
+    button.innerHTML = `<span class="module-no">PERGUNTA ${String(i + 1).padStart(2, '0')}</span><span class="module-name"></span>`;
+    button.querySelector('.module-name').textContent = mod.title;
+    button.addEventListener('click', () => selectModule(i));
+    nav.append(button);
+  });
+  $('overall-counter').innerHTML = `${String(MODULES.length ? moduleIndex + 1 : 0).padStart(2, '0')} <small>/ ${String(MODULES.length).padStart(2, '0')}</small>`;
+  $('overall-fill').style.width = (MODULES.length ? (moduleIndex + 1) / MODULES.length * 100 : 0) + '%';
+}
+
+function renderContent() {
+  const mod = MODULES[moduleIndex] || {
+    title: 'Comece criando uma questão',
+    question: 'Este simulado ainda não tem perguntas.',
+    idea: 'Adicione uma questão para montar seu próprio roteiro.',
+    arguments: [],
+    closing: '',
+    followup: '',
+    alert: '',
+    keywords: []
+  };
+
+  $('section-label').textContent = `QUESTÃO ${String(MODULES.length ? moduleIndex + 1 : 0).padStart(2, '0')}`;
+  $('tele-heading').textContent = mod.title;
+  $('main-question').textContent = mod.question;
+
+  document.querySelectorAll('[data-mode]').forEach(b => {
+    b.classList.toggle('active', b.dataset.mode === mode);
+    b.setAttribute('aria-pressed', String(b.dataset.mode === mode));
+  });
+
+  $('idea-text').textContent = mod.idea;
+  $('argument-list').replaceChildren();
+  mod.arguments.forEach(a => {
+    const li = document.createElement('li');
+    li.textContent = a;
+    $('argument-list').append(li);
+  });
+  $('closing-text').textContent = mod.closing;
+  $('follow-up').textContent = mod.followup;
+  $('legal-alert').textContent = mod.alert;
+
+  const map = $('mind-map');
+  map.replaceChildren();
+  mod.keywords.forEach((s, i) => {
+    if (i) {
+      const arrow = document.createElement('span');
+      arrow.className = 'map-connector';
+      arrow.textContent = '→';
+      map.append(arrow);
+    }
+    const node = document.createElement('span');
+    node.className = 'map-node';
+    node.textContent = s;
+    map.append(node);
+  });
+
+  const keywords = $('keywords-content');
+  keywords.replaceChildren();
+  const big = document.createElement('p');
+  big.className = 'memory-center';
+  big.textContent = mod.idea;
+  keywords.append(big);
+  mod.keywords.forEach(s => {
+    const pill = document.createElement('span');
+    pill.className = 'keyword-pill';
+    pill.textContent = s;
+    keywords.append(pill);
+  });
+  const hint = document.createElement('p');
+  hint.className = 'memory-flow';
+  hint.textContent = 'Use os conceitos acima para construir a resposta com suas próprias palavras.';
+  keywords.append(hint);
+
+  $('font-size-label').textContent = `${store.fontSize} px`;
+  $('tele-content').style.fontSize = `${store.fontSize}px`;
+  $('tele-content').hidden = memory;
+  keywords.hidden = !memory;
+  renderTeleprompter();
+}
+
+function renderTeleprompter() {
+  const text = currentText();
+  const out = $('tele-content');
+  out.replaceChildren();
+  currentWordEls = [];
+
+  const paragraphs = text.split(/\n\s*\n/);
+  let wordIndex = 0;
+  for (const para of paragraphs) {
+    const p = document.createElement('p');
+    const parts = para.split(/([\p{L}\p{N}]+(?:[’'-][\p{L}\p{N}]+)*)/gu);
+    parts.forEach((part, index) => {
+      if (index % 2 === 1) {
+        const el = document.createElement('span');
+        el.className = 'word';
+        el.dataset.wordIndex = wordIndex++;
+        el.textContent = part;
+        currentWordEls.push(el);
+        p.appendChild(el);
+      } else {
+        p.appendChild(document.createTextNode(part));
+      }
+    });
+    out.appendChild(p);
+  }
+  lastAutoScroll = -1;
+  lastOmissionCount = 0;
+  refreshTranscript();
+}
+
+function transcriptText() {
+  return manualOverride || [...finalizedSegments, currentRecognitionFinal, currentRecognitionInterim].filter(Boolean).join(' ').trim();
+}
+
+function refreshTranscript() {
+  const text = transcriptText();
+  highlightResult = alignTranscript(tokenized(currentText()), tokenized(text));
+  const h = highlightResult;
+
+  // Atualiza métricas na interface
+  $('metric-words').textContent = String(h.words);
+  $('metric-skipped').textContent = String(h.skipped.size);
+  $('metric-score').textContent = `${h.finalScore}%`;
+  $('word-position').textContent = `${h.words} / ${h.total} palavras`;
+  $('progress-label').textContent = `${h.progress}%`;
+  $('progress-fill').style.width = `${h.progress}%`;
+
+  // Disparo de Som de Erro em Omissão Confirmada
+  if (h.skipped.size > lastOmissionCount) {
+    playSubtleErrorSound();
+    lastOmissionCount = h.skipped.size;
+  }
+
+  // Mapeamento dos blocos aceitos por equivalência semântica
+  const semanticSet = new Set();
+  h.semanticMatches.forEach(sm => {
+    for (let idx = sm.range[0]; idx <= sm.range[1]; idx++) {
+      semanticSet.add(idx);
+    }
+  });
+
+  // Atualização visual das palavras com as classes exigidas
+  for (let idx = 0; idx < currentWordEls.length; idx++) {
+    let cl = 'word';
+    if (semanticSet.has(idx)) {
+      cl += ' semantic'; // Azul: paráfrase aceita semanticamente
+    } else if (h.matched.has(idx)) {
+      cl += ' matched'; // Verde: correto
+    } else if (h.skipped.has(idx)) {
+      cl += ' skipped'; // Vermelho: omitido / pulado
+    } else if (h.pendingSkipped && h.pendingSkipped.has(idx)) {
+      cl += ' pending'; // Hesitação em janela de tolerância
+    } else if (idx === h.current && text) {
+      cl += ' current'; // Dourado: palavra em foco
+    }
+    currentWordEls[idx].className = cl;
+  }
+
+  // Scroll automático suave mantendo a linha atual visível
+  if (text && h.current !== lastAutoScroll && h.progress > 0) {
+    lastAutoScroll = h.current;
+    const target = currentWordEls[h.current];
+    if (target) {
+      const rect = target.getBoundingClientRect();
+      const parent = $('tele-window').getBoundingClientRect();
+      if (rect.top < parent.top + 65 || rect.bottom > parent.bottom - 90) {
+        target.scrollIntoView({ behavior: 'smooth', block: 'center' });
+      }
+    }
+  }
+
+  $('transcript').textContent = text || 'A transcrição aparecerá aqui conforme você falar.';
+}
+
+function renderClock() {
+  const ms = elapsedMs + (runStart ? performance.now() - runStart : 0);
+  const t = Math.floor(ms / 1000);
+  $('metric-time').textContent = `${String(Math.floor(t / 60)).padStart(2, '0')}:${String(t % 60).padStart(2, '0')}`;
+}
+
+function stopClock() {
+  if (runStart) {
+    elapsedMs += performance.now() - runStart;
+    runStart = null;
+  }
+  clearInterval(timerHandle);
+  renderClock();
+}
+
+function startClock() {
+  if (!runStart) runStart = performance.now();
+  clearInterval(timerHandle);
+  timerHandle = setInterval(renderClock, 250);
+  renderClock();
+}
+
+function status(text, state = 'idle') {
+  $('speech-status').textContent = text;
+  $('dock-status').textContent = text;
+  $('mic-dot').className = 'mic-dot ' + state;
+  $('start-button').disabled = listening;
+  $('pause-button').disabled = !listening;
+  $('resume-button').hidden = !paused;
+  $('pause-button').hidden = paused;
+}
+
+function commitRecognition() {
+  const complete = [currentRecognitionFinal, currentRecognitionInterim].filter(Boolean).join(' ').trim();
+  if (complete) finalizedSegments.push(complete);
+  currentRecognitionFinal = '';
+  currentRecognitionInterim = '';
+}
+
+function newRecognizer() {
+  const Voice = window.SpeechRecognition || window.webkitSpeechRecognition;
+  if (!Voice) return null;
+  const r = new Voice();
+  r.lang = 'pt-BR';
+  r.continuous = true;
+  r.interimResults = true;
+  r.maxAlternatives = 1;
+
+  r.onresult = e => {
+    let finalized = [], interim = [];
+    for (let k = 0; k < e.results.length; k++) {
+      const row = e.results[k];
+      const text = row[0]?.transcript || '';
+      (row.isFinal ? finalized : interim).push(text);
+    }
+    currentRecognitionFinal = finalized.join(' ').trim();
+    currentRecognitionInterim = interim.join(' ').trim();
+    refreshTranscript();
+  };
+
+  r.onerror = e => {
+    const fatal = ['not-allowed', 'service-not-allowed', 'audio-capture', 'language-not-supported'];
+    if (fatal.includes(e.error)) {
+      recognitionDesired = false;
+      listening = false;
+      paused = true;
+      stopClock();
+      status(`Microfone indisponível: ${e.error}`, 'error');
+      $('manual-details').open = true;
+      toast('Reconhecimento não disponível. Use a transcrição manual.');
+    } else if (e.error === 'no-speech') {
+      status('Sem fala detectada; aguardando...', 'listening');
+    } else {
+      toast(`Reconhecimento de voz: ${e.error}`);
+    }
+  };
+
+  r.onend = () => {
+    commitRecognition();
+    refreshTranscript();
+    voice = null;
+    if (recognitionDesired && listening) {
+      setTimeout(() => {
+        if (recognitionDesired && listening) {
+          try {
+            voice = newRecognizer();
+            voice.start();
+          } catch (err) {
+            recognitionDesired = false;
+            listening = false;
+            paused = true;
+            stopClock();
+            status('Falha ao reiniciar microfone', 'paused');
+          }
+        }
+      }, 230);
+    } else if (!listening) {
+      status(paused ? 'Treino pausado' : 'Treino encerrado', paused ? 'paused' : 'idle');
+    }
+  };
+
+  return r;
+}
+
+function beginVoice() {
+  if (!MODULES.length) {
+    toast('Adicione uma questão antes de iniciar o treino.');
+    return;
+  }
+  if (!voiceSupported) {
+    $('manual-details').open = true;
+    toast('Este navegador não oferece SpeechRecognition. Use a análise manual.');
+    status('Modo manual disponível', 'idle');
+    return;
+  }
+
+  manualOverride = '';
+  recognitionDesired = true;
+  listening = true;
+  paused = false;
+  status('Ouvindo em português (Brasil)...', 'listening');
+  startClock();
+
+  try {
+    voice = newRecognizer();
+    voice.start();
+  } catch (e) {
+    recognitionDesired = false;
+    listening = false;
+    paused = true;
+    stopClock();
+    status('Microfone não iniciado', 'paused');
+    $('manual-details').open = true;
+    toast('Não foi possível iniciar o microfone. Verifique permissões e HTTPS.');
+  }
+}
+
+function startVoice() {
+  if (!voiceSupported) {
+    beginVoice();
+    return;
+  }
+  if (!store.consent) {
+    $('privacy-modal').hidden = false;
+    return;
+  }
+  beginVoice();
+}
+
+function pauseVoice() {
+  if (!listening) return;
+  recognitionDesired = false;
+  listening = false;
+  paused = true;
+  stopClock();
+  status('Treino pausado', 'paused');
+  try { voice?.stop(); } catch (e) {}
+}
+
+function resumeVoice() {
+  if (!paused) return;
+  beginVoice();
+}
+
+function stopVoice() {
+  recognitionDesired = false;
+  listening = false;
+  paused = false;
+  stopClock();
+  try { voice?.stop(); } catch (e) {}
+  voice = null;
+}
+
+function clearRun() {
+  stopVoice();
+  finalizedSegments = [];
+  currentRecognitionFinal = '';
+  currentRecognitionInterim = '';
+  manualOverride = '';
+  elapsedMs = 0;
+  runStart = null;
+  lastOmissionCount = 0;
+  status('Pronto para praticar', 'idle');
+  $('tele-window').scrollTop = 0;
+  renderClock();
+  refreshTranscript();
+}
+
+function selectModule(i) {
+  if (i === moduleIndex) return;
+  stopVoice();
+  moduleIndex = i;
+  clearRun();
+  renderModules();
+  renderContent();
+}
+
+// Conclusão e Relatório de Pontuação Final
+function finishSession() {
+  stopVoice();
+  refreshTranscript();
+  status('Ensaio concluído', 'done');
+
+  const h = highlightResult;
+  $('final-score-val').textContent = String(h.finalScore);
+  $('modal-coverage-val').textContent = `${h.coverage}%`;
+  $('modal-semantic-val').textContent = `${h.semanticScore}%`;
+  $('modal-skipped-val').textContent = `${h.skipped.size} palavras`;
+  $('modal-paraphrases-val').textContent = `${h.semanticMatches.length} trecho(s)`;
+
+  // Qualificação pedagógica
+  const ratingTitle = $('score-rating-title');
+  const ratingDesc = $('score-rating-desc');
+  if (h.finalScore >= 85) {
+    ratingTitle.textContent = 'Desempenho Excelente (Aprovado)';
+    ratingDesc.textContent = 'Domínio pleno do roteiro com ótima cobertura conceitual e fluência argumentativa.';
+  } else if (h.finalScore >= 70) {
+    ratingTitle.textContent = 'Desempenho Muito Bom';
+    ratingDesc.textContent = 'Roteiro bem sustentado com pequenas omissões ou paráfrases que mantiveram a ideia central.';
+  } else if (h.finalScore >= 50) {
+    ratingTitle.textContent = 'Desempenho Regular';
+    ratingDesc.textContent = 'Pontos essenciais foram transmitidos, mas há omissões expressivas que merecem reforço.';
+  } else {
+    ratingTitle.textContent = 'Necessita de Mais Treino';
+    ratingDesc.textContent = 'Muitas palavras-chave foram puladas. Recomendamos treinar primeiro a versão de 30 segundos.';
+  }
+
+  // Lista de trechos omitidos
+  const omissionsBox = $('omissions-container');
+  const omissionsTags = $('omissions-tags');
+  omissionsTags.replaceChildren();
+
+  if (h.skipped.size > 0) {
+    omissionsBox.hidden = false;
+    const skippedArr = Array.from(h.skipped).slice(0, 20); // primeiras 20 palavras
+    skippedArr.forEach(idx => {
+      const el = currentWordEls[idx];
+      if (el) {
+        const pill = document.createElement('span');
+        pill.className = 'omission-pill';
+        pill.textContent = el.textContent;
+        omissionsTags.append(pill);
+      }
+    });
+    if (h.skipped.size > 20) {
+      const more = document.createElement('span');
+      more.className = 'omission-pill';
+      more.textContent = `+ ${h.skipped.size - 20} outras...`;
+      omissionsTags.append(more);
+    }
+  } else {
+    omissionsBox.hidden = true;
+  }
+
+  $('score-modal').hidden = false;
+}
+
+function openEditor() {
+  if (!MODULES.length) {
+    toast('Crie uma questão antes de editar respostas.');
+    return;
+  }
+  pauseVoice();
+  $('editor-subtitle').textContent = `Pergunta ${moduleIndex + 1} · Versão ${modes[mode]}`;
+  $('editor-text').value = currentText();
+  $('editor-modal').hidden = false;
+  $('editor-text').focus();
+}
+
+function closeEditor() {
+  $('editor-modal').hidden = true;
+}
+
+function saveEditor() {
+  const text = $('editor-text').value.trim();
+  if (!text) {
+    toast('O roteiro não pode ficar vazio.');
+    return;
+  }
+  store.edits[editionKey(moduleIndex, mode)] = text;
+  persist();
+  closeEditor();
+  clearRun();
+  renderTeleprompter();
+  toast('Resposta salva neste dispositivo.');
+}
+
+function restoreEditor() {
+  if (!confirm('Restaurar o texto original desta versão?')) return;
+  delete store.edits[editionKey(moduleIndex, mode)];
+  persist();
+  $('editor-text').value = MODULES[moduleIndex]?.[mode] || '';
+  clearRun();
+  renderTeleprompter();
+  toast('Versão original restaurada.');
+}
+
+function saveSession() {
+  stopClock();
+  if (!transcriptText()) {
+    toast('Não há transcrição para registrar nesta sessão.');
+    return;
+  }
+  const item = {
+    date: new Date().toISOString(),
+    collectionId: store.activeCollectionId,
+    questionId: MODULES[moduleIndex]?.id,
+    module: moduleIndex,
+    mode,
+    seconds: Math.round(elapsedMs / 1000),
+    words: highlightResult.words,
+    progress: highlightResult.progress,
+    skipped: highlightResult.skipped.size,
+    score: highlightResult.finalScore,
+    paraphrases: highlightResult.semanticMatches.length,
+    transcript: transcriptText()
+  };
+  store.history.unshift(item);
+  store.history = store.history.slice(0, 30);
+  persist();
+  renderHistory();
+  toast('Sessão registrada no histórico com pontuação.');
+}
+
+function renderHistory() {
+  const hist = $('history-list');
+  hist.replaceChildren();
+  if (!store.history?.length) {
+    hist.textContent = 'Nenhuma sessão salva.';
+    return;
+  }
+  store.history.forEach(e => {
+    const row = document.createElement('div');
+    row.className = 'history-row';
+    const scoreText = e.score !== undefined ? ` · Score ${e.score}%` : '';
+    row.textContent = `${new Date(e.date).toLocaleString('pt-BR')} · ${(store.collections.find(c => c.id === e.collectionId)?.name || 'Simulado')} · Q${e.module + 1} · ${modes[e.mode] || e.mode} · ${e.seconds}s · avanço ${e.progress}%${scoreText}`;
+    hist.append(row);
+  });
+}
+
+function downloadFile(name, content, mime) {
+  const blob = new Blob([content], { type: mime });
+  const url = URL.createObjectURL(blob);
+  const a = document.createElement('a');
+  a.href = url;
+  a.download = name;
+  document.body.append(a);
+  a.click();
+  a.remove();
+  setTimeout(() => URL.revokeObjectURL(url), 5000);
+}
+
+function exportJSON() {
+  downloadFile(
+    'oral-lab-backup.json',
+    JSON.stringify({
+      application: 'Oral Lab',
+      version: 2,
+      exportedAt: new Date().toISOString(),
+      collections: store.collections,
+      activeCollectionId: store.activeCollectionId,
+      edits: store.edits,
+      history: store.history,
+      fontSize: store.fontSize,
+      soundEnabled: store.soundEnabled
+    }, null, 2),
+    'application/json;charset=utf-8'
+  );
+  toast('Backup completo exportado em JSON.');
+}
+
+async function importJSON(file) {
+  if (!file) return;
+  try {
+    const data = JSON.parse(await file.text());
+    if (!data || data.application !== 'Oral Lab' || data.version !== 2 || !Array.isArray(data.collections) || !data.collections.length) {
+      throw Error('Arquivo não reconhecido como backup Oral Lab v2');
+    }
+    if (!confirm('Importar o backup? Substituirá simulados e edições locais.')) return;
+    store.collections = data.collections;
+    store.activeCollectionId = store.collections.some(c => c.id === data.activeCollectionId) ? data.activeCollectionId : store.collections[0].id;
+    store.edits = data.edits && typeof data.edits === 'object' ? data.edits : {};
+    store.history = Array.isArray(data.history) ? data.history.slice(0, 100) : [];
+    store.fontSize = Number.isInteger(data.fontSize) ? Math.max(16, Math.min(32, data.fontSize)) : store.fontSize;
+    if (typeof data.soundEnabled === 'boolean') store.soundEnabled = data.soundEnabled;
+
+    moduleIndex = 0;
+    MODULES = activeCollection().questions;
+    persist();
+    clearRun();
+    renderLibrary();
+    renderModules();
+    renderContent();
+    renderHistory();
+    updateSoundButtonUI();
+    toast('Simulados importados com sucesso.');
+  } catch (e) {
+    toast(`Falha na importação: ${e.message}`);
+  }
+}
+
+function renderLibrary() {
+  const sel = $('collection-select');
+  sel.replaceChildren();
+  store.collections.forEach(c => {
+    const o = document.createElement('option');
+    o.value = c.id;
+    o.textContent = c.name;
+    sel.append(o);
+  });
+  sel.value = store.activeCollectionId;
+  const c = activeCollection();
+  $('collection-heading').textContent = c.name;
+  $('collection-description').textContent = c.description || 'Simulado personalizável';
+  $('delete-collection').disabled = store.collections.length <= 1;
+}
+
+function selectCollection(id) {
+  if (!store.collections.some(c => c.id === id)) return;
+  stopVoice();
+  store.activeCollectionId = id;
+  MODULES = activeCollection().questions;
+  moduleIndex = 0;
+  mode = 'full';
+  persist();
+  clearRun();
+  renderLibrary();
+  renderModules();
+  renderContent();
+  renderSources();
+}
+
+let editingCollection = false;
+function openCollectionEditor(edit = false) {
+  editingCollection = edit;
+  const c = activeCollection();
+  $('collection-modal-title').textContent = edit ? 'Editar simulado' : 'Criar simulado';
+  $('collection-name').value = edit ? c.name : '';
+  $('collection-desc').value = edit ? (c.description || '') : '';
+  $('collection-modal').hidden = false;
+  $('collection-name').focus();
+}
+
+function saveCollection() {
+  const name = $('collection-name').value.trim();
+  if (!name) {
+    toast('Informe um nome para o simulado.');
+    return;
+  }
+  const description = $('collection-desc').value.trim();
+  if (editingCollection) {
+    activeCollection().name = name;
+    activeCollection().description = description;
+    persist();
+    renderLibrary();
+  } else {
+    const id = makeId();
+    store.collections.push({ id, name, description, questions: [] });
+    selectCollection(id);
+  }
+  $('collection-modal').hidden = true;
+  toast(editingCollection ? 'Simulado renomeado.' : 'Novo simulado criado com sucesso.');
+}
+
+function deleteCollection() {
+  if (store.collections.length <= 1) return;
+  if (!confirm(`Excluir o simulado “${activeCollection().name}” e suas questões?`)) return;
+  const id = store.activeCollectionId;
+  store.collections = store.collections.filter(c => c.id !== id);
+  for (const k of Object.keys(store.edits)) {
+    if (k.startsWith(id + ':')) delete store.edits[k];
+  }
+  selectCollection(store.collections[0].id);
+  toast('Simulado excluído do dispositivo.');
+}
+
+let editingQuestion = false;
+const qFields = ['title', 'question', 'short', 'medium', 'full', 'idea', 'arguments', 'keywords', 'closing', 'followup', 'alert'];
+
+function openQuestionEditor(edit = false) {
+  editingQuestion = edit;
+  const q = edit ? MODULES[moduleIndex] : null;
+  if (edit && !q) return;
+  $('question-modal-title').textContent = edit ? 'Editar questão e guia' : 'Nova questão';
+  for (const name of qFields) {
+    let v = '';
+    if (q) {
+      v = ['short', 'medium', 'full'].includes(name)
+        ? currentText(moduleIndex, name)
+        : name === 'arguments'
+          ? (q.arguments || []).join('\n')
+          : name === 'keywords'
+            ? (q.keywords || []).join(', ')
+            : q[name] || '';
+    }
+    $('q-' + name).value = v;
+  }
+  $('question-modal').hidden = false;
+  $('q-title').focus();
+}
+
+function saveQuestion() {
+  const title = $('q-title').value.trim(), question = $('q-question').value.trim();
+  if (!title || !question) {
+    toast('Informe o título e o enunciado da questão.');
+    return;
+  }
+  const q = { id: editingQuestion ? MODULES[moduleIndex].id : makeId(), title, question };
+  for (const name of ['short', 'medium', 'full', 'idea', 'closing', 'followup', 'alert']) {
+    q[name] = $('q-' + name).value.trim();
+  }
+  q.arguments = $('q-arguments').value.split(/\n/).map(s => s.trim()).filter(Boolean);
+  q.keywords = $('q-keywords').value.split(',').map(s => s.trim()).filter(Boolean);
+  if (!q.full || !q.short || !q.medium) {
+    toast('Preencha as três versões de resposta para ativar o teleprompter.');
+    return;
+  }
+
+  if (editingQuestion) {
+    const index = moduleIndex;
+    MODULES[index] = q;
+    for (const m of ['short', 'medium', 'full']) delete store.edits[editionKey(index, m)];
+  } else {
+    MODULES.push(q);
+    moduleIndex = MODULES.length - 1;
+  }
+
+  $('question-modal').hidden = true;
+  persist();
+  clearRun();
+  renderModules();
+  renderContent();
+  toast(editingQuestion ? 'Questão atualizada.' : 'Questão adicionada.');
+}
+
+function deleteQuestion() {
+  if (!MODULES.length) return;
+  if (!confirm(`Excluir a questão “${MODULES[moduleIndex].title}”?`)) return;
+  for (const m of ['short', 'medium', 'full']) delete store.edits[editionKey(moduleIndex, m)];
+  MODULES.splice(moduleIndex, 1);
+  moduleIndex = Math.min(moduleIndex, Math.max(0, MODULES.length - 1));
+  persist();
+  clearRun();
+  renderModules();
+  renderContent();
+  toast('Questão excluída.');
+}
+
+function printParagraphs(target, text) {
+  String(text).split(/\n\s*\n/).forEach(line => {
+    const p = document.createElement('p');
+    p.textContent = line;
+    target.append(p);
+  });
+}
+
+function addPrintSection(parent, title, text) {
+  const h = document.createElement('h3');
+  h.textContent = title;
+  parent.append(h);
+  printParagraphs(parent, text);
+}
+
+function buildPrint() {
+  const root = $('print-root');
+  root.replaceChildren();
+  const cover = document.createElement('div');
+  cover.className = 'print-cover';
+  cover.innerHTML = `<div class="cap">ORAL LAB · GUIA DE PROVA ORAL</div><h1>PROVAS<br><em>ORAIS</em></h1><p>${activeCollection().name}</p><footer>${MODULES.length} questões · Respostas completas e sintetizadas · Mapas mentais</footer>`;
+  root.append(cover);
+
+  const toc = document.createElement('section');
+  toc.className = 'print-toc';
+  toc.innerHTML = '<div class="print-header">Guia de preparação</div><h2>Sumário</h2>';
+  const list = document.createElement('ol');
+  MODULES.forEach(mod => {
+    const li = document.createElement('li');
+    li.textContent = mod.title;
+    list.append(li);
+  });
+  toc.append(list);
+  root.append(toc);
+
+  MODULES.forEach((mod, i) => {
+    const section = document.createElement('section');
+    section.className = 'print-module';
+    section.innerHTML = `<div class="print-header">QUESTÃO ${String(i + 1).padStart(2, '0')} / ${String(MODULES.length).padStart(2, '0')}</div><h2>${mod.title}</h2><p class="q">${mod.question}</p>`;
+    addPrintSection(section, 'Resposta completa', currentText(i, 'full'));
+    addPrintSection(section, 'Versão de 90 segundos', currentText(i, 'medium'));
+    addPrintSection(section, 'Versão de 30 segundos', currentText(i, 'short'));
+    root.append(section);
+  });
+
+  const refs = document.createElement('section');
+  refs.className = 'print-sources';
+  refs.innerHTML = '<div class="print-header">Fontes prioritárias e legislação</div><h2>Referências & orientações de treino</h2>';
+  if (store.activeCollectionId === seedId) {
+    SOURCES.forEach(source => {
+      const p = document.createElement('p');
+      p.textContent = `${source.name}. ${source.detail}`;
+      refs.append(p);
+    });
+  }
+  root.append(refs);
+}
+
+function exportPDF() {
+  buildPrint();
+  toast('Na janela de impressão, escolha “Salvar como PDF”.');
+  setTimeout(() => window.print(), 120);
+}
+
+function renderSources() {
+  const root = $('source-list');
+  root.replaceChildren();
+  if (store.activeCollectionId !== seedId) {
+    root.textContent = 'Adicione suas fontes aos roteiros e confirme a validade de todas as informações antes do exame.';
+    return;
+  }
+  SOURCES.forEach(s => {
+    const div = document.createElement('div');
+    div.className = 'source-row';
+    const strong = document.createElement('strong');
+    strong.textContent = s.name;
+    div.append(strong, document.createTextNode(' — ' + s.detail));
+    root.append(div);
+  });
+}
+
+function setFont(s) {
+  store.fontSize = Math.max(16, Math.min(32, s));
+  persist();
+  $('tele-content').style.fontSize = store.fontSize + 'px';
+  $('font-size-label').textContent = store.fontSize + ' px';
+}
+
+// Inicialização e Efeito Parallax Suave no Fundo
+function initParallax() {
+  const layer1 = $('parallax-layer-1');
+  const layer2 = $('parallax-layer-2');
+  const layer3 = $('parallax-layer-3');
+  if (!layer1 || !layer2 || !layer3) return;
+
+  const handleMove = e => {
+    if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+    const clientX = e.clientX || (e.touches && e.touches[0]?.clientX) || window.innerWidth / 2;
+    const clientY = e.clientY || (e.touches && e.touches[0]?.clientY) || window.innerHeight / 2;
+    const xPct = (clientX / window.innerWidth) - 0.5;
+    const yPct = (clientY / window.innerHeight) - 0.5;
+
+    // Camadas com diferentes profundidades e sem vibração
+    layer1.style.transform = `translate3d(${xPct * 8}px, ${yPct * 8}px, 0)`;
+    layer2.style.transform = `translate3d(${xPct * -14}px, ${yPct * -14}px, 0)`;
+    layer3.style.transform = `translate3d(${xPct * 20}px, ${yPct * 20}px, 0)`;
+  };
+
+  window.addEventListener('mousemove', handleMove, { passive: true });
+}
+
+function bind() {
+  document.querySelectorAll('[data-mode]').forEach(b => b.addEventListener('click', () => {
+    const next = b.dataset.mode;
+    if (next === mode) return;
+    clearRun();
+    mode = next;
+    renderContent();
+  }));
+
+  $('font-down').onclick = () => setFont(store.fontSize - 2);
+  $('font-up').onclick = () => setFont(store.fontSize + 2);
+  $('memory-toggle').onchange = e => { memory = e.target.checked; renderContent(); };
+  $('sound-toggle').onclick = toggleSound;
+
+  $('edit-button').onclick = openEditor;
+  $('editor-close').onclick = closeEditor;
+  $('editor-cancel').onclick = closeEditor;
+  $('editor-save').onclick = saveEditor;
+  $('restore-version').onclick = restoreEditor;
+
+  $('start-button').onclick = startVoice;
+  $('pause-button').onclick = pauseVoice;
+  $('resume-button').onclick = resumeVoice;
+  $('finish-button').onclick = finishSession;
+  $('restart-button').onclick = clearRun;
+  $('next-button').onclick = () => MODULES.length ? selectModule((moduleIndex + 1) % MODULES.length) : toast('Adicione uma questão.');
+
+  $('new-collection').onclick = () => openCollectionEditor(false);
+  $('rename-collection').onclick = () => openCollectionEditor(true);
+  $('delete-collection').onclick = deleteCollection;
+  $('collection-select').onchange = e => selectCollection(e.target.value);
+
+  $('new-question').onclick = () => openQuestionEditor(false);
+  $('edit-question').onclick = () => openQuestionEditor(true);
+  $('delete-question').onclick = deleteQuestion;
+
+  $('collection-close').onclick = $('collection-cancel').onclick = () => $('collection-modal').hidden = true;
+  $('collection-save').onclick = saveCollection;
+  $('question-close').onclick = $('question-cancel').onclick = () => $('question-modal').hidden = true;
+  $('question-save').onclick = saveQuestion;
+
+  $('settings-toggle').onclick = () => { $('settings-modal').hidden = false; renderHistory(); };
+  $('settings-close').onclick = () => $('settings-modal').hidden = true;
+
+  $('score-close').onclick = () => $('score-modal').hidden = true;
+  $('repeat-session-btn').onclick = () => { $('score-modal').hidden = true; clearRun(); };
+  $('save-modal-session-btn').onclick = () => { saveSession(); $('score-modal').hidden = true; };
+
+  $('voice-consent').onchange = e => $('privacy-accept').disabled = !e.target.checked;
+  $('privacy-accept').onclick = () => {
+    store.consent = true;
+    persist();
+    $('privacy-modal').hidden = true;
+    beginVoice();
+  };
+  $('privacy-cancel').onclick = () => $('privacy-modal').hidden = true;
+
+  $('analyze-manual').onclick = () => {
+    pauseVoice();
+    manualOverride = $('manual-transcript').value.trim();
+    if (!manualOverride) {
+      toast('Digite ou cole a transcrição primeiro.');
+      return;
+    }
+    refreshTranscript();
+    toast('Comparação manual concluída com pontuação.');
+  };
+  $('clear-transcript').onclick = clearRun;
+  $('save-session').onclick = saveSession;
+
+  $('export-json').onclick = exportJSON;
+  $('import-json').onclick = () => $('import-file').click();
+  $('import-file').onchange = e => { importJSON(e.target.files[0]); e.target.value = ''; };
+  $('export-pdf').onclick = exportPDF;
+
+  $('erase-data').onclick = () => {
+    if (!confirm('Apagar todos os simulados, respostas editadas e histórico?')) return;
+    store.collections = [makeSeed()];
+    store.activeCollectionId = seedId;
+    store.edits = {};
+    store.history = [];
+    MODULES = activeCollection().questions;
+    moduleIndex = 0;
+    persist();
+    clearRun();
+    renderLibrary();
+    renderModules();
+    renderContent();
+    renderSources();
+    renderHistory();
+    toast('Simulado inicial restaurado.');
+  };
+
+  const modals = ['editor-modal', 'settings-modal', 'privacy-modal', 'collection-modal', 'question-modal', 'score-modal'];
+  modals.forEach(name => {
+    const el = $(name);
+    if (el) el.addEventListener('click', e => { if (e.target === el) el.hidden = true; });
+  });
+
+  document.addEventListener('keydown', e => {
+    if (e.key === 'Escape') {
+      modals.forEach(name => { const el = $(name); if (el) el.hidden = true; });
+    }
+  });
+
+  window.addEventListener('beforeprint', buildPrint);
+  window.addEventListener('pagehide', stopVoice);
+}
+
+if (!persistent) $('storage-status').textContent = 'Armazenamento indisponível';
+if (!voiceSupported) {
+  $('speech-status').textContent = 'Reconhecimento não disponível neste navegador';
+  $('manual-details').open = true;
+}
+
+renderLibrary();
+renderModules();
+renderContent();
+renderHistory();
+renderSources();
+renderClock();
+updateSoundButtonUI();
+initParallax();
+bind();
+
+if ('serviceWorker' in navigator && location.protocol === 'https:') {
+  navigator.serviceWorker.register('./service-worker.js').catch(() => {});
+}
 
 </script>
 </body>
