@@ -1174,6 +1174,56 @@ button:active:not(:disabled) {
   padding-top: 6px;
 }
 
+/* Painel de Diagnóstico do SpeechRecognition */
+.diag-panel {
+  margin-top: 12px;
+  padding: 10px 12px;
+  background: #f1f5f3;
+  border: 1px solid #d4dfdc;
+  border-radius: var(--radius-sm);
+  font-size: 11px;
+  color: #3b5558;
+}
+
+.diag-panel summary {
+  font-weight: 700;
+  cursor: pointer;
+  color: var(--petrol);
+  user-select: none;
+}
+
+.diag-grid {
+  margin-top: 8px;
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 4px;
+  font-family: monospace;
+  font-size: 10.5px;
+}
+
+.diag-item {
+  display: flex;
+  justify-content: space-between;
+  border-bottom: 1px dashed #d5e0dd;
+  padding: 2px 0;
+}
+
+.diag-item strong {
+  color: var(--petrol);
+}
+
+.mic-dot.requesting, .mic-dot.starting {
+  background: #f39c12;
+  box-shadow: 0 0 0 4px rgba(243, 156, 18, 0.25);
+  animation: pulseMic 1s infinite;
+}
+
+.mic-dot.speaking {
+  background: #00b894;
+  box-shadow: 0 0 0 6px rgba(0, 184, 148, 0.35);
+  animation: pulseMic 0.7s infinite;
+}
+
 /* ========================================================
    MODAL DE RESUMO FINAL & PONTUAÇÃO (SCORE DASHBOARD)
    ======================================================== */
