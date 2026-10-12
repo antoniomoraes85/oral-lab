@@ -1,151 +1,172 @@
 # ORAL LAB 3.0 — Active Recall: Status do Desenvolvimento
 
 > **Branch:** `feat/active-recall-mvp`
-> **Última atualização:** 2026-10-11
+> **Última atualização:** 2026-10-11 (Tarefa 04)
 
 ---
 
 ## Etapa Atual
 
-**Tarefa 03 — Banco de Matérias e Assuntos** ✅ CONCLUÍDA
+**Tarefa 04 — Banco de Flashcards e Expansão Curricular** ✅ CONCLUÍDA
 
 ---
 
 ## Implementações Concluídas
 
-### Tarefa 01 + 02 (branch `main`)
+### Tarefas 01 + 02 (branch `main` — publicado)
 - Design premium com parallax, glassmorphism e micro-animações
-- Detecção de omissões em vermelho com feedback sonoro via Web Audio API
+- Detecção de omissões em vermelho + feedback sonoro via Web Audio API
 - Alinhamento semântico com tolerância temporal e pontuação final
-- Correção completa do fluxo SpeechRecognition (estados granulares, backoff exponencial)
+- Correção do fluxo SpeechRecognition (estados granulares, backoff exponencial)
 - Modal de pontuação final com classificação pedagógica
 
-### Tarefa 03 — Esta branch
+### Tarefa 03 (branch `feat/active-recall-mvp` — commit `796b43f`)
+- `study/study-db.js` — schema IndexedDB v1, 5 object stores
+- `study/study-seed.js` — 9 matérias e 9 assuntos de Legislação
+- `tests/test_study_seed.mjs` — 42 PASS
 
-| Arquivo | Descrição |
-|---------|-----------|
-| [`study/study-db.js`](../study/study-db.js) | Camada IndexedDB: `openDB()`, `getAll()`, `getById()`, `getTopicsBySubject()`, `getSubjectsByCategory()`, `upsert()`, `countRecords()` |
-| [`study/study-seed.js`](../study/study-seed.js) | Seed idempotente com `SEED_SUBJECTS` (9 matérias) e `SEED_TOPICS` (9 assuntos de Legislação) |
-| [`tests/test_study_seed.mjs`](../tests/test_study_seed.mjs) | Suite de testes Node.js com 43 asserções |
-| [`docs/ACTIVE_RECALL_STATUS.md`](./ACTIVE_RECALL_STATUS.md) | Este documento |
+### Tarefa 04 (esta entrega)
 
-#### Object Stores criadas no IndexedDB (`oral-lab-active-recall-v1`, schema v1)
+| Arquivo | Tipo | Descrição |
+|---------|------|-----------|
+| [`study/study-db.js`](../study/study-db.js) | Modificado | Schema v2: índice multiEntry `tags` em `cards`; migração não-destrutiva; novos helpers `getByIndex`, `deleteRecord`; opção `skipExisting` em `upsert` |
+| [`study/study-seed.js`](../study/study-seed.js) | Modificado | 48 tópicos (9 Legislação + 39 para demais matérias); 45 flashcards de Legislação; seed idempotente com `skipExisting:true` para cards |
+| [`study/study-cards.js`](../study/study-cards.js) | Criado | CRUD completo: `validateCard`, `validateRelations`, `createCard`, `getCardById_`, `listCardsBySubject`, `listCardsByTopic`, `listCardsByTags`, `updateCard`, `deleteCard` (cascade), `importCards`, `exportCards`, `countCards` |
+| [`tests/test_study_cards.mjs`](../tests/test_study_cards.mjs) | Criado | 63 PASS + 1 SKIP honesto — 20 cenários do spec |
+| [`docs/ACTIVE_RECALL_STATUS.md`](./ACTIVE_RECALL_STATUS.md) | Modificado | Este documento |
+
+#### Schema IndexedDB — Histórico de Versões
 
 ```
-subjects   — matérias (id, slug, name, category, weight, createdAt)
-             índices: slug (unique), category
-topics     — assuntos (id, slug, name, subjectId, order, createdAt)
-             índices: subjectId, slug (unique)
-cards      — flashcards (reservado — Tarefa 04)
-             índices: topicId, subjectId, nextReview
-attempts   — histórico de tentativas (autoIncrement)
-             índices: cardId, createdAt
-schedules  — agenda de revisão espaçada
-             índice: nextReview
+v1 (Tarefa 03):  subjects, topics, cards, attempts, schedules
+v2 (Tarefa 04):  + índice multiEntry 'tags' em cards
+                 + helpers getByIndex, deleteRecord
+                 + skipExisting em upsert
 ```
 
-#### Matérias cadastradas
+#### Catálogo de Assuntos (48 tópicos totais)
 
-| Matéria | Categoria | Peso |
-|---------|-----------|------|
-| Português | geral | 1 |
-| Raciocínio Lógico-Matemático | geral | 1 |
-| Legislação | geral | 1 |
-| Desenvolvimento / Engenharia de Software | especifico | 2 |
-| Redes e Segurança | especifico | 2 |
-| Arquitetura / Sistemas Operacionais | especifico | 2 |
-| Banco de Dados / Dados / IA | especifico | 2 |
-| Governança | especifico | 2 |
-| Prova Discursiva — Redação | complementar | null |
+| Matéria | Tópicos |
+|---------|---------|
+| Legislação | 9 (confirmados — edital TRT-4) |
+| Português | 5 (preliminar) |
+| Raciocínio Lógico-Matemático | 5 (preliminar) |
+| Desenvolvimento / Engenharia de Software | 5 (preliminar) |
+| Redes e Segurança | 5 (preliminar) |
+| Arquitetura / Sistemas Operacionais | 5 (preliminar) |
+| Banco de Dados / Dados / IA | 5 (preliminar) |
+| Governança | 5 (preliminar) |
+| Prova Discursiva — Redação | 4 (preliminar) |
 
-#### Assuntos de Legislação cadastrados (9)
+> ⚠️ Tópicos marcados como "preliminar" não estão confirmados pelo edital oficial. Consulte o edital do TRT da 4ª Região.
 
-`lei-8112-1990` · `lei-9784-1999` · `lei-8429-1992` · `lei-14230-2021` ·
-`lei-14133-2021` · `lei-13709-2018` · `lei-13146-2015` ·
-`regimento-interno-trt4` · `resolucao-cnj-400-2021`
+#### Flashcards (45 iniciais)
 
-> ⚠️ **Aviso editorial:** esta estrutura é uma aproximação para fins de estudo.
-> Consulte sempre o edital oficial do TRT da 4ª Região para pesos e assuntos vigentes.
+| Assunto | Cards |
+|---------|-------|
+| Lei nº 8.112/1990 | 5 |
+| Lei nº 9.784/1999 | 5 |
+| Lei nº 8.429/1992 (redação original) | 5 |
+| Lei nº 14.230/2021 | 5 |
+| Lei nº 14.133/2021 | 5 |
+| Lei nº 13.709/2018 (LGPD) | 5 |
+| Lei nº 13.146/2015 (EPD) | 5 |
+| Regimento Interno TRT-4 | 5 |
+| Resolução CNJ nº 400/2021 | 5 |
+| **Total** | **45** |
+
+> Os cards de Regimento Interno TRT-4 e Resolução CNJ 400/2021 indicam
+> fontes oficiais para verificação independente onde o conteúdo específico
+> não pôde ser confirmado sem acesso ao texto vigente.
+
+#### Política de Integridade Referencial
+
+**Exclusão de card (CASCADE):**
+- Deleta todos os `attempts` vinculados pelo índice `cardId`
+- Deleta o `schedule` vinculado (keyPath = `cardId`)
+- `subjects` e `topics` **NÃO** são afetados
+
+**Proteção de edições personalizadas:**
+- `importCards` usa `skipExisting:true` por padrão
+- `seedDatabase` usa `skipExisting:true` para cards
+- Re-seed nunca sobrescreve cards modificados pelo usuário
 
 ---
 
-## Testes Realizados
+## Preparação para Revisão Espaçada — Contrato de Dados (Tarefa 05)
 
-### Suíte de alinhamento (`test_alignment.mjs`) — ✅ 11 PASS
+### Dados de entrada mínimos para SM-2
 
-```
-PASS prefixo simples 67 4
-PASS acentuação e case 100 4
-PASS omissões 88 5
-PASS palavras repetidas 40 2
-PASS longos saltos 25 2
-PASS fala extra 67 4
-PASS variação pequena 100 4
-PASS correspondência integral: score 100
-PASS detecção de omissão real: palavras puladas = 6
-PASS tolerância a hesitação: omissões confirmadas = 0
-PASS equivalência semântica: overlap = 43 score = 49
+O store `schedules` recebe, após cada sessão de revisão:
+
+```js
+{
+  cardId:      string,   // FK → cards.id
+  nextReview:  ISO8601,  // data da próxima revisão
+  interval:    number,   // dias até a próxima revisão (I)
+  easeFactor:  number,   // fator de facilidade (EF, inicial 2.5)
+  repetitions: number    // número de repetições consecutivas corretas (n)
+}
 ```
 
-### Suíte DOM (`test_dom.mjs`) — ✅ 1 PASS
+O store `attempts` recebe, após cada avaliação:
 
+```js
+{
+  // id: autoIncrement
+  cardId:    string,   // FK → cards.id
+  rating:    0–5,      // nota de recuperação (0=falha, 3=aceitável, 5=perfeito)
+  createdAt: ISO8601
+}
 ```
-PASS: DOM simulado e biblioteca de simulados — 6 módulos, editor/persistência,
-      STT falso com pausa/retomada, histórico, preparação PDF, navegação
-```
 
-### Suíte do banco de estudos (`test_study_seed.mjs`) — ✅ 42 PASS · ⏭ 1 SKIP
+O algoritmo SM-2 usa: `rating`, `interval`, `easeFactor`, `repetitions`
+para calcular o próximo `interval` e `nextReview`. Implementação: Tarefa 05.
 
-| Grupo | Asserções |
+---
+
+## Testes Executados
+
+| Suite | Resultado |
 |-------|-----------|
-| Quantidade de matérias (9) | PASS |
-| Todos os nomes das 9 matérias | PASS (9/9) |
-| Categorias corretas (3 geral, 5 específico, 1 complementar) | PASS |
-| Pesos (1, 2 e null) | PASS |
-| Matéria Legislação encontrada por id estável | PASS |
-| 9 assuntos vinculados à Legislação | PASS |
-| Todos os slugs dos 9 assuntos presentes | PASS (9/9) |
-| IDs e slugs únicos (subjects e topics) | PASS (4/4) |
-| FKs topic→subject válidas | PASS (9/9) |
-| Idempotência: 2 seeds no mock não duplicam | PASS (2/2) |
-| IndexedDB real (abertura no navegador) | **SKIP** — API ausente em Node.js puro |
+| `test_alignment.mjs` | **11 PASS** ✅ |
+| `test_dom.mjs` | **1 PASS** ✅ |
+| `test_study_seed.mjs` | **81 PASS · 1 SKIP** ✅ |
+| `test_study_cards.mjs` | **63 PASS · 1 SKIP** ✅ |
 
-> **Limitação documentada:** o teste de abertura real do IndexedDB é marcado como
-> `SKIP` honesto em Node.js. Nenhum polyfill foi instalado. Para validar o
-> comportamento real, abrir o console do navegador e executar:
-> ```js
-> import('./study/study-db.js').then(m => m.openDB()).then(db => console.log('OK', db.name));
-> ```
+SKIP em ambas as suítes: IndexedDB real — API ausente em Node.js puro.
+Para validar, abra o console do navegador e execute:
+```js
+import('./study/study-db.js').then(m => m.openDB()).then(db => console.log('OK', db.name, 'v', db.version));
+```
 
 ---
 
-## Pendências
+## Arquivos NÃO modificados na Tarefa 04
 
-- [ ] **Tarefa 04** — Flashcards: criar, editar e associar cards a topics
-- [ ] **Tarefa 05** — Algoritmo SM-2/FS-RS: calcular próximas revisões e popular `schedules`
-- [ ] **Tarefa 06** — Interface de flashcards (tela separada, sem alterar o layout 2.0)
-- [ ] **Tarefa 07** — Dashboard de progresso por matéria
-- [ ] Seed de assuntos para Português, Raciocínio e matérias específicas
-- [ ] Validação manual do IndexedDB no navegador (Chrome/Edge)
+`app.js` · `alignment.js` · `styles.css` · `index.html` ·
+`content.js` · `content-data.json` · `service-worker.js` — **intactos**
 
 ---
 
-## Arquivos NÃO modificados nesta tarefa
+## Pendências e Limitações
 
-- `app.js` — intacto
-- `alignment.js` — intacto
-- `styles.css` — intacto
-- `index.html` — intacto
-- `content.js` / `content-data.json` — intactos
-- `service-worker.js` — intacto
-- localStorage do app 2.0 — não tocado
+- [ ] IndexedDB real ainda não validado no navegador (aguarda Tarefa 06)
+- [ ] Tópicos preliminares precisam de confirmação pelo edital oficial
+- [ ] Cards de Regimento TRT-4 e CNJ 400/2021 indicam fontes para verificação
+- [ ] Seed de flashcards para matérias não-Legislação (Tarefa 04+)
+- [ ] Algoritmo SM-2 completo — **Tarefa 05**
+- [ ] Interface visual de flashcards — **Tarefa 06**
+- [ ] Dashboard de progresso — **Tarefa 07**
 
 ---
 
-## Próximo Passo Previsto
+## Próximo Passo — Tarefa 05: Revisão Espaçada (SM-2)
 
-**Tarefa 04 — Flashcards:**
-- Definir schema do card (`question`, `answer`, `hint`, `topicId`, `subjectId`, `tags`)
-- Criar `study/study-cards.js` com CRUD de cards
-- Seed de 5 cards-exemplo por assunto de Legislação
-- Testes Node.js para CRUD e relacionamentos
+**Contrato de dados definido acima.** A Tarefa 05 implementará:
+
+1. `study/study-srs.js` — algoritmo SM-2 (ou FSRS como alternativa)
+2. Funções: `scheduleCard(db, cardId, rating)`, `getDueCards(db, limit)`
+3. Integração com stores `attempts` e `schedules`
+4. Testes: `tests/test_study_srs.mjs`
+5. Sem interface visual (permanece na Tarefa 06)
