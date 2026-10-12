@@ -1,15 +1,25 @@
-<!doctype html>
+﻿<!doctype html>
 <html lang="pt-BR">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
-  <meta name="theme-color" content="#103d46" />
-  <meta name="description" content="Plataforma de alta performance para provas orais e entrevistas: simulados personalizáveis, teleprompter com IA e tolerância semântica, detecção de omissões com feedback sonoro e relatório final." />
+  <meta name="theme-color" content="#102A43" />
+  <meta name="description" content="Plataforma de alta performance para provas orais e entrevistas: simulados personalizÃ¡veis, teleprompter com IA e tolerÃ¢ncia semÃ¢ntica, detecÃ§Ã£o de omissÃµes com feedback sonoro e relatÃ³rio final." />
   <link rel="manifest" href="./manifest.webmanifest" />
   <link rel="stylesheet" href="./styles.css" />
-  <title>ORAL LAB | Estúdio Premium de Provas Orais & Entrevistas</title>
+  <title>ORAL LAB | EstÃºdio Premium de Provas Orais & Entrevistas</title>
 </head>
 <body>
+  <!-- MENTIVA nav-back bar -->
+  <div id="mentiva-nav-bar" style="position:sticky;top:0;z-index:500;background:#102A43;display:flex;align-items:center;gap:12px;padding:0 20px;height:44px;font-family:'Inter',system-ui,sans-serif;">
+    <a href="./dashboard.html" style="display:flex;align-items:center;gap:8px;color:rgba(255,255,255,.75);font-size:13px;font-weight:500;text-decoration:none;transition:color .15s" onmouseover="this.style.color='#fff'" onmouseout="this.style.color='rgba(255,255,255,.75)'">
+      <span style="font-size:16px">ðŸ§ </span>
+      <span style="font-family:'Outfit',sans-serif;font-weight:800;color:#fff;font-size:15px;letter-spacing:-.2px">MENTIVA</span>
+      <span style="color:rgba(255,255,255,.3);margin:0 4px">Â·</span>
+      <span>â† Dashboard</span>
+    </a>
+    <span style="margin-left:auto;font-size:11px;font-weight:600;letter-spacing:1px;text-transform:uppercase;color:rgba(255,255,255,.4)">Prova Oral</span>
+  </div>
   <!-- Fundo Parallax Elegante com Camadas de Profundidade -->
   <div class="parallax-viewport" aria-hidden="true">
     <div class="parallax-layer parallax-layer-1" id="parallax-layer-1"></div>
@@ -20,36 +30,36 @@
   <div id="app-shell">
     <header class="topbar">
       <div class="brand-lockup">
-        <div class="brand-symbol">OL<span>✦</span></div>
+        <div class="brand-symbol">OL<span>âœ¦</span></div>
         <div>
           <div class="brand-name">
             ORAL LAB <span class="brand-divider">/</span> PROVAS ORAIS
             <span class="brand-badge">PREMIUM STUDIO</span>
           </div>
-          <div class="brand-subtitle">Simulador de arguição oral com teleprompter inteligente e análise de fala</div>
+          <div class="brand-subtitle">Simulador de arguiÃ§Ã£o oral com teleprompter inteligente e anÃ¡lise de fala</div>
         </div>
       </div>
       <div class="header-actions">
-        <button id="sound-toggle" class="sound-toggle-btn" aria-label="Alternar som de feedback" title="Ativar/desativar som discreto de erro em omissões">
-          <span id="sound-icon">🔔</span> <span id="sound-text">Som Ativo</span>
+        <button id="sound-toggle" class="sound-toggle-btn" aria-label="Alternar som de feedback" title="Ativar/desativar som discreto de erro em omissÃµes">
+          <span id="sound-icon">ðŸ””</span> <span id="sound-text">Som Ativo</span>
         </button>
         <span id="storage-status" class="storage-tag" aria-live="polite">Dados neste dispositivo</span>
-        <button id="settings-toggle" class="circle-button" aria-label="Abrir configurações de estudo e histórico" title="Ajustes e histórico">⚙</button>
+        <button id="settings-toggle" class="circle-button" aria-label="Abrir configuraÃ§Ãµes de estudo e histÃ³rico" title="Ajustes e histÃ³rico">âš™</button>
       </div>
     </header>
 
     <main class="app-container">
       <div class="page-intro">
         <div>
-          <div class="eyebrow"><span class="gold-dot"></span> PLATAFORMA DE TREINAMENTO ORAL · PADRÃO BANCA EXAMINADORA</div>
-          <h1>Prepare sua fundamentação.<br><em>Domine a sustentação oral.</em></h1>
-          <p>Treine com teleprompter adaptativo, detecção de palavras puladas em vermelho, tolerância semântica e pontuação transparente de desempenho.</p>
+          <div class="eyebrow"><span class="gold-dot"></span> PLATAFORMA DE TREINAMENTO ORAL Â· PADRÃƒO BANCA EXAMINADORA</div>
+          <h1>Prepare sua fundamentaÃ§Ã£o.<br><em>Domine a sustentaÃ§Ã£o oral.</em></h1>
+          <p>Treine com teleprompter adaptativo, detecÃ§Ã£o de palavras puladas em vermelho, tolerÃ¢ncia semÃ¢ntica e pontuaÃ§Ã£o transparente de desempenho.</p>
         </div>
         <div class="session-overview">
           <span>PROGRESSO DO SIMULADO</span>
           <strong id="overall-counter">01 <small>/ 06</small></strong>
           <div class="thin-track"><div id="overall-fill"></div></div>
-          <small>Banco personalizável de questões</small>
+          <small>Banco personalizÃ¡vel de questÃµes</small>
         </div>
       </div>
 
@@ -59,28 +69,28 @@
           <select id="collection-select" aria-label="Selecionar simulado"></select>
         </div>
         <div class="library-actions">
-          <button id="new-collection" class="library-btn">＋ Novo simulado</button>
-          <button id="rename-collection" class="library-btn">✎ Renomear</button>
+          <button id="new-collection" class="library-btn">ï¼‹ Novo simulado</button>
+          <button id="rename-collection" class="library-btn">âœŽ Renomear</button>
           <button id="delete-collection" class="library-btn muted" title="Excluir simulado">Excluir</button>
         </div>
       </section>
 
       <div class="questions-bar">
         <div>
-          <strong id="collection-heading">Direito das Famílias — Trabalho de cuidado</strong>
-          <p id="collection-description">Simulado inicial com seis respostas fundamentadas e editáveis.</p>
+          <strong id="collection-heading">Direito das FamÃ­lias â€” Trabalho de cuidado</strong>
+          <p id="collection-description">Simulado inicial com seis respostas fundamentadas e editÃ¡veis.</p>
         </div>
-        <button id="new-question" class="gold-button">＋ Nova questão</button>
+        <button id="new-question" class="gold-button">ï¼‹ Nova questÃ£o</button>
       </div>
 
-      <nav class="module-nav" id="module-nav" aria-label="Questões do simulado"></nav>
+      <nav class="module-nav" id="module-nav" aria-label="QuestÃµes do simulado"></nav>
 
       <div class="workspace-grid">
-        <!-- ÁREA CENTRAL: TELEPROMPTER -->
+        <!-- ÃREA CENTRAL: TELEPROMPTER -->
         <section class="tele-card" aria-labelledby="tele-heading">
           <div class="section-kicker">
             <span class="gold-bar"></span>
-            <span id="section-label">QUESTÃO 01</span>
+            <span id="section-label">QUESTÃƒO 01</span>
             <span class="kicker-right">TELEPROMPTER ADAPTATIVO & ALINHAMENTO</span>
           </div>
 
@@ -88,18 +98,18 @@
           <p id="main-question" class="main-question"></p>
           
           <div class="question-edit-actions">
-            <button id="edit-question" class="link-button">✎ Editar questão e guia pedagógico</button>
-            <button id="delete-question" class="link-button warning-link">Excluir questão</button>
+            <button id="edit-question" class="link-button">âœŽ Editar questÃ£o e guia pedagÃ³gico</button>
+            <button id="delete-question" class="link-button warning-link">Excluir questÃ£o</button>
           </div>
 
           <div class="tele-toolbar">
-            <div class="choice-set" id="mode-picker" role="group" aria-label="Versão da resposta">
-              <button data-mode="short">30 s (Síntese)</button>
-              <button data-mode="medium">90 s (Padrão)</button>
+            <div class="choice-set" id="mode-picker" role="group" aria-label="VersÃ£o da resposta">
+              <button data-mode="short">30 s (SÃ­ntese)</button>
+              <button data-mode="medium">90 s (PadrÃ£o)</button>
               <button data-mode="full">Completa</button>
             </div>
             <div class="font-control">
-              <button id="font-down" aria-label="Diminuir tamanho da letra">A−</button>
+              <button id="font-down" aria-label="Diminuir tamanho da letra">Aâˆ’</button>
               <span id="font-size-label">22 px</span>
               <button id="font-up" aria-label="Aumentar tamanho da letra">A+</button>
             </div>
@@ -108,9 +118,9 @@
           <div class="reading-switch">
             <label class="toggle-label">
               <input id="memory-toggle" type="checkbox" />
-              <span>Modo Memorização <small>ocultar texto corrido e exibir tópicos-chave</small></span>
+              <span>Modo MemorizaÃ§Ã£o <small>ocultar texto corrido e exibir tÃ³picos-chave</small></span>
             </label>
-            <button id="edit-button" class="link-button">✎ Customizar este roteiro</button>
+            <button id="edit-button" class="link-button">âœŽ Customizar este roteiro</button>
           </div>
 
           <!-- Janela do Teleprompter com Scroll e Estados de Palavras -->
@@ -128,16 +138,16 @@
 
           <div class="tele-footer">
             <div class="progress-caption">
-              <span>Avanço no roteiro (com tolerância semântica)</span>
+              <span>AvanÃ§o no roteiro (com tolerÃ¢ncia semÃ¢ntica)</span>
               <strong id="progress-label">0%</strong>
             </div>
             <div class="progress-track"><div id="progress-fill"></div></div>
             <p class="micro-note">
-              Verde = pronunciado corretamente · Vermelho = omitido/pulado · Dourado = foco da fala · Azul = paráfrase aceita sem prejuízo conceitual.
+              Verde = pronunciado corretamente Â· Vermelho = omitido/pulado Â· Dourado = foco da fala Â· Azul = parÃ¡frase aceita sem prejuÃ­zo conceitual.
             </p>
           </div>
 
-          <!-- Métricas de Treino em Tempo Real -->
+          <!-- MÃ©tricas de Treino em Tempo Real -->
           <div class="metrics-grid">
             <div>
               <span>TEMPO</span>
@@ -158,19 +168,19 @@
           </div>
         </section>
 
-        <!-- COLUNA LATERAL DE APOIO PEDAGÓGICO E TRANSCRIÇÃO -->
+        <!-- COLUNA LATERAL DE APOIO PEDAGÃ“GICO E TRANSCRIÃ‡ÃƒO -->
         <aside class="insight-column">
           <section class="insight-card">
             <div class="aside-heading">
-              <span class="aside-icon">◎</span>
+              <span class="aside-icon">â—Ž</span>
               <div>
-                <div class="micro-overline">GUIA DE ARGUMENTAÇÃO</div>
-                <h3>Essência da resposta</h3>
+                <div class="micro-overline">GUIA DE ARGUMENTAÃ‡ÃƒO</div>
+                <h3>EssÃªncia da resposta</h3>
               </div>
             </div>
             <p id="idea-text" class="idea-text"></p>
             <div class="gold-rule"></div>
-            <h4>Três argumentos essenciais</h4>
+            <h4>TrÃªs argumentos essenciais</h4>
             <ol id="argument-list" class="argument-list"></ol>
             <div class="closing-box">
               <span>FRASE DE FECHAMENTO</span>
@@ -180,9 +190,9 @@
 
           <section class="insight-card">
             <div class="aside-heading">
-              <span class="aside-icon">⌘</span>
+              <span class="aside-icon">âŒ˜</span>
               <div>
-                <div class="micro-overline">CONEXÕES CONCEITUAIS</div>
+                <div class="micro-overline">CONEXÃ•ES CONCEITUAIS</div>
                 <h3>Mapa mental</h3>
               </div>
             </div>
@@ -191,40 +201,40 @@
             <h4>Pergunta de repescagem da banca</h4>
             <p id="follow-up" class="small-aside"></p>
             <div class="legal-alert">
-              <strong>PONTOS DE ATENÇÃO / ARMADILHAS</strong>
+              <strong>PONTOS DE ATENÃ‡ÃƒO / ARMADILHAS</strong>
               <p id="legal-alert"></p>
             </div>
           </section>
 
           <section class="insight-card transcript-panel">
             <div class="aside-heading">
-              <span class="aside-icon">◉</span>
+              <span class="aside-icon">â—‰</span>
               <div>
-                <div class="micro-overline">TRANSCRIÇÃO EM TEMPO REAL</div>
-                <h3>Análise da fala</h3>
+                <div class="micro-overline">TRANSCRIÃ‡ÃƒO EM TEMPO REAL</div>
+                <h3>AnÃ¡lise da fala</h3>
               </div>
             </div>
             <div id="transcript" class="transcript-output" aria-live="polite">
-              A transcrição do áudio aparecerá aqui conforme você responder à banca...
+              A transcriÃ§Ã£o do Ã¡udio aparecerÃ¡ aqui conforme vocÃª responder Ã  banca...
             </div>
             <details id="manual-details">
-              <summary>Sem microfone? Inserir transcrição manual</summary>
-              <textarea id="manual-transcript" rows="4" placeholder="Cole ou digite a resposta falada para testar o alinhamento e a pontuação semântica."></textarea>
+              <summary>Sem microfone? Inserir transcriÃ§Ã£o manual</summary>
+              <textarea id="manual-transcript" rows="4" placeholder="Cole ou digite a resposta falada para testar o alinhamento e a pontuaÃ§Ã£o semÃ¢ntica."></textarea>
               <button id="analyze-manual" class="small-gold-button">Analisar texto</button>
             </details>
             <details id="diag-details" class="diag-panel">
-              <summary>Diagnóstico de Reconhecimento</summary>
+              <summary>DiagnÃ³stico de Reconhecimento</summary>
               <div class="diag-grid">
                 <div class="diag-item"><span>Estado:</span><strong id="diag-state">Inativo</strong></div>
                 <div class="diag-item"><span>Suporte:</span><strong id="diag-support">Verificando...</strong></div>
-                <div class="diag-item"><span>Último erro:</span><strong id="diag-last-error">Nenhum</strong></div>
+                <div class="diag-item"><span>Ãšltimo erro:</span><strong id="diag-last-error">Nenhum</strong></div>
                 <div class="diag-item"><span>Resultados recebidos:</span><strong id="diag-results-count">0</strong></div>
-                <div class="diag-item"><span>Reinicializações:</span><strong id="diag-restarts-count">0</strong></div>
+                <div class="diag-item"><span>ReinicializaÃ§Ãµes:</span><strong id="diag-restarts-count">0</strong></div>
               </div>
             </details>
             <div class="panel-foot">
-              <button id="save-session" class="link-button">Salvar sessão</button>
-              <button id="clear-transcript" class="link-button">Limpar transcrição</button>
+              <button id="save-session" class="link-button">Salvar sessÃ£o</button>
+              <button id="clear-transcript" class="link-button">Limpar transcriÃ§Ã£o</button>
             </div>
           </section>
         </aside>
@@ -236,40 +246,40 @@
       <div class="dock-inner">
         <div class="dock-label">
           <span>TREINAMENTO ORAL</span>
-          <strong id="dock-status">Aguardando início</strong>
+          <strong id="dock-status">Aguardando inÃ­cio</strong>
         </div>
         <div class="dock-controls">
-          <button id="start-button" class="primary-action"><span>●</span> Iniciar arguição</button>
-          <button id="pause-button" class="dock-action" disabled>Ⅱ Pausar</button>
-          <button id="resume-button" class="dock-action" hidden>▶ Continuar</button>
-          <button id="finish-button" class="dock-action finish-action" title="Concluir treino e gerar relatório de pontuação">✓ Concluir ensaio</button>
-          <button id="restart-button" class="dock-action">↻ Reiniciar</button>
-          <button id="next-button" class="dock-action next-action">Próxima pergunta →</button>
+          <button id="start-button" class="primary-action"><span>â—</span> Iniciar arguiÃ§Ã£o</button>
+          <button id="pause-button" class="dock-action" disabled>â…¡ Pausar</button>
+          <button id="resume-button" class="dock-action" hidden>â–¶ Continuar</button>
+          <button id="finish-button" class="dock-action finish-action" title="Concluir treino e gerar relatÃ³rio de pontuaÃ§Ã£o">âœ“ Concluir ensaio</button>
+          <button id="restart-button" class="dock-action">â†» Reiniciar</button>
+          <button id="next-button" class="dock-action next-action">PrÃ³xima pergunta â†’</button>
         </div>
       </div>
     </div>
   </div>
 
-  <!-- MODAL DE RELATÓRIO FINAL & PONTUAÇÃO (SCORE DASHBOARD) -->
+  <!-- MODAL DE RELATÃ“RIO FINAL & PONTUAÃ‡ÃƒO (SCORE DASHBOARD) -->
   <div class="modal-backdrop" id="score-modal" hidden>
     <div class="modal-sheet score-modal-sheet" role="dialog" aria-modal="true" aria-labelledby="score-modal-title">
       <div class="modal-heading">
         <div>
-          <span class="micro-overline">RELATÓRIO DE DESEMPENHO</span>
+          <span class="micro-overline">RELATÃ“RIO DE DESEMPENHO</span>
           <h2 id="score-modal-title">Resultado do Ensaio Oral</h2>
-          <p id="score-modal-subtitle">Avaliação quantitativa e qualitativa da sua resposta.</p>
+          <p id="score-modal-subtitle">AvaliaÃ§Ã£o quantitativa e qualitativa da sua resposta.</p>
         </div>
-        <button id="score-close" class="circle-button" aria-label="Fechar relatório">×</button>
+        <button id="score-close" class="circle-button" aria-label="Fechar relatÃ³rio">Ã—</button>
       </div>
 
       <div class="score-hero">
         <div class="score-badge">
           <div class="score-circle"><span id="final-score-val">0</span><small>%</small></div>
-          <div class="score-tag">PONTUAÇÃO GERAL</div>
+          <div class="score-tag">PONTUAÃ‡ÃƒO GERAL</div>
         </div>
         <div class="score-hero-details">
           <h3 id="score-rating-title">Desempenho Muito Bom</h3>
-          <p id="score-rating-desc">Sua resposta cobriu a maior parte dos fundamentos esperados com boa precisão conceitual.</p>
+          <p id="score-rating-desc">Sua resposta cobriu a maior parte dos fundamentos esperados com boa precisÃ£o conceitual.</p>
         </div>
       </div>
 
@@ -279,7 +289,7 @@
           <strong id="modal-coverage-val">0%</strong>
         </div>
         <div class="score-breakdown-item">
-          <span>ADERÊNCIA SEMÂNTICA</span>
+          <span>ADERÃŠNCIA SEMÃ‚NTICA</span>
           <strong id="modal-semantic-val">0%</strong>
         </div>
         <div class="score-breakdown-item">
@@ -287,13 +297,13 @@
           <strong id="modal-skipped-val" style="color:var(--red);">0</strong>
         </div>
         <div class="score-breakdown-item">
-          <span>EQUIVALÊNCIAS SEMÂNTICAS ACEITAS</span>
+          <span>EQUIVALÃŠNCIAS SEMÃ‚NTICAS ACEITAS</span>
           <strong id="modal-paraphrases-val" style="color:#1a56db;">0 trechos</strong>
         </div>
       </div>
 
       <div class="score-formula-box">
-        <strong>Fórmula de Pontuação:</strong> Score = (40% Cobertura) + (35% Aderência Semântica) + (15% Retenção sem Omissões) + (Bônus de Paráfrases Aceitas até 10%). Não penaliza hesitações momentâneas nem paráfrases válidas.
+        <strong>FÃ³rmula de PontuaÃ§Ã£o:</strong> Score = (40% Cobertura) + (35% AderÃªncia SemÃ¢ntica) + (15% RetenÃ§Ã£o sem OmissÃµes) + (BÃ´nus de ParÃ¡frases Aceitas atÃ© 10%). NÃ£o penaliza hesitaÃ§Ãµes momentÃ¢neas nem parÃ¡frases vÃ¡lidas.
       </div>
 
       <div class="score-omissions-box" id="omissions-container" hidden>
@@ -302,9 +312,9 @@
       </div>
 
       <div class="modal-actions">
-        <button id="repeat-session-btn" class="secondary-button">↻ Repetir este ensaio</button>
+        <button id="repeat-session-btn" class="secondary-button">â†» Repetir este ensaio</button>
         <span class="flex-space"></span>
-        <button id="save-modal-session-btn" class="gold-button">💾 Salvar sessão no histórico</button>
+        <button id="save-modal-session-btn" class="gold-button">ðŸ’¾ Salvar sessÃ£o no histÃ³rico</button>
       </div>
     </div>
   </div>
@@ -314,19 +324,19 @@
     <div class="modal-sheet" role="dialog" aria-modal="true" aria-labelledby="editor-title">
       <div class="modal-heading">
         <div>
-          <span class="micro-overline">PERSONALIZAÇÃO DO ROTEIRO</span>
+          <span class="micro-overline">PERSONALIZAÃ‡ÃƒO DO ROTEIRO</span>
           <h2 id="editor-title">Editar resposta</h2>
           <p id="editor-subtitle"></p>
         </div>
-        <button id="editor-close" class="circle-button" aria-label="Fechar editor">×</button>
+        <button id="editor-close" class="circle-button" aria-label="Fechar editor">Ã—</button>
       </div>
-      <textarea id="editor-text" rows="14" spellcheck="true" aria-label="Texto editável da resposta"></textarea>
-      <p class="edit-helper">As versões de 30 s, 90 s e completa são independentes. Salvar substitui apenas a versão atual.</p>
+      <textarea id="editor-text" rows="14" spellcheck="true" aria-label="Texto editÃ¡vel da resposta"></textarea>
+      <p class="edit-helper">As versÃµes de 30 s, 90 s e completa sÃ£o independentes. Salvar substitui apenas a versÃ£o atual.</p>
       <div class="modal-actions">
         <button id="restore-version" class="secondary-button">Restaurar original</button>
         <span class="flex-space"></span>
         <button id="editor-cancel" class="secondary-button">Cancelar</button>
-        <button id="editor-save" class="gold-button">Salvar alterações</button>
+        <button id="editor-save" class="gold-button">Salvar alteraÃ§Ãµes</button>
       </div>
     </div>
   </div>
@@ -336,15 +346,15 @@
       <div class="modal-heading">
         <div>
           <span class="micro-overline">CONTROLE DOS SEUS DADOS</span>
-          <h2 id="settings-title">Configurações & arquivos</h2>
+          <h2 id="settings-title">ConfiguraÃ§Ãµes & arquivos</h2>
         </div>
-        <button id="settings-close" class="circle-button" aria-label="Fechar configurações">×</button>
+        <button id="settings-close" class="circle-button" aria-label="Fechar configuraÃ§Ãµes">Ã—</button>
       </div>
       <div class="settings-body">
-        <h3>Privacidade & Segurança</h3>
-        <p>O roteiro e as sessões são salvos apenas no armazenamento deste navegador (LocalStorage). O aplicativo não grava nem armazena áudio em servidores externos.</p>
+        <h3>Privacidade & SeguranÃ§a</h3>
+        <p>O roteiro e as sessÃµes sÃ£o salvos apenas no armazenamento deste navegador (LocalStorage). O aplicativo nÃ£o grava nem armazena Ã¡udio em servidores externos.</p>
         
-        <h3>Backup e recuperação</h3>
+        <h3>Backup e recuperaÃ§Ã£o</h3>
         <div class="settings-buttons">
           <button id="export-json" class="secondary-button">Exportar JSON</button>
           <button id="import-json" class="secondary-button">Importar JSON</button>
@@ -352,17 +362,17 @@
           <button id="export-pdf" class="gold-button">Exportar guia em PDF</button>
         </div>
 
-        <h3>Histórico local de sessões</h3>
-        <div id="history-list" class="history-list">Nenhuma sessão salva.</div>
+        <h3>HistÃ³rico local de sessÃµes</h3>
+        <div id="history-list" class="history-list">Nenhuma sessÃ£o salva.</div>
 
         <div class="danger-row">
           <button id="erase-data" class="danger-button">Apagar dados locais</button>
-          <span>Apaga respostas editadas e histórico salvo neste navegador.</span>
+          <span>Apaga respostas editadas e histÃ³rico salvo neste navegador.</span>
         </div>
 
         <h3>Fontes do simulado inicial</h3>
         <div id="source-list" class="source-list"></div>
-        <p class="micro-note">As referências abaixo se aplicam apenas ao simulado inicial de Direito das Famílias. Confira sempre a atualização normativa.</p>
+        <p class="micro-note">As referÃªncias abaixo se aplicam apenas ao simulado inicial de Direito das FamÃ­lias. Confira sempre a atualizaÃ§Ã£o normativa.</p>
       </div>
     </div>
   </div>
@@ -374,15 +384,15 @@
           <span class="micro-overline">BIBLIOTECA DE ESTUDOS</span>
           <h2 id="collection-modal-title">Criar simulado</h2>
         </div>
-        <button id="collection-close" class="circle-button" aria-label="Fechar">×</button>
+        <button id="collection-close" class="circle-button" aria-label="Fechar">Ã—</button>
       </div>
       <label class="field-label">
         Nome do simulado
-        <input id="collection-name" type="text" maxlength="120" placeholder="Ex.: Direito Constitucional — prova oral" />
+        <input id="collection-name" type="text" maxlength="120" placeholder="Ex.: Direito Constitucional â€” prova oral" />
       </label>
       <label class="field-label">
-        Descrição ou objetivo
-        <input id="collection-desc" type="text" maxlength="300" placeholder="Ex.: Questões de concursos públicos" />
+        DescriÃ§Ã£o ou objetivo
+        <input id="collection-desc" type="text" maxlength="300" placeholder="Ex.: QuestÃµes de concursos pÃºblicos" />
       </label>
       <div class="modal-actions">
         <button id="collection-cancel" class="secondary-button">Cancelar</button>
@@ -395,40 +405,40 @@
     <div class="modal-sheet question-sheet" role="dialog" aria-modal="true" aria-labelledby="question-modal-title">
       <div class="modal-heading">
         <div>
-          <span class="micro-overline">EDITOR DE QUESTÕES</span>
-          <h2 id="question-modal-title">Nova questão</h2>
-          <p>Cadastre o enunciado e os roteiros. Todas as respostas poderão ser revisadas depois.</p>
+          <span class="micro-overline">EDITOR DE QUESTÃ•ES</span>
+          <h2 id="question-modal-title">Nova questÃ£o</h2>
+          <p>Cadastre o enunciado e os roteiros. Todas as respostas poderÃ£o ser revisadas depois.</p>
         </div>
-        <button id="question-close" class="circle-button" aria-label="Fechar">×</button>
+        <button id="question-close" class="circle-button" aria-label="Fechar">Ã—</button>
       </div>
       <div class="question-fields">
-        <label class="field-label">Título curto<input id="q-title" maxlength="120" placeholder="Ex.: Controle de constitucionalidade" /></label>
-        <label class="field-label">Enunciado da questão<textarea id="q-question" rows="3" placeholder="Qual seria a pergunta da banca?"></textarea></label>
+        <label class="field-label">TÃ­tulo curto<input id="q-title" maxlength="120" placeholder="Ex.: Controle de constitucionalidade" /></label>
+        <label class="field-label">Enunciado da questÃ£o<textarea id="q-question" rows="3" placeholder="Qual seria a pergunta da banca?"></textarea></label>
         <label class="field-label">Resposta de 30 segundos<textarea id="q-short" rows="3"></textarea></label>
         <label class="field-label">Resposta de 90 segundos<textarea id="q-medium" rows="5"></textarea></label>
         <label class="field-label">Resposta completa<textarea id="q-full" rows="7"></textarea></label>
         <label class="field-label">Ideia central<input id="q-idea" /></label>
-        <label class="field-label">Três argumentos essenciais (um por linha)<textarea id="q-arguments" rows="3"></textarea></label>
-        <label class="field-label">Palavras-chave do mapa mental (separadas por vírgula)<input id="q-keywords" /></label>
+        <label class="field-label">TrÃªs argumentos essenciais (um por linha)<textarea id="q-arguments" rows="3"></textarea></label>
+        <label class="field-label">Palavras-chave do mapa mental (separadas por vÃ­rgula)<input id="q-keywords" /></label>
         <label class="field-label">Frase de fechamento<input id="q-closing" /></label>
         <label class="field-label">Pergunta de repescagem<input id="q-followup" /></label>
-        <label class="field-label">Pontos de atenção<input id="q-alert" /></label>
+        <label class="field-label">Pontos de atenÃ§Ã£o<input id="q-alert" /></label>
       </div>
       <div class="modal-actions">
         <button id="question-cancel" class="secondary-button">Cancelar</button>
-        <button id="question-save" class="gold-button">Salvar questão</button>
+        <button id="question-save" class="gold-button">Salvar questÃ£o</button>
       </div>
     </div>
   </div>
 
   <div class="modal-backdrop" id="privacy-modal" hidden>
     <div class="modal-sheet permission-sheet" role="dialog" aria-modal="true" aria-labelledby="permission-title">
-      <span class="permission-symbol">◉</span>
-      <h2 id="permission-title">Permissão de microfone</h2>
-      <p>Ao iniciar o treinamento, o navegador solicitará acesso ao microfone. O processamento de voz ocorre localmente ou através da Web Speech API nativa do navegador. Nenhum áudio é gravado pelo aplicativo.</p>
+      <span class="permission-symbol">â—‰</span>
+      <h2 id="permission-title">PermissÃ£o de microfone</h2>
+      <p>Ao iniciar o treinamento, o navegador solicitarÃ¡ acesso ao microfone. O processamento de voz ocorre localmente ou atravÃ©s da Web Speech API nativa do navegador. Nenhum Ã¡udio Ã© gravado pelo aplicativo.</p>
       <label class="consent-checkbox">
         <input type="checkbox" id="voice-consent"/>
-        <span>Compreendo essa condição e desejo ativar o reconhecimento de fala.</span>
+        <span>Compreendo essa condiÃ§Ã£o e desejo ativar o reconhecimento de fala.</span>
       </label>
       <div class="modal-actions">
         <button id="privacy-cancel" class="secondary-button">Cancelar</button>
@@ -438,8 +448,9 @@
   </div>
 
   <div id="toast" role="status" aria-live="polite" hidden></div>
-  <section id="print-root" aria-label="Guia de prova oral para impressão"></section>
+  <section id="print-root" aria-label="Guia de prova oral para impressÃ£o"></section>
 
   <script type="module" src="./app.js"></script>
 </body>
 </html>
+

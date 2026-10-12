@@ -1,1 +1,14 @@
-{"name":"Oral Lab | Estúdio de Provas Orais","short_name":"Oral Lab","lang":"pt-BR","start_url":"./index.html","display":"standalone","background_color":"#f7f6f1","theme_color":"#103d46","description":"Simulados de provas orais, respostas editáveis e teleprompter com reconhecimento de fala."}
+{
+  "name": "MENTIVA — Mente Ativa",
+  "short_name": "MENTIVA",
+  "lang": "pt-BR",
+  "start_url": "./dashboard.html",
+  "display": "standalone",
+  "background_color": "#F7F9FC",
+  "theme_color": "#102A43",
+  "description": "MENTIVA — Plataforma de Estudo Inteligente: prova oral com teleprompter, Active Recall com revisão espaçada e simulados para concursos públicos.",
+  "icons": [
+    { "src": "./icons/icon-192.png", "sizes": "192x192", "type": "image/png" },
+    { "src": "./icons/icon-512.png", "sizes": "512x512", "type": "image/png" }
+  ]
+}

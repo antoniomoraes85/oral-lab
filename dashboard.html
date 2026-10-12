@@ -1,0 +1,372 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+  <meta name="theme-color" content="#102A43" />
+  <meta name="description" content="MENTIVA — Plataforma de Estudo Inteligente. Prova oral com teleprompter, Active Recall com revisão espaçada, flashcards e simulados para concursos públicos." />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="default" />
+  <link rel="manifest" href="./manifest.webmanifest" />
+  <link rel="stylesheet" href="./mentiva-styles.css" />
+  <title>MENTIVA — Mente Ativa | Plataforma de Estudo Inteligente</title>
+</head>
+<body class="mentiva-app">
+
+  <!-- Overlay mobile sidebar -->
+  <div id="sidebar-overlay" class="sidebar-overlay" aria-hidden="true"></div>
+
+  <!-- ─── Sidebar ─────────────────────────────────────────────── -->
+  <nav id="sidebar" class="sidebar" aria-label="Navegação principal">
+
+    <div class="sidebar-logo" aria-label="MENTIVA — Mente Ativa">
+      <div class="sidebar-logo-icon" aria-hidden="true">🧠</div>
+      <span class="sidebar-logo-text">MENTIVA</span>
+    </div>
+
+    <!-- Toggle desktop -->
+    <button id="sidebar-toggle" class="sidebar-toggle" aria-label="Recolher menu" title="Recolher menu">‹</button>
+
+    <div class="sidebar-nav" role="list">
+
+      <!-- Principal -->
+      <div class="sidebar-group">
+        <div class="sidebar-group-label">Principal</div>
+
+        <a href="./dashboard.html" class="nav-item active" role="listitem" aria-current="page">
+          <span class="nav-icon" aria-hidden="true">⌂</span>
+          <span class="nav-label">Início</span>
+        </a>
+
+        <a href="./index.html" class="nav-item" role="listitem">
+          <span class="nav-icon" aria-hidden="true">🎤</span>
+          <span class="nav-label">Prova Oral</span>
+        </a>
+
+        <button class="nav-item" role="listitem" data-wip="Active Recall">
+          <span class="nav-icon" aria-hidden="true">🧠</span>
+          <span class="nav-label">Active Recall</span>
+          <span class="nav-chip-wip">Em breve</span>
+        </button>
+
+        <button class="nav-item" role="listitem" data-wip="Flashcards">
+          <span class="nav-icon" aria-hidden="true">🗂</span>
+          <span class="nav-label">Flashcards</span>
+          <span class="nav-chip-wip">Em breve</span>
+        </button>
+
+        <a href="./index.html" class="nav-item" role="listitem">
+          <span class="nav-icon" aria-hidden="true">📋</span>
+          <span class="nav-label">Simulados</span>
+        </a>
+
+        <button class="nav-item" role="listitem" data-wip="Banco de Questões">
+          <span class="nav-icon" aria-hidden="true">🗄</span>
+          <span class="nav-label">Banco de Questões</span>
+          <span class="nav-chip-wip">Em breve</span>
+        </button>
+      </div>
+
+      <!-- Estudo avançado -->
+      <div class="sidebar-group">
+        <div class="sidebar-group-label">Estudo Avançado</div>
+
+        <button class="nav-item" role="listitem" data-wip="Redação">
+          <span class="nav-icon" aria-hidden="true">✍</span>
+          <span class="nav-label">Redação</span>
+          <span class="nav-chip-wip">Em breve</span>
+        </button>
+
+        <button class="nav-item" role="listitem" data-wip="Planos de Estudo">
+          <span class="nav-icon" aria-hidden="true">📅</span>
+          <span class="nav-label">Planos de Estudo</span>
+          <span class="nav-chip-wip">Em breve</span>
+        </button>
+
+        <button class="nav-item" role="listitem" data-wip="Desempenho">
+          <span class="nav-icon" aria-hidden="true">📈</span>
+          <span class="nav-label">Desempenho</span>
+          <span class="nav-chip-wip">Em breve</span>
+        </button>
+
+        <button class="nav-item" role="listitem" data-wip="Mapas Mentais">
+          <span class="nav-icon" aria-hidden="true">🕸</span>
+          <span class="nav-label">Mapas Mentais</span>
+          <span class="nav-chip-wip">Em breve</span>
+        </button>
+
+        <button class="nav-item" role="listitem" data-wip="Materiais">
+          <span class="nav-icon" aria-hidden="true">📚</span>
+          <span class="nav-label">Materiais</span>
+          <span class="nav-chip-wip">Em breve</span>
+        </button>
+      </div>
+    </div>
+
+    <!-- Footer sidebar -->
+    <div class="sidebar-footer">
+      <a href="./index.html#settings" class="nav-item" role="listitem">
+        <span class="nav-icon" aria-hidden="true">⚙</span>
+        <span class="nav-label">Configurações</span>
+      </a>
+    </div>
+  </nav>
+
+  <!-- ─── Main Area ────────────────────────────────────────────── -->
+  <div id="main-area" class="main-area">
+
+    <!-- TopBar -->
+    <header class="topbar" role="banner">
+      <button id="hamburger-btn" class="topbar-hamburger" aria-label="Abrir menu">☰</button>
+
+      <div class="search-bar" role="search" aria-label="Pesquisar conteúdo">
+        <span aria-hidden="true" style="font-size:14px;opacity:.5">🔍</span>
+        <input type="search" placeholder="Buscar matéria, questão ou tema…" aria-label="Buscar" autocomplete="off" />
+      </div>
+
+      <div class="topbar-right">
+        <span id="dashboard-greeting" class="topbar-label" style="display:none" aria-live="polite"></span>
+        <button class="topbar-icon-btn" title="Notificações" aria-label="Notificações">🔔</button>
+        <button class="topbar-icon-btn" title="Configurações" aria-label="Configurações"
+          onclick="window.location.href='./index.html'">⚙</button>
+      </div>
+    </header>
+
+    <!-- Dashboard Content -->
+    <main class="dashboard-content" id="dashboard-main">
+
+      <!-- ═══ Hero Banner ═══════════════════════════════════════ -->
+      <section class="hero-banner" aria-label="Banner MENTIVA">
+        <canvas id="cosmos-canvas" aria-hidden="true"></canvas>
+        <div class="hero-gradient-overlay" aria-hidden="true"></div>
+        <div class="hero-text">
+          <span class="hero-eyebrow">Plataforma de Estudo Inteligente</span>
+          <h1 class="hero-title">MENTIVA</h1>
+          <p class="hero-subtitle">Conhecimento, método e evolução.</p>
+          <a href="./index.html" class="hero-cta">
+            Iniciar Prova Oral <span aria-hidden="true">→</span>
+          </a>
+        </div>
+      </section>
+
+      <!-- ═══ Feature Cards ════════════════════════════════════ -->
+      <section class="dash-section" aria-labelledby="section-estudar">
+        <div class="section-header">
+          <h2 class="section-title" id="section-estudar">O que estudar agora?</h2>
+        </div>
+        <div class="feature-grid">
+
+          <!-- Prova Oral — funcional -->
+          <a href="./index.html" class="feature-card teal" aria-label="Ir para Prova Oral">
+            <div class="feature-icon teal" aria-hidden="true">🎤</div>
+            <div class="feature-card-body">
+              <div class="feature-card-title">Prova Oral</div>
+              <div class="feature-card-desc">Treine respostas com teleprompter adaptativo, alinhamento semântico e detecção de omissões.</div>
+            </div>
+          </a>
+
+          <!-- Active Recall — em desenvolvimento -->
+          <button class="feature-card blue" data-wip="Active Recall" aria-label="Active Recall — em desenvolvimento">
+            <div class="feature-icon blue" aria-hidden="true">🧠</div>
+            <div class="feature-card-body">
+              <div class="feature-card-title">Active Recall</div>
+              <div class="feature-card-desc">Fortaleça a memória com recuperação ativa e revisão espaçada por SM-2.</div>
+              <span class="feature-wip">⏳ Em desenvolvimento</span>
+            </div>
+          </button>
+
+          <!-- Redação — em desenvolvimento -->
+          <button class="feature-card gold" data-wip="Redação" aria-label="Redação — em desenvolvimento">
+            <div class="feature-icon gold" aria-hidden="true">✍</div>
+            <div class="feature-card-body">
+              <div class="feature-card-title">Redação</div>
+              <div class="feature-card-desc">Desenvolva sua escrita argumentativa com prática estruturada e fundamentação jurídica.</div>
+              <span class="feature-wip">⏳ Em desenvolvimento</span>
+            </div>
+          </button>
+
+          <!-- Simulados — funcional -->
+          <a href="./index.html" class="feature-card navy" aria-label="Ir para Simulados">
+            <div class="feature-icon navy" aria-hidden="true">🎯</div>
+            <div class="feature-card-body">
+              <div class="feature-card-title">Simulados</div>
+              <div class="feature-card-desc">Pratique questões do simulado ativo e acompanhe sua pontuação por sessão.</div>
+            </div>
+          </a>
+
+        </div>
+      </section>
+
+      <!-- ═══ Grid principal (conteúdo + painel lateral) ═══════ -->
+      <div class="dash-grid">
+
+        <!-- ── Coluna principal ─────────────────────────────────── -->
+        <div class="dash-col col-main">
+
+          <!-- Continuar Estudando -->
+          <section aria-labelledby="section-continuar">
+            <div class="section-header">
+              <h2 class="section-title" id="section-continuar">Onde parei?</h2>
+              <a href="./index.html" class="section-link">Ver todos →</a>
+            </div>
+            <div id="resume-container">
+              <!-- populado por dashboard.js -->
+              <div class="empty-state">
+                <div class="empty-state-icon">📖</div>
+                <div class="empty-state-title">Carregando…</div>
+              </div>
+            </div>
+          </section>
+
+          <!-- Últimas Sessões -->
+          <section aria-labelledby="section-sessoes">
+            <div class="section-header">
+              <h2 class="section-title" id="section-sessoes">Últimas sessões</h2>
+            </div>
+            <div class="panel-card" style="overflow:auto">
+              <table class="sessions-table" aria-label="Histórico de sessões de estudo">
+                <thead>
+                  <tr>
+                    <th>Data</th>
+                    <th>Modalidade</th>
+                    <th>Tema / Matéria</th>
+                    <th>Pontuação</th>
+                    <th>Duração</th>
+                  </tr>
+                </thead>
+                <tbody id="sessions-tbody">
+                  <tr><td colspan="5" style="text-align:center;color:var(--text-3);padding:24px">Carregando…</td></tr>
+                </tbody>
+              </table>
+            </div>
+          </section>
+
+        </div>
+
+        <!-- ── Coluna lateral ───────────────────────────────────── -->
+        <div class="dash-col col-side">
+
+          <!-- Seu Progresso -->
+          <section aria-labelledby="section-progresso">
+            <h2 class="section-title" id="section-progresso" style="margin-bottom:12px">Como estou evoluindo?</h2>
+            <div class="panel-card">
+              <div class="panel-card-head">
+                <span class="panel-card-title">Seu Progresso</span>
+                <span style="font-size:11px;color:var(--text-3)">Dados locais</span>
+              </div>
+              <div class="panel-card-body">
+                <div class="progress-stats">
+                  <div class="stat-item">
+                    <div class="stat-value" id="stat-sessions">—</div>
+                    <div class="stat-label">Sessões</div>
+                  </div>
+                  <div class="stat-item">
+                    <div class="stat-value" id="stat-time">—</div>
+                    <div class="stat-label">Tempo</div>
+                  </div>
+                  <div class="stat-item">
+                    <div class="stat-value" id="stat-avg">—</div>
+                    <div class="stat-label">Média</div>
+                  </div>
+                  <div class="stat-item">
+                    <div class="stat-value" id="stat-flashcards">—</div>
+                    <div class="stat-label">Flashcards</div>
+                  </div>
+                </div>
+
+                <div class="progress-bar-row" style="margin-top:18px">
+                  <span class="progress-bar-label">Prova Oral</span>
+                  <div class="progress-bar-track">
+                    <div class="progress-bar-fill" id="progress-oral" style="width:0%"></div>
+                  </div>
+                  <span class="progress-bar-pct" id="progress-oral-pct">0%</span>
+                </div>
+                <div class="progress-bar-row">
+                  <span class="progress-bar-label">Active Recall</span>
+                  <div class="progress-bar-track">
+                    <div class="progress-bar-fill" style="width:0%;background:var(--blue)"></div>
+                  </div>
+                  <span class="progress-bar-pct">—</span>
+                </div>
+                <div class="progress-bar-row">
+                  <span class="progress-bar-label">Redação</span>
+                  <div class="progress-bar-track">
+                    <div class="progress-bar-fill" style="width:0%;background:var(--gold)"></div>
+                  </div>
+                  <span class="progress-bar-pct">—</span>
+                </div>
+              </div>
+            </div>
+          </section>
+
+          <!-- Revisão de Hoje -->
+          <section aria-labelledby="section-revisao">
+            <div class="panel-card">
+              <div class="panel-card-head">
+                <span class="panel-card-title" id="section-revisao">Revisão de Hoje</span>
+                <span style="font-size:18px">📅</span>
+              </div>
+              <div class="panel-card-body review-info">
+                <div class="review-count" id="review-count" aria-live="polite">—</div>
+                <div class="review-count-label">cards pendentes</div>
+                <button class="review-btn" id="review-btn" disabled
+                  onclick="document.getElementById('wip-backdrop').classList.add('open');
+                           document.getElementById('wip-modal-title').textContent='Active Recall';
+                           document.getElementById('wip-modal-desc').textContent='A interface de revisão de flashcards estará disponível em breve.';">
+                  Verificando…
+                </button>
+                <p class="review-note" id="review-note">Carregando dados…</p>
+              </div>
+            </div>
+          </section>
+
+          <!-- Metas da semana -->
+          <section aria-labelledby="section-metas">
+            <div class="panel-card">
+              <div class="panel-card-head">
+                <span class="panel-card-title" id="section-metas">Metas da Semana</span>
+                <span style="font-size:11px;color:var(--text-3)">Personalizar em breve</span>
+              </div>
+              <div class="panel-card-body">
+                <p style="font-size:12.5px;color:var(--text-2);text-align:center;padding:10px 0">
+                  As metas personalizáveis estarão disponíveis na próxima versão.<br>
+                  Por enquanto, acompanhe seu progresso no painel acima.
+                </p>
+                <div class="goal-item">
+                  <div class="goal-checkbox" aria-label="Meta pendente">—</div>
+                  <span class="goal-label">Realizar 3 sessões de prova oral</span>
+                  <span class="goal-count" id="goal-sessions-count">—/3</span>
+                </div>
+                <div class="goal-item">
+                  <div class="goal-checkbox" aria-label="Meta pendente">—</div>
+                  <span class="goal-label">Revisar 20 flashcards</span>
+                  <span class="goal-count">—/20</span>
+                </div>
+              </div>
+            </div>
+          </section>
+
+        </div>
+      </div>
+      <!-- fim dash-grid -->
+
+    </main>
+  </div>
+  <!-- fim main-area -->
+
+  <!-- ─── WIP Modal ─────────────────────────────────────────────── -->
+  <div id="wip-backdrop" class="wip-backdrop" role="dialog" aria-modal="true" aria-labelledby="wip-modal-title">
+    <div class="wip-modal">
+      <div class="wip-icon" aria-hidden="true">🔬</div>
+      <h2 class="wip-title" id="wip-modal-title">Módulo em Desenvolvimento</h2>
+      <p class="wip-desc" id="wip-modal-desc">Este módulo estará disponível em breve.</p>
+      <button class="wip-close" id="wip-close">Entendido</button>
+    </div>
+  </div>
+
+  <!-- Toast -->
+  <div id="mentiva-toast" class="mentiva-toast" role="status" aria-live="polite"></div>
+
+  <script src="./dashboard.js"></script>
+</body>
+</html>
